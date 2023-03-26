@@ -1,0 +1,79 @@
+= Bake
+
+Go Build + Something like Make = Bake ¯\_(ツ)_/¯ 🤷
+
+== Design goals
+
+* Given a go plugin file, have a cli that generates all completions for it.
+
+* Simple subcommands:
+Instead of all the boiler plate of tying things with go-getoptions just let a task declare its position in the hierarchy and it should figure itself out.
+
+Something like:
+
+----
+func Entrypoint(ctx, opt, args) error {
+  p := declare.Task("parent", ParentTask, nil)
+
+  t := declare.Task("my-task", MyTask, p, declare.Alias("mt"))
+  t.String(...)
+  t.Int(...)
+  t.DependsOn(a)
+
+  return nil
+}
+
+func MyTask(ctx, opt, args) error {
+  s := opt.Value("option").(string)
+  return nil
+}
+
+// Initial ctx might only be for pre-processing.
+// Callback context might be passed to communicate data to downstream fns.
+func MyTask(ctx, opt, args) func(ctx context.Context) error {
+  var s string
+  opt.StringVar(&s, "option", ...)
+  opt.DependsOn(AnotherTask)
+
+  return func(ctx context.Context) error {
+    fmt.Println(s)
+  }
+}
+
+  mt := MyTask(opt.NewCommand("my-task", ""))
+  MySubTask(mt.NewCommand("my-sub-task", ""))
+
+
+func MyTask(opt) getoption.Getopt {
+  var s string
+  opt.StringVar(&s, "option", ...)
+  opt.SetCommandFn(func(ctx, opt, args) error {
+    fmt.Println(s)
+    return nil
+  }
+  return opt
+}
+----
+
+Then run with `bake parent my-task`
+
+Declare dependencies automagically
+
+
+== Extra features
+
+* Automated cancellation on timeout when passing -t flag.
+
+* Task aliases should be supported.
+
+* Compile static binary with bundled plugin.
+
+* Finding so files?
+Maybe something like xxx_bake.go
+Or prefixed with bake_xxx.go
+
+== Notes
+
+building:
+
+go build -buildmode=plugin
