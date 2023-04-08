@@ -4,6 +4,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"io"
 	"log"
 	"os"
@@ -16,6 +19,7 @@ import (
 	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"golang.org/x/tools/go/packages"
 )
 
 var Logger = log.New(os.Stderr, "", log.LstdFlags)
@@ -43,6 +47,12 @@ func program(args []string) int {
 		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
 		return 1
 	}
+
+	bls := opt.NewCommand("bake-list-symbols", "lists symbols")
+	bls.SetCommandFn(ListSymbolsRun(bakefile))
+
+	bld := opt.NewCommand("bake-list-descriptions", "lists descriptions")
+	bld.SetCommandFn(ListDescriptionsRun(bakefile))
 
 	opt.HelpCommand("help", opt.Alias("?"))
 	remaining, err := opt.Parse(args[1:])
@@ -101,27 +111,6 @@ func load(ctx context.Context, bakefile string, opt *getoptions.GetOpt) (*plugin
 	return plug, nil
 }
 
-// https://github.com/golang/go/issues/17823
-type Plug struct {
-	pluginpath string
-	err        string        // set if plugin failed to load
-	loaded     chan struct{} // closed when loaded
-	syms       map[string]any
-}
-
-func inspectPlugin(p *plugin.Plugin) {
-	pl := (*Plug)(unsafe.Pointer(p))
-
-	Logger.Printf("Plugin %s exported symbols (%d): \n", pl.pluginpath, len(pl.syms))
-
-	for name, pointers := range pl.syms {
-		Logger.Printf("symbol: %s, pointer: %v, type: %v\n", name, pointers, reflect.TypeOf(pointers))
-		if _, ok := pointers.(func(*getoptions.GetOpt) getoptions.CommandFn); ok {
-			fmt.Printf("name: %s\n", name)
-		}
-	}
-}
-
 func findBakeFiles(ctx context.Context) (string, error) {
 	wd, err := os.Getwd()
 	if err != nil {
@@ -177,4 +166,72 @@ func build(dir string) error {
 		return run.CMD("go", "build", "-buildmode=plugin", "-o=bake.so").Dir(dir).Log().Run()
 	}
 	return nil
+}
+
+func ListSymbolsRun(bakefile string) getoptions.CommandFn {
+	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+		plug, err := plugin.Open(bakefile)
+		if err != nil {
+			return fmt.Errorf("failed to open plugin: %w", err)
+		}
+		inspectPlugin(plug)
+		return nil
+	}
+}
+
+// https://github.com/golang/go/issues/17823
+type Plug struct {
+	pluginpath string
+	err        string        // set if plugin failed to load
+	loaded     chan struct{} // closed when loaded
+	syms       map[string]any
+}
+
+func inspectPlugin(p *plugin.Plugin) {
+	pl := (*Plug)(unsafe.Pointer(p))
+
+	Logger.Printf("Plugin %s exported symbols (%d): \n", pl.pluginpath, len(pl.syms))
+
+	for name, pointers := range pl.syms {
+		Logger.Printf("symbol: %s, pointer: %v, type: %v\n", name, pointers, reflect.TypeOf(pointers))
+		if _, ok := pointers.(func(*getoptions.GetOpt) getoptions.CommandFn); ok {
+			fmt.Printf("name: %s\n", name)
+		}
+	}
+}
+
+func ListDescriptionsRun(bakefile string) getoptions.CommandFn {
+	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+		Logger.Printf("bakefile: %s\n", bakefile)
+		dir := filepath.Dir(bakefile)
+		cfg := &packages.Config{Mode: packages.NeedFiles | packages.NeedSyntax, Dir: dir}
+		pkgs, err := packages.Load(cfg, ".")
+		if err != nil {
+			return fmt.Errorf("failed to load packages: %w", err)
+		}
+		for _, pkg := range pkgs {
+			fmt.Println(pkg.ID, pkg.GoFiles)
+			for _, file := range pkg.GoFiles {
+				fmt.Println(file)
+				// parse file
+				fset := token.NewFileSet()
+				fset.AddFile(file, fset.Base(), len(file))
+				f, err := parser.ParseFile(fset, file, nil, parser.ParseComments)
+				if err != nil {
+					return fmt.Errorf("failed to parse file: %w", err)
+				}
+				// inspect file
+				ast.Inspect(f, func(n ast.Node) bool {
+					switch x := n.(type) {
+					case *ast.FuncDecl:
+						fmt.Println(x.Name.Name)
+						fmt.Printf("%s:\tFuncDecl %s\t%s\n", fset.Position(n.Pos()), x.Name, x.Doc.Text())
+					}
+					return true
+				})
+			}
+		}
+
+		return nil
+	}
 }
