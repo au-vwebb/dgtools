@@ -204,34 +204,57 @@ func ListDescriptionsRun(bakefile string) getoptions.CommandFn {
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		Logger.Printf("bakefile: %s\n", bakefile)
 		dir := filepath.Dir(bakefile)
-		cfg := &packages.Config{Mode: packages.NeedFiles | packages.NeedSyntax, Dir: dir}
-		pkgs, err := packages.Load(cfg, ".")
+		m := make(map[string]FuncDecl)
+		err := GetFuncDeclForPackage(dir, &m)
 		if err != nil {
-			return fmt.Errorf("failed to load packages: %w", err)
+			return fmt.Errorf("failed to inspect package: %w", err)
 		}
-		for _, pkg := range pkgs {
-			fmt.Println(pkg.ID, pkg.GoFiles)
-			for _, file := range pkg.GoFiles {
-				fmt.Println(file)
-				// parse file
-				fset := token.NewFileSet()
-				fset.AddFile(file, fset.Base(), len(file))
-				f, err := parser.ParseFile(fset, file, nil, parser.ParseComments)
-				if err != nil {
-					return fmt.Errorf("failed to parse file: %w", err)
-				}
-				// inspect file
-				ast.Inspect(f, func(n ast.Node) bool {
-					switch x := n.(type) {
-					case *ast.FuncDecl:
-						fmt.Println(x.Name.Name)
-						fmt.Printf("%s:\tFuncDecl %s\t%s\n", fset.Position(n.Pos()), x.Name, x.Doc.Text())
-					}
-					return true
-				})
-			}
+		for name, fd := range m {
+			fmt.Printf("%s: %s\n", name, fd.Description)
 		}
 
 		return nil
 	}
+}
+
+type FuncDecl struct {
+	Description string
+}
+
+// m: map of function name to function information
+func GetFuncDeclForPackage(dir string, m *map[string]FuncDecl) error {
+	if m == nil {
+		return fmt.Errorf("map is nil")
+	}
+	cfg := &packages.Config{Mode: packages.NeedFiles | packages.NeedSyntax, Dir: dir}
+	pkgs, err := packages.Load(cfg, ".")
+	if err != nil {
+		return fmt.Errorf("failed to load packages: %w", err)
+	}
+	for _, pkg := range pkgs {
+		fmt.Println(pkg.ID, pkg.GoFiles)
+		for _, file := range pkg.GoFiles {
+			Logger.Printf("file: %s\n", file)
+			// parse file
+			fset := token.NewFileSet()
+			fset.AddFile(file, fset.Base(), len(file))
+			f, err := parser.ParseFile(fset, file, nil, parser.ParseComments)
+			if err != nil {
+				return fmt.Errorf("failed to parse file: %w", err)
+			}
+			// inspect file
+			ast.Inspect(f, func(n ast.Node) bool {
+				switch x := n.(type) {
+				case *ast.FuncDecl:
+					if x.Name.IsExported() {
+						name := x.Name.Name
+						description := x.Doc.Text()
+						(*m)[name] = FuncDecl{Description: description}
+					}
+				}
+				return true
+			})
+		}
+	}
+	return nil
 }
