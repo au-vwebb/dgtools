@@ -18,22 +18,27 @@ var TM *dag.TaskMap
 func TaskDefinitions(ctx context.Context, opt *getoptions.GetOpt) error {
 	TM = dag.NewTaskMap()
 
-	m := bake.NewTask(TM, opt, "main", "main", Main)
-	bake.NewTask(TM, m, "hello", "This is a greeting", Hello)
-	bake.NewTask(TM, m, "world", "This is a planet", World)
+	m := bake.NewTask(TM, opt, "main", Main)
+	bake.NewTask(TM, m, "hello", Hello)
+	bake.NewTask(TM, m, "world", World)
 
 	return nil
 }
 
+// main
+// This is the entry point for the application.
+// For example:
+//
+//	$ ./bake
 func Main(opt *getoptions.GetOpt) getoptions.CommandFn {
 	var s string
-	opt.StringVar(&s, "option", "main", opt.ValidValues("hola", "hello"))
+	opt.StringVar(&s, "option", "main", opt.ValidValues("hello", "world"))
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		fmt.Printf("task: main, option: %s\n", s)
 		Logger.Println(args)
 
 		g := dag.NewGraph("greeting")
-		g.TaskDependensOn(TM.Get("mundo"), TM.Get("hola"))
+		g.TaskDependensOn(TM.Get("world"), TM.Get("hello"))
 		err := g.Validate(TM)
 		if err != nil {
 			return fmt.Errorf("validation: %w", err)
@@ -47,24 +52,16 @@ func Main(opt *getoptions.GetOpt) getoptions.CommandFn {
 	}
 }
 
-func Hello(opt *getoptions.GetOpt) getoptions.CommandFn {
-	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
-		s := opt.Value("option").(string)
-		fmt.Printf("task: hola, option: %s\n", s)
-		Logger.Println(args)
-		return nil
-	}
-}
-
+// This is a planet
 func World(opt *getoptions.GetOpt) getoptions.CommandFn {
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		s := opt.Value("option").(string)
 
-		fmt.Printf("task: mundo, option: %s\n", s)
+		fmt.Printf("task: world, option: %s\n", s)
 		Logger.Println(args)
 
-		g := dag.NewGraph("mundo")
-		g.AddTask(TM.Get("hola"))
+		g := dag.NewGraph("world")
+		g.AddTask(TM.Get("hello"))
 		err := g.Validate(TM)
 		if err != nil {
 			return fmt.Errorf("validation: %w", err)
