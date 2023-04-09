@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"errors"
 	"fmt"
@@ -13,6 +14,9 @@ import (
 	"path/filepath"
 	"plugin"
 	"reflect"
+	"regexp"
+	"strings"
+	"unicode"
 	"unsafe"
 
 	"github.com/DavidGamba/dgtools/buildutils"
@@ -49,7 +53,13 @@ func program(args []string) int {
 		return 1
 	}
 
-	err = loadAndRunTaskDefinitionFn(ctx, plug, opt)
+	// err = loadAndRunTaskDefinitionFn(ctx, plug, opt)
+	// if err != nil {
+	// 	fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
+	// 	return 1
+	// }
+
+	err = loadOptFns(ctx, plug, opt, filepath.Dir(bakefile))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
 		return 1
@@ -108,6 +118,55 @@ func loadAndRunTaskDefinitionFn(ctx context.Context, plug *plugin.Plugin, opt *g
 		return fmt.Errorf("unexpected TaskDefinitions signature")
 	}
 	return tdfn(ctx, opt)
+}
+
+func loadOptFns(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt, dir string) error {
+	m := make(map[string]FuncDecl)
+	err := GetFuncDeclForPackage(dir, &m)
+	if err != nil {
+		return fmt.Errorf("failed to inspect package: %w", err)
+	}
+
+	// Regex for description: fn-name - description
+	re := regexp.MustCompile(`^\w\S+ -`)
+
+	for name, fd := range m {
+		// Logger.Printf("inspecting %s\n", name)
+		fn, err := plug.Lookup(name)
+		if err != nil {
+			return fmt.Errorf("failed to find %s function: %w", name, err)
+		}
+		tfn, ok := fn.(func(*getoptions.GetOpt) getoptions.CommandFn)
+		if !ok {
+			continue
+		}
+		description := strings.TrimSpace(fd.Description)
+		if description != "" {
+			// Logger.Printf("description '%s'\n", description)
+			if re.MatchString(description) {
+				// Get first word from string
+				name = strings.Split(description, " ")[0]
+				description = strings.TrimPrefix(description, name+" -")
+				description = strings.TrimSpace(description)
+			}
+		} else {
+			name = camelToKebab(name)
+		}
+		cmd := opt.NewCommand(name, description)
+		cmd.SetCommandFn(tfn(cmd))
+	}
+	return nil
+}
+
+func camelToKebab(camel string) string {
+	var buffer bytes.Buffer
+	for i, ch := range camel {
+		if unicode.IsUpper(ch) && i > 0 && !unicode.IsUpper([]rune(camel)[i-1]) {
+			buffer.WriteRune('-')
+		}
+		buffer.WriteRune(unicode.ToLower(ch))
+	}
+	return buffer.String()
 }
 
 func findBakeFiles(ctx context.Context) (string, error) {
@@ -231,9 +290,9 @@ func GetFuncDeclForPackage(dir string, m *map[string]FuncDecl) error {
 		return fmt.Errorf("failed to load packages: %w", err)
 	}
 	for _, pkg := range pkgs {
-		fmt.Println(pkg.ID, pkg.GoFiles)
+		// Logger.Println(pkg.ID, pkg.GoFiles)
 		for _, file := range pkg.GoFiles {
-			Logger.Printf("file: %s\n", file)
+			// Logger.Printf("file: %s\n", file)
 			// parse file
 			fset := token.NewFileSet()
 			fset.AddFile(file, fset.Base(), len(file))
