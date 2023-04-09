@@ -120,6 +120,8 @@ func loadAndRunTaskDefinitionFn(ctx context.Context, plug *plugin.Plugin, opt *g
 	return tdfn(ctx, opt)
 }
 
+// loadOptFns - loads all TaskFn functions from the plugin and adds them as commands to opt.
+// TODO: If TM task map is defined, add the tasks to the map.
 func loadOptFns(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt, dir string) error {
 	m := make(map[string]FuncDecl)
 	err := GetFuncDeclForPackage(dir, &m)
@@ -129,6 +131,8 @@ func loadOptFns(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt
 
 	// Regex for description: fn-name - description
 	re := regexp.MustCompile(`^\w\S+ -`)
+
+	ot := NewOptTree(opt)
 
 	for name, fd := range m {
 		// Logger.Printf("inspecting %s\n", name)
@@ -152,10 +156,62 @@ func loadOptFns(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt
 		} else {
 			name = camelToKebab(name)
 		}
-		cmd := opt.NewCommand(name, description)
+		cmd := ot.AddCommand(name, description)
 		cmd.SetCommandFn(tfn(cmd))
 	}
 	return nil
+}
+
+type OptTree struct {
+	Root *OptNode
+}
+
+type OptNode struct {
+	Name     string
+	Opt      *getoptions.GetOpt
+	Children map[string]*OptNode
+}
+
+func NewOptTree(opt *getoptions.GetOpt) *OptTree {
+	return &OptTree{
+		Root: &OptNode{
+			Name:     "root",
+			Opt:      opt,
+			Children: make(map[string]*OptNode),
+		},
+	}
+}
+
+func (ot *OptTree) AddCommand(name, description string) *getoptions.GetOpt {
+	keys := strings.Split(name, ":")
+	// Logger.Printf("keys: %v\n", keys)
+	node := ot.Root
+	var cmd *getoptions.GetOpt
+	for i, key := range keys {
+		n, ok := node.Children[key]
+		if ok {
+			// Logger.Printf("key: %v already defined, parent: %s\n", key, node.Name)
+			node = n
+			cmd = n.Opt
+			if len(keys) == i+1 {
+				cmd.Self(key, description)
+			}
+			continue
+		}
+		// Logger.Printf("key: %v not defined, parent: %s\n", key, node.Name)
+		desc := ""
+		if len(keys) == i+1 {
+			desc = description
+		}
+		cmd = node.Opt.NewCommand(key, desc)
+		node.Children[key] = &OptNode{
+			Name:     key,
+			Opt:      cmd,
+			Children: make(map[string]*OptNode),
+		}
+		node = node.Children[key]
+	}
+	return cmd
 }
 
 func camelToKebab(camel string) string {

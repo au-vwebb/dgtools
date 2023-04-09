@@ -25,8 +25,7 @@ func TaskDefinitions(ctx context.Context, opt *getoptions.GetOpt) error {
 	return nil
 }
 
-// main
-// This is the entry point for the application.
+// main - This is the entry point for the application.
 // For example:
 //
 //	$ ./bake
@@ -52,7 +51,7 @@ func Main(opt *getoptions.GetOpt) getoptions.CommandFn {
 	}
 }
 
-// This is a planet
+// main:world - This is a planet
 func World(opt *getoptions.GetOpt) getoptions.CommandFn {
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		s := opt.Value("option").(string)
