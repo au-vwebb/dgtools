@@ -29,8 +29,8 @@ type TaskFn func(*getoptions.GetOpt) getoptions.CommandFn
 //
 //		return nil
 //	}
-func NewTask(tm *dag.TaskMap, opt *getoptions.GetOpt, name, description string, fn TaskFn) *getoptions.GetOpt {
-	cmd := opt.NewCommand(name, description)
+func NewTask(tm *dag.TaskMap, opt *getoptions.GetOpt, name string, fn TaskFn) *getoptions.GetOpt {
+	cmd := opt.NewCommand(name, "")
 	fnr := fn(cmd)
 	tm.Add(name, fnr)
 	cmd.SetCommandFn(fnr)
