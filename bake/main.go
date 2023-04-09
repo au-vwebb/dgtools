@@ -23,6 +23,7 @@ import (
 	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"github.com/DavidGamba/go-getoptions/dag"
 	"golang.org/x/tools/go/packages"
 )
 
@@ -121,10 +122,21 @@ func loadAndRunTaskDefinitionFn(ctx context.Context, plug *plugin.Plugin, opt *g
 }
 
 // loadOptFns - loads all TaskFn functions from the plugin and adds them as commands to opt.
-// TODO: If TM task map is defined, add the tasks to the map.
+// If TM task map is defined, add the tasks to the map.
 func loadOptFns(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt, dir string) error {
+	var tm **dag.TaskMap
+	var tmOk bool
+	tmDecl, err := plug.Lookup("TM")
+	if err == nil {
+		tm, tmOk = tmDecl.(*(*dag.TaskMap))
+		// Logger.Printf("tm: %v, Ok: %v\n", tm, tmOk)
+		if tmOk {
+			*tm = dag.NewTaskMap()
+		}
+	}
+
 	m := make(map[string]FuncDecl)
-	err := GetFuncDeclForPackage(dir, &m)
+	err = GetFuncDeclForPackage(dir, &m)
 	if err != nil {
 		return fmt.Errorf("failed to inspect package: %w", err)
 	}
@@ -157,7 +169,12 @@ func loadOptFns(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt
 			name = camelToKebab(name)
 		}
 		cmd := ot.AddCommand(name, description)
-		cmd.SetCommandFn(tfn(cmd))
+		fnr := tfn(cmd)
+		cmd.SetCommandFn(fnr)
+		if tmOk {
+			// Logger.Printf("adding %s to TM\n", name)
+			(*tm).Add(name, fnr)
+		}
 	}
 	return nil
 }

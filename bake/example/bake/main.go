@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/DavidGamba/dgtools/bake/lib/bake"
 	"github.com/DavidGamba/go-getoptions"
 	"github.com/DavidGamba/go-getoptions/dag"
 )
@@ -14,16 +13,6 @@ import (
 var Logger = log.New(os.Stderr, "", log.LstdFlags)
 
 var TM *dag.TaskMap
-
-func TaskDefinitions(ctx context.Context, opt *getoptions.GetOpt) error {
-	TM = dag.NewTaskMap()
-
-	m := bake.NewTask(TM, opt, "main", Main)
-	bake.NewTask(TM, m, "hello", Hello)
-	bake.NewTask(TM, m, "world", World)
-
-	return nil
-}
 
 // main - This is the entry point for the application.
 // For example:
@@ -37,7 +26,7 @@ func Main(opt *getoptions.GetOpt) getoptions.CommandFn {
 		Logger.Println(args)
 
 		g := dag.NewGraph("greeting")
-		g.TaskDependensOn(TM.Get("world"), TM.Get("hello"))
+		g.TaskDependensOn(TM.Get("main:world"), TM.Get("main:hello"))
 		err := g.Validate(TM)
 		if err != nil {
 			return fmt.Errorf("validation: %w", err)
@@ -60,7 +49,7 @@ func World(opt *getoptions.GetOpt) getoptions.CommandFn {
 		Logger.Println(args)
 
 		g := dag.NewGraph("world")
-		g.AddTask(TM.Get("hello"))
+		g.AddTask(TM.Get("main:hello"))
 		err := g.Validate(TM)
 		if err != nil {
 			return fmt.Errorf("validation: %w", err)
