@@ -42,7 +42,14 @@ func program(args []string) int {
 		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
 		return 1
 	}
-	plug, err := load(ctx, bakefile, opt)
+
+	plug, err := plugin.Open(bakefile)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "ERROR: failed to open plugin: %s\n", err)
+		return 1
+	}
+
+	err = loadAndRunTaskDefinitionFn(ctx, plug, opt)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
 		return 1
@@ -90,25 +97,17 @@ func program(args []string) int {
 type TaskDefinitionFn func(ctx context.Context, opt *getoptions.GetOpt) error
 type TaskFn func(*getoptions.GetOpt) getoptions.CommandFn
 
-func load(ctx context.Context, bakefile string, opt *getoptions.GetOpt) (*plugin.Plugin, error) {
-	plug, err := plugin.Open(bakefile)
-	if err != nil {
-		return plug, fmt.Errorf("failed to open plugin: %w", err)
-	}
-	// inspectPlugin(plug)
-
+func loadAndRunTaskDefinitionFn(ctx context.Context, plug *plugin.Plugin, opt *getoptions.GetOpt) error {
 	taskDefinitions, err := plug.Lookup("TaskDefinitions")
 	if err != nil {
-		return plug, fmt.Errorf("failed to find TaskDefinitions function: %w", err)
+		return fmt.Errorf("failed to find TaskDefinitions function: %w", err)
 	}
 	var tdfn TaskDefinitionFn
 	tdfn, ok := taskDefinitions.(func(ctx context.Context, opt *getoptions.GetOpt) error)
 	if !ok {
-		return plug, fmt.Errorf("unexpected TaskDefinitions signature")
+		return fmt.Errorf("unexpected TaskDefinitions signature")
 	}
-	tdfn(ctx, opt)
-
-	return plug, nil
+	return tdfn(ctx, opt)
 }
 
 func findBakeFiles(ctx context.Context) (string, error) {
