@@ -294,6 +294,8 @@ func build(dir string) error {
 	}
 	if modified {
 		Logger.Printf("Found modifications on %v, rebuilding...\n", files)
+		// Debug flags
+		// return run.CMD("go", "build", "-buildmode=plugin", "-o=bake.so", "-trimpath", "-gcflags", "all=-N -l").Dir(dir).Log().Run()
 		return run.CMD("go", "build", "-buildmode=plugin", "-o=bake.so").Dir(dir).Log().Run()
 	}
 	return nil

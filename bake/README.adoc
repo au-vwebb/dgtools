@@ -2,6 +2,18 @@
 
 Go Build + Something like Make = Bake ¯\_(ツ)_/¯ 🤷
 
+== Installation
+
+----
+go install github.com/DavidGamba/dgtools/bake
+----
+
+Debug flags:
+
+----
+go install -trimpath -gcflags "all=-N -l" github.com/DavidGamba/dgtools/bake
+----
+
 == Design goals
 
 * Given a go plugin file, have a cli that generates all completions for it.
