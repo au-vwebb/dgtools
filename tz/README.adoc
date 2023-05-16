@@ -1,0 +1,36 @@
+= tz: Time Zone CLI app
+
+Show time zones based on actors (team members, cities, etc).
+
+== Features
+
+* Show the time zone of your team members.
++
+----
+UTC
+    1 2 3 4 5 6 7 8 9 10 11 12 [13] 14 15 16 17 18 19 20 21 22 23 24
+
+EST @jane @john
+               1 2 3 4 5 6 7 8  [9] 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+
+MDT @david
+                   1 2 3 4 5 6  [7] 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+----
+
+* Use a config file to configure your time zones.
+
+* List all time zones so you can easily edit your config file.
+
+== Motivation
+
+Replacement for my `date` based https://github.com/DavidGamba/bin/blob/96468fe1ebfdc81972dad0b56a11b8023f3f639b/tz[tz] script.
+
+== LICENSE
+
+This file is part of tz.
+
+Copyright (C) 2023  David Gamba Rios
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
