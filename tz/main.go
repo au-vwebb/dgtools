@@ -13,7 +13,7 @@ import (
 
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
-	"github.com/logrusorgru/aurora/v4"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var Logger = log.New(os.Stderr, "", log.LstdFlags)
@@ -165,33 +165,47 @@ func PrintHours(t, base time.Time) {
 		}
 		switch {
 		case h >= 0 && h < 3:
-			PrintBlock(fmt.Sprintf("%02d", h), 14, 19, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#FFFFFF", "#0A4B78", h == x)
 		case h >= 3 && h < 7:
-			PrintBlock(fmt.Sprintf("%02d", h), 14, 19, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#FFFFFF", "#135E96", h == x)
 		case h >= 7 && h < 9:
-			PrintBlock(fmt.Sprintf("%02d", h), 0, 36, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#646970", "#b8e6bf", h == x)
 		case h >= 9 && h < 15:
-			PrintBlock(fmt.Sprintf("%02d", h), 0, 34, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#000000", "#68de7c", h == x)
 		case h >= 15 && h < 17:
-			PrintBlock(fmt.Sprintf("%02d", h), 0, 36, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#646970", "#00ba37", h == x)
 		case h >= 17 && h < 22:
-			PrintBlock(fmt.Sprintf("%02d", h), 0, 81, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#FFFFFF", "#9ec2e6", h == x)
 		case h >= 22 && h < 24:
-			PrintBlock(fmt.Sprintf("%02d", h), 14, 19, h == x)
+			PrintBlock(fmt.Sprintf("%02d", h), "#FFFFFF", "#0A4B78", h == x)
 		}
-		// if h > 0 && h < 6 {
-		// 	color.New(color.FgBlack, color.BgGreen, color.Bold).Printf("  %02d  ", h)
-		// }
 		h++
 	}
 	fmt.Println()
+
 }
 
-func PrintBlock(hour string, fg, bg aurora.ColorIndex, highlight bool) {
+func PrintBlock(hour string, fg, bg string, highlight bool) {
+	var style = lipgloss.NewStyle().
+		Bold(true).
+		Foreground(lipgloss.Color("#FAFAFA")).
+		Background(lipgloss.Color("#7D56F4")).
+		PaddingLeft(0).
+		PaddingRight(0)
+
+	var normal = lipgloss.NewStyle().
+		Foreground(lipgloss.Color(fg)).
+		Background(lipgloss.Color(bg)).
+		PaddingLeft(2).
+		PaddingRight(2)
+
 	if highlight {
-		hour = fmt.Sprintf("%s", aurora.Index(0, aurora.BgIndex(229, hour)))
+		// hour = fmt.Sprintf("%s", aurora.Index(0, aurora.BgIndex(229, hour)))
+		hour = style.Render(hour)
 	} else {
-		hour = fmt.Sprintf("%s", aurora.Index(fg, aurora.BgIndex(bg, hour)))
+		// hour = fmt.Sprintf("%s", aurora.Index(fg, aurora.BgIndex(bg, hour)))
+		hour = normal.Render(hour)
 	}
-	fmt.Printf("%s%s%s", aurora.Index(fg, aurora.BgIndex(bg, "  ")), hour, aurora.Index(fg, aurora.BgIndex(bg, "  ")))
+	fmt.Printf("%s", hour)
+	// fmt.Printf("%s%s%s", aurora.Index(fg, aurora.BgIndex(bg, "  ")), hour, aurora.Index(fg, aurora.BgIndex(bg, "  ")))
 }
