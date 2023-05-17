@@ -143,7 +143,7 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 func PrintActors(am ActorMap) {
 	// p := PurpleYellow
 	// p := BlueGreen
-	p := BlueYellow
+	p := NewPalette("BlueYellow")
 
 	offsets := []int{}
 	for offset := range am {
@@ -165,7 +165,7 @@ func PrintActors(am ActorMap) {
 	Logger.Printf("Total: %d", count)
 }
 
-func PrintActorsLine(p Palette, att []ActorTime) {
+func PrintActorsLine(p *Palette, att []ActorTime) {
 	display := []string{}
 	for _, at := range att {
 		display = append(display, at.Display)
@@ -239,6 +239,53 @@ type Palette struct {
 
 	Highlight   string
 	FgHighlight string
+
+	LipglossPalette struct {
+		Night     lipgloss.Style
+		Dawn      lipgloss.Style
+		Morning   lipgloss.Style
+		Noon      lipgloss.Style // work hours
+		AfterNoon lipgloss.Style
+		Dusk      lipgloss.Style
+		Evening   lipgloss.Style
+		Highlight lipgloss.Style
+	}
+}
+
+func NewPalette(theme string) *Palette {
+	p := &BlueYellow
+
+	p.LipglossPalette.Night = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgNight)).Background(lipgloss.Color(p.Night))
+	p.LipglossPalette.Dawn = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgDawn)).Background(lipgloss.Color(p.Dawn))
+	p.LipglossPalette.Morning = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgMorning)).Background(lipgloss.Color(p.Morning))
+	p.LipglossPalette.Noon = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgNoon)).Background(lipgloss.Color(p.Noon))
+	p.LipglossPalette.AfterNoon = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgAfterNoon)).Background(lipgloss.Color(p.AfterNoon))
+	p.LipglossPalette.Dusk = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgDusk)).Background(lipgloss.Color(p.Dusk))
+	p.LipglossPalette.Evening = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgEvening)).Background(lipgloss.Color(p.Evening))
+	p.LipglossPalette.Highlight = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgHighlight)).Background(lipgloss.Color(p.Highlight))
+
+	return p
+}
+
+func (p *Palette) Style(timeOfDay int) lipgloss.Style {
+	switch timeOfDay {
+	case 22, 23, 24, 0, 1, 2, 3, 4:
+		return p.LipglossPalette.Night
+	case 5, 6:
+		return p.LipglossPalette.Dawn
+	case 7, 8:
+		return p.LipglossPalette.Morning
+	case 9, 10, 11, 12, 13, 14:
+		return p.LipglossPalette.Noon
+	case 15, 16:
+		return p.LipglossPalette.AfterNoon
+	case 17, 18, 19:
+		return p.LipglossPalette.Dusk
+	case 20, 21:
+		return p.LipglossPalette.Evening
+	default:
+		return p.LipglossPalette.Night
+	}
 }
 
 var PurpleYellow = Palette{
@@ -282,20 +329,13 @@ var BlueYellow = Palette{
 	FgHighlight: "#000000",
 }
 
-func PrintHours(p Palette, t, base time.Time) {
+func PrintHours(p *Palette, t, base time.Time) {
 	// Logger.Printf("t: %s", t.Format("-07"))
 	// Logger.Printf("base: %s", base.Format("-07"))
 	// Logger.Printf("last: %s", last.Format("-07"))
 	x := t.Hour()
 	h := t.Hour()
 	h -= 4
-
-	var hStyle = lipgloss.NewStyle().
-		Bold(true).
-		Foreground(lipgloss.Color(p.FgHighlight)).
-		Background(lipgloss.Color(p.Highlight)).
-		PaddingLeft(0).
-		PaddingRight(0)
 
 	for i := 0; i < 24; i++ {
 		if h >= 24 {
@@ -304,38 +344,15 @@ func PrintHours(p Palette, t, base time.Time) {
 		if h < 0 {
 			h = 24 + h
 		}
-		switch {
-		case h >= 22 && h < 24:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgNight, p.Night, h == x, hStyle)
-		case h >= 0 && h < 3:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgNight, p.Night, h == x, hStyle)
-		case h >= 3 && h < 5:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgNight, p.Night, h == x, hStyle)
-		case h >= 5 && h < 7:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgDawn, p.Dawn, h == x, hStyle)
-		case h >= 7 && h < 9:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgMorning, p.Morning, h == x, hStyle)
-		case h >= 9 && h < 15:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgNoon, p.Noon, h == x, hStyle)
-		case h >= 15 && h < 17:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgAfterNoon, p.AfterNoon, h == x, hStyle)
-		case h >= 17 && h < 22:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgDusk, p.Dusk, h == x, hStyle)
-		case h >= 17 && h < 20:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgDusk, p.Dusk, h == x, hStyle)
-		case h >= 20 && h < 22:
-			PrintBlock(fmt.Sprintf("%02d", h), p.FgEvening, p.Evening, h == x, hStyle)
-		}
+		PrintBlock(fmt.Sprintf("%02d", h), p.Style(h), h == x, p.LipglossPalette.Highlight)
 		h++
 	}
 	fmt.Println()
 
 }
 
-func PrintBlock(hour string, fg, bg string, highlight bool, hStyle lipgloss.Style) {
-	var normal = lipgloss.NewStyle().
-		Foreground(lipgloss.Color(fg)).
-		Background(lipgloss.Color(bg)).
+func PrintBlock(hour string, normal lipgloss.Style, highlight bool, hStyle lipgloss.Style) {
+	normal.
 		PaddingLeft(2).
 		PaddingRight(2)
 
