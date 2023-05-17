@@ -32,8 +32,9 @@ var HourFormat = "15"
 func program(args []string) int {
 	opt := getoptions.New()
 	opt.SetUnknownMode(getoptions.Pass)
-	opt.Bool("verbose", false, opt.GetEnv("TZ_VERBOSE"))
+	opt.Bool("verbose", false, opt.GetEnv("TZ_VERBOSE"), opt.Description("Enable logging"))
 	opt.Bool("standard", false, opt.Alias("analog", "civilian", "12-hour", "12h", "am-pm"), opt.Description("Use standard 12 hour AM/PM time format"))
+	opt.Bool("short", false, opt.Alias("s"), opt.Description("Don't show timezone bars"))
 	opt.SetCommandFn(Run)
 	opt.HelpCommand("help", opt.Alias("?"))
 
@@ -91,6 +92,8 @@ type ActorMap map[int][]ActorTime
 
 // List of locations can be found in "/usr/share/zoneinfo" in both Linux and macOS
 func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+	short := opt.Value("short").(bool)
+
 	locations := []string{
 		"Australia/Sydney",
 		"Asia/Tokyo",
@@ -136,11 +139,11 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	}
 	Logger.Printf("Total: %d\n", count)
 
-	PrintActors(am)
+	PrintActors(am, short)
 	return nil
 }
 
-func PrintActors(am ActorMap) {
+func PrintActors(am ActorMap, short bool) {
 	// p := PurpleYellow
 	// p := BlueGreen
 	p := NewPalette("BlueYellow")
@@ -151,18 +154,12 @@ func PrintActors(am ActorMap) {
 	}
 	sort.Ints(offsets)
 	Logger.Println(len(offsets))
-	count := 0
 	for _, offset := range offsets {
-		display := []string{}
-		for _, at := range am[offset] {
-			count++
-			display = append(display, at.Display)
-		}
-		fmt.Printf("%s %s\n", am[offset][0].Time.Format(HourMinuteFormat), strings.Join(display, ", "))
 		PrintActorsLine(p, am[offset])
-		PrintHours(p, am[offset][0].Time, am[offsets[0]][0].Time)
+		if !short {
+			PrintHours(p, am[offset][0].Time, am[offsets[0]][0].Time)
+		}
 	}
-	Logger.Printf("Total: %d", count)
 }
 
 func PrintActorsLine(p *Palette, att []ActorTime) {
@@ -171,14 +168,9 @@ func PrintActorsLine(p *Palette, att []ActorTime) {
 		display = append(display, at.Display)
 	}
 
-	var timeStyle = lipgloss.NewStyle().
-		Bold(true).
-		PaddingLeft(0).
-		PaddingRight(0)
-
 	t := att[0].Time
 
-	fmt.Printf("%s %s   %s\n", ClockEmoji[t.Hour()], timeStyle.Render(t.Format(HourMinuteFormat)), strings.Join(display, ", "))
+	fmt.Printf("%s %s   %s\n", ClockEmoji[t.Hour()], p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)), strings.Join(display, ", "))
 }
 
 var ClockEmoji = map[int]string{
@@ -357,12 +349,9 @@ func PrintBlock(hour string, normal lipgloss.Style, highlight bool, hStyle lipgl
 		PaddingRight(2)
 
 	if highlight {
-		// hour = fmt.Sprintf("%s", aurora.Index(0, aurora.BgIndex(229, hour)))
 		hour = hStyle.Render(hour)
 	} else {
-		// hour = fmt.Sprintf("%s", aurora.Index(fg, aurora.BgIndex(bg, hour)))
 		hour = normal.Render(hour)
 	}
 	fmt.Printf("%s", hour)
-	// fmt.Printf("%s%s%s", aurora.Index(fg, aurora.BgIndex(bg, "  ")), hour, aurora.Index(fg, aurora.BgIndex(bg, "  ")))
 }
