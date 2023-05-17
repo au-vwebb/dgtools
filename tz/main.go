@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 	"sort"
-	"strings"
 	"time"
 
 	"github.com/DavidGamba/dgtools/run"
@@ -158,6 +157,7 @@ func PrintActors(am ActorMap, short bool) {
 		PrintActorsLine(p, am[offset])
 		if !short {
 			PrintHours(p, am[offset][0].Time, am[offsets[0]][0].Time)
+			fmt.Println()
 		}
 	}
 }
@@ -170,7 +170,11 @@ func PrintActorsLine(p *Palette, att []ActorTime) {
 
 	t := att[0].Time
 
-	fmt.Printf("%s %s   %s\n", ClockEmoji[t.Hour()], p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)), strings.Join(display, ", "))
+	fmt.Printf("%s %s   ", ClockEmoji[t.Hour()], p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)))
+	for _, d := range display {
+		fmt.Printf("%s  ", p.LipglossPalette.Actor.Render(d))
+	}
+	fmt.Println()
 }
 
 var ClockEmoji = map[int]string{
@@ -232,6 +236,9 @@ type Palette struct {
 	Highlight   string
 	FgHighlight string
 
+	Actor   string
+	FgActor string
+
 	LipglossPalette struct {
 		Night     lipgloss.Style
 		Dawn      lipgloss.Style
@@ -241,6 +248,8 @@ type Palette struct {
 		Dusk      lipgloss.Style
 		Evening   lipgloss.Style
 		Highlight lipgloss.Style
+
+		Actor lipgloss.Style
 	}
 }
 
@@ -255,6 +264,7 @@ func NewPalette(theme string) *Palette {
 	p.LipglossPalette.Dusk = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgDusk)).Background(lipgloss.Color(p.Dusk))
 	p.LipglossPalette.Evening = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgEvening)).Background(lipgloss.Color(p.Evening))
 	p.LipglossPalette.Highlight = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgHighlight)).Background(lipgloss.Color(p.Highlight))
+	p.LipglossPalette.Actor = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgActor)).Background(lipgloss.Color(p.Actor))
 
 	return p
 }
@@ -319,6 +329,9 @@ var BlueYellow = Palette{
 
 	Highlight:   "#fafa00",
 	FgHighlight: "#000000",
+
+	Actor:   "#fbabb2",
+	FgActor: "#000000",
 }
 
 func PrintHours(p *Palette, t, base time.Time) {
@@ -343,7 +356,9 @@ func PrintHours(p *Palette, t, base time.Time) {
 
 }
 
-func PrintBlock(hour string, normal lipgloss.Style, highlight bool, hStyle lipgloss.Style) {
+func PrintBlock(hour string, style lipgloss.Style, highlight bool, hStyle lipgloss.Style) {
+	normal := style.Copy()
+
 	normal.
 		PaddingLeft(2).
 		PaddingRight(2)
