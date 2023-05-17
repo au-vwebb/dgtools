@@ -141,6 +141,10 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 }
 
 func PrintActors(am ActorMap) {
+	// p := PurpleYellow
+	// p := BlueGreen
+	p := BlueYellow
+
 	offsets := []int{}
 	for offset := range am {
 		offsets = append(offsets, offset)
@@ -155,9 +159,65 @@ func PrintActors(am ActorMap) {
 			display = append(display, at.Display)
 		}
 		fmt.Printf("%s %s\n", am[offset][0].Time.Format(HourMinuteFormat), strings.Join(display, ", "))
-		PrintHours(am[offset][0].Time, am[offsets[0]][0].Time)
+		PrintActorsLine(p, am[offset])
+		PrintHours(p, am[offset][0].Time, am[offsets[0]][0].Time)
 	}
 	Logger.Printf("Total: %d", count)
+}
+
+func PrintActorsLine(p Palette, att []ActorTime) {
+	display := []string{}
+	for _, at := range att {
+		display = append(display, at.Display)
+	}
+
+	var timeStyle = lipgloss.NewStyle().
+		Bold(true).
+		PaddingLeft(0).
+		PaddingRight(0)
+
+	t := att[0].Time
+
+	fmt.Printf("%s %s   %s\n", ClockEmoji[t.Hour()], timeStyle.Render(t.Format(HourMinuteFormat)), strings.Join(display, ", "))
+}
+
+var ClockEmoji = map[int]string{
+	0:  "🕛",
+	12: "🕛",
+	24: "🕛",
+
+	1:  "🕐",
+	13: "🕐",
+
+	2:  "🕑",
+	14: "🕑",
+
+	3:  "🕒",
+	15: "🕒",
+
+	4:  "🕓",
+	16: "🕓",
+
+	5:  "🕔",
+	17: "🕔",
+
+	6:  "🕕",
+	18: "🕕",
+
+	7:  "🕖",
+	19: "🕖",
+
+	8:  "🕗",
+	20: "🕗",
+
+	9:  "🕘",
+	21: "🕘",
+
+	10: "🕙",
+	22: "🕙",
+
+	11: "🕚",
+	23: "🕚",
 }
 
 type Palette struct {
@@ -222,10 +282,7 @@ var BlueYellow = Palette{
 	FgHighlight: "#000000",
 }
 
-func PrintHours(t, base time.Time) {
-	// p := PurpleYellow
-	// p := BlueGreen
-	p := BlueYellow
+func PrintHours(p Palette, t, base time.Time) {
 	// Logger.Printf("t: %s", t.Format("-07"))
 	// Logger.Printf("base: %s", base.Format("-07"))
 	// Logger.Printf("last: %s", last.Format("-07"))
