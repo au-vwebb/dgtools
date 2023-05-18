@@ -25,6 +25,24 @@ MDT @david
 
 Replacement for my `date` based https://github.com/DavidGamba/bin/blob/96468fe1ebfdc81972dad0b56a11b8023f3f639b/tz[tz] script.
 
+== City time zone information
+
+Information obtained by going to http://download.geonames.org/export/dump/ and downloading the `cities15000.zip` file.
+
+Then a sqlite3 db is generated using the command:
+
+----
+sqlite3 cities.db < db.schema
+----
+
+Finally, the following query is used to generate an export:
+
+----
+sqlite3 -header -csv cities.db ".mode tabs" "select asciiname,countrycode,timezone from cities15000;" > cities15000-tz.tsv
+----
+
+The TSV is bundled in the binary (The resulting TSV is smaller than its CSV and JSON counterparts).
+
 == LICENSE
 
 This file is part of tz.
