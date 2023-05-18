@@ -1,4 +1,3 @@
-asciiname	countrycode	timezone
 les Escaldes	AD	Europe/Andorra
 Andorra la Vella	AD	Europe/Andorra
 Umm Al Quwain City	AE	Asia/Dubai
@@ -245,7 +244,6 @@ Termas de Rio Hondo	AR	America/Argentina/Cordoba
 Tartagal	AR	America/Argentina/Salta
 Tafi Viejo	AR	America/Argentina/Tucuman
 Sunchales	AR	America/Argentina/Cordoba
-Santo Tome	AR	America/Argentina/Cordoba
 Santiago del Estero	AR	America/Argentina/Cordoba
 Santa Rosa	AR	America/Argentina/Salta
 Santa Lucia	AR	America/Argentina/San_Juan
@@ -380,7 +378,6 @@ Stockerau	AT	Europe/Vienna
 Steyr	AT	Europe/Vienna
 Simmering	AT	Europe/Vienna
 Sankt Poelten	AT	Europe/Vienna
-Sankt Peter	AT	Europe/Vienna
 Sankt Peter	AT	Europe/Vienna
 Sankt Martin	AT	Europe/Vienna
 Salzburg	AT	Europe/Vienna
@@ -798,7 +795,6 @@ Tungi	BD	Asia/Dhaka
 Sylhet	BD	Asia/Dhaka
 Dohar	BD	Asia/Dhaka
 Jamalpur	BD	Asia/Dhaka
-Shibganj	BD	Asia/Dhaka
 Shibganj	BD	Asia/Dhaka
 Satkhira	BD	Asia/Dhaka
 Sirajganj	BD	Asia/Dhaka
@@ -1365,7 +1361,6 @@ Sao Goncalo do Amarante	BR	America/Fortaleza
 Sao Felix do Xingu	BR	America/Belem
 Sao Domingos do Maranhao	BR	America/Fortaleza
 Sao Bento	BR	America/Fortaleza
-Sao Bento	BR	America/Fortaleza
 Santa Rita	BR	America/Fortaleza
 Santarem	BR	America/Santarem
 Santa Quiteria do Maranhao	BR	America/Fortaleza
@@ -1702,7 +1697,6 @@ Seabra	BR	America/Bahia
 Schroeder	BR	America/Sao_Paulo
 Saubara	BR	America/Bahia
 Sarzedo	BR	America/Sao_Paulo
-Sarandi	BR	America/Sao_Paulo
 Sarandi	BR	America/Sao_Paulo
 Saquarema	BR	America/Sao_Paulo
 Sapucaia	BR	America/Sao_Paulo
@@ -2508,7 +2502,6 @@ Jaru	BR	America/Porto_Velho
 Guajara Mirim	BR	America/Porto_Velho
 Cacoal	BR	America/Porto_Velho
 Aparecida de Goiania	BR	America/Sao_Paulo
-Campinas	BR	America/Sao_Paulo
 Jaboatao dos Guararapes	BR	America/Recife
 Lauro de Freitas	BR	America/Bahia
 Minacu	BR	America/Sao_Paulo
@@ -2519,14 +2512,10 @@ Redencao	BR	America/Belem
 Rio Preto da Eva	BR	America/Manaus
 Simoes Filho	BR	America/Bahia
 Sinop	BR	America/Cuiaba
-Tucuma	BR	America/Belem
 Xinguara	BR	America/Belem
 Cambebba	BR	America/Fortaleza
 Jardim Paulista	BR	America/Sao_Paulo
-Trindade	BR	America/Sao_Paulo
 Freguesia do Ribeirao da Ilha	BR	America/Sao_Paulo
-Planaltina	BR	America/Sao_Paulo
-Sao Pedro	BR	America/Sao_Paulo
 Alvorada	BR	America/Sao_Paulo
 Nassau	BS	America/Nassau
 Lucaya	BS	America/Nassau
@@ -2779,7 +2768,6 @@ Saguenay	CA	America/Toronto
 Saint-Basile-le-Grand	CA	America/Toronto
 Saint-Bruno-de-Montarville	CA	America/Toronto
 Saint-Constant	CA	America/Toronto
-Sainte-Catherine	CA	America/Toronto
 Sainte-Catherine	CA	America/Toronto
 Sainte-Julie	CA	America/Toronto
 Sainte-Therese	CA	America/Toronto
@@ -3497,13 +3485,11 @@ Zhongxing	CN	Asia/Shanghai
 Zhongxin	CN	Asia/Shanghai
 Zhongshu	CN	Asia/Shanghai
 Zhonghe	CN	Asia/Shanghai
-Zhonghe	CN	Asia/Shanghai
 Zhongduo	CN	Asia/Shanghai
 Gusong	CN	Asia/Shanghai
 Zhongchao	CN	Asia/Shanghai
 Zhong'ao	CN	Asia/Shanghai
 Zhigou	CN	Asia/Shanghai
-Zhicheng	CN	Asia/Shanghai
 Zhicheng	CN	Asia/Shanghai
 Zhenzhou	CN	Asia/Shanghai
 Zhenxi	CN	Asia/Shanghai
@@ -3537,7 +3523,6 @@ Zaoyang	CN	Asia/Shanghai
 Yuyao	CN	Asia/Shanghai
 Yingchuan	CN	Asia/Shanghai
 Yuxia	CN	Asia/Shanghai
-Yuxi	CN	Asia/Shanghai
 Yushan	CN	Asia/Shanghai
 Kunshan	CN	Asia/Shanghai
 Yunyang	CN	Asia/Shanghai
@@ -3569,7 +3554,6 @@ Youxi	CN	Asia/Shanghai
 Youting	CN	Asia/Shanghai
 Youchou	CN	Asia/Shanghai
 Yongzhou	CN	Asia/Shanghai
-Yongxing	CN	Asia/Shanghai
 Yongxing	CN	Asia/Shanghai
 Yongxin	CN	Asia/Shanghai
 Yongqing	CN	Asia/Shanghai
@@ -3608,7 +3592,6 @@ Yanliang	CN	Asia/Shanghai
 Yanjing	CN	Asia/Shanghai
 Yanjia	CN	Asia/Shanghai
 Yangzhou	CN	Asia/Shanghai
-Yangzhou	CN	Asia/Shanghai
 Yanguan	CN	Asia/Shanghai
 Yangtun	CN	Asia/Shanghai
 Yangshuo	CN	Asia/Shanghai
@@ -3634,15 +3617,12 @@ Xuchang	CN	Asia/Shanghai
 Xuantan	CN	Asia/Shanghai
 Xuanzhou	CN	Asia/Shanghai
 Xixiang	CN	Asia/Shanghai
-Xixiang	CN	Asia/Shanghai
 Xiuying	CN	Asia/Shanghai
 Xiulin	CN	Asia/Shanghai
 Xiugu	CN	Asia/Shanghai
 Xituo	CN	Asia/Shanghai
 Xiongzhou	CN	Asia/Shanghai
 Guixi	CN	Asia/Shanghai
-Xinzhou	CN	Asia/Shanghai
-Xinzhou	CN	Asia/Shanghai
 Xinzhou	CN	Asia/Shanghai
 Xinzhi	CN	Asia/Shanghai
 Xinzhai	CN	Asia/Shanghai
@@ -3663,7 +3643,6 @@ Xinhe	CN	Asia/Shanghai
 Xingtai	CN	Asia/Shanghai
 Xingren	CN	Asia/Shanghai
 Xinglong	CN	Asia/Shanghai
-Xinglong	CN	Asia/Shanghai
 Xingguo	CN	Asia/Shanghai
 Ankang	CN	Asia/Shanghai
 Wenfeng	CN	Asia/Shanghai
@@ -3671,7 +3650,6 @@ Xindian	CN	Asia/Shanghai
 Xindi	CN	Asia/Shanghai
 Feicheng	CN	Asia/Shanghai
 Xincheng	CN	Asia/Shanghai
-Xinshi	CN	Asia/Shanghai
 Xinyi	CN	Asia/Shanghai
 Sanshui	CN	Asia/Shanghai
 Ximeicun	CN	Asia/Shanghai
@@ -3680,9 +3658,6 @@ Xihe	CN	Asia/Shanghai
 Xigang	CN	Asia/Shanghai
 Xiema	CN	Asia/Shanghai
 Xichang	CN	Asia/Shanghai
-Xichang	CN	Asia/Shanghai
-Xiazhuang	CN	Asia/Shanghai
-Xiazhuang	CN	Asia/Shanghai
 Xiazhuang	CN	Asia/Shanghai
 Xiazhen	CN	Asia/Shanghai
 Xiasi	CN	Asia/Shanghai
@@ -3721,13 +3696,11 @@ Wuxue	CN	Asia/Shanghai
 Wushan	CN	Asia/Shanghai
 Wuxi	CN	Asia/Shanghai
 Wutongshu	CN	Asia/Shanghai
-Wushan	CN	Asia/Shanghai
 Wuqiao	CN	Asia/Shanghai
 Dongyang	CN	Asia/Shanghai
 Wuling	CN	Asia/Shanghai
 Changde	CN	Asia/Shanghai
 Wujing	CN	Asia/Shanghai
-Wujia	CN	Asia/Shanghai
 Wujia	CN	Asia/Shanghai
 Wuhu	CN	Asia/Shanghai
 Wuhan	CN	Asia/Shanghai
@@ -3809,7 +3782,6 @@ Taihe	CN	Asia/Shanghai
 Taishan	CN	Asia/Shanghai
 Taicang	CN	Asia/Shanghai
 Tai'an	CN	Asia/Shanghai
-Tai'an	CN	Asia/Shanghai
 Suzhou	CN	Asia/Shanghai
 Suyangshan	CN	Asia/Shanghai
 Suqian	CN	Asia/Shanghai
@@ -3832,12 +3804,10 @@ Shunhe	CN	Asia/Shanghai
 Shuizhai	CN	Asia/Shanghai
 Shuitu	CN	Asia/Shanghai
 Shuikou	CN	Asia/Shanghai
-Shuikou	CN	Asia/Shanghai
 Shuijiang	CN	Asia/Shanghai
 Laixi	CN	Asia/Shanghai
 Shuangshi	CN	Asia/Shanghai
 Shuanglong	CN	Asia/Shanghai
-Shuangjiang	CN	Asia/Shanghai
 Shuangjiang	CN	Asia/Shanghai
 Shuanghe	CN	Asia/Shanghai
 Shuanggou	CN	Asia/Shanghai
@@ -3847,7 +3817,6 @@ Shizuishan	CN	Asia/Shanghai
 Shizilu	CN	Asia/Shanghai
 Shiyan	CN	Asia/Shanghai
 Shiwan	CN	Asia/Shanghai
-Shiwan	CN	Asia/Shanghai
 Shituo	CN	Asia/Shanghai
 Shitanjing	CN	Asia/Shanghai
 Shiquan	CN	Asia/Shanghai
@@ -3855,7 +3824,6 @@ Shiqiaozi	CN	Asia/Shanghai
 Shiqiao	CN	Asia/Shanghai
 Shiqi	CN	Asia/Shanghai
 Shimen	CN	Asia/Shanghai
-Shima	CN	Asia/Shanghai
 Shima	CN	Asia/Shanghai
 Xianglong	CN	Asia/Shanghai
 Shilong	CN	Asia/Shanghai
@@ -3876,7 +3844,6 @@ Shenjiamen	CN	Asia/Shanghai
 Yunlong	CN	Asia/Shanghai
 Shawan	CN	Asia/Shanghai
 Rensha	CN	Asia/Shanghai
-Shaping	CN	Asia/Shanghai
 Shaping	CN	Asia/Shanghai
 Shaoxing	CN	Asia/Shanghai
 Shaowu	CN	Asia/Shanghai
@@ -3922,7 +3889,6 @@ Quzhou	CN	Asia/Shanghai
 Qujing	CN	Asia/Shanghai
 Qufu	CN	Asia/Shanghai
 Quanzhou	CN	Asia/Shanghai
-Wuxi	CN	Asia/Shanghai
 Zhuangyuan	CN	Asia/Shanghai
 Qiuji	CN	Asia/Shanghai
 Qishan	CN	Asia/Shanghai
@@ -3944,9 +3910,7 @@ Qingdao	CN	Asia/Shanghai
 Qingyuan	CN	Asia/Shanghai
 Qincheng	CN	Asia/Shanghai
 Qina	CN	Asia/Shanghai
-Qishan	CN	Asia/Shanghai
 Hongqiao	CN	Asia/Shanghai
-Qiaotou	CN	Asia/Shanghai
 Qiaotou	CN	Asia/Shanghai
 Qiaoguan	CN	Asia/Shanghai
 Qianliu	CN	Asia/Shanghai
@@ -3956,7 +3920,6 @@ Puyang	CN	Asia/Shanghai
 Putian	CN	Asia/Shanghai
 Puji	CN	Asia/Shanghai
 Puqi	CN	Asia/Shanghai
-Yongning	CN	Asia/Shanghai
 Pulandian	CN	Asia/Shanghai
 Pu'an	CN	Asia/Shanghai
 Poyang	CN	Asia/Shanghai
@@ -3985,7 +3948,6 @@ Ningyang	CN	Asia/Shanghai
 Yutan	CN	Asia/Shanghai
 Hanyuan	CN	Asia/Shanghai
 Ninghai	CN	Asia/Shanghai
-Ninghai	CN	Asia/Shanghai
 Ningbo	CN	Asia/Shanghai
 Nianbo	CN	Asia/Shanghai
 Neijiang	CN	Asia/Shanghai
@@ -3997,7 +3959,6 @@ Nantong	CN	Asia/Shanghai
 Nanshu	CN	Asia/Shanghai
 Pucheng	CN	Asia/Shanghai
 Nanping	CN	Asia/Shanghai
-Nanping	CN	Asia/Shanghai
 Nanning	CN	Asia/Shanghai
 Nanma	CN	Asia/Shanghai
 Nanlong	CN	Asia/Shanghai
@@ -4005,7 +3966,6 @@ Nanjing	CN	Asia/Shanghai
 Nanjian	CN	Asia/Shanghai
 Nanhu	CN	Asia/Shanghai
 Nangong	CN	Asia/Shanghai
-Nanfeng	CN	Asia/Shanghai
 Nanfeng	CN	Asia/Shanghai
 Nandu	CN	Asia/Shanghai
 Nanding	CN	Asia/Shanghai
@@ -4024,7 +3984,6 @@ Minggang	CN	Asia/Shanghai
 Mingcun	CN	Asia/Shanghai
 Micheng	CN	Asia/Shanghai
 Miaoyu	CN	Asia/Shanghai
-Mianyang	CN	Asia/Shanghai
 Mianyang	CN	Asia/Shanghai
 Mentougou	CN	Asia/Shanghai
 Mengyin	CN	Asia/Shanghai
@@ -4049,8 +4008,6 @@ Lueshun	CN	Asia/Shanghai
 Lushar	CN	Asia/Shanghai
 Lushan	CN	Asia/Shanghai
 Luoyang	CN	Asia/Shanghai
-Luoyang	CN	Asia/Shanghai
-Luoyang	CN	Asia/Shanghai
 Luorong	CN	Asia/Shanghai
 Luoqi	CN	Asia/Shanghai
 Luoping	CN	Asia/Shanghai
@@ -4071,7 +4028,6 @@ Loudi	CN	Asia/Shanghai
 Longyan	CN	Asia/Shanghai
 Longxing	CN	Asia/Shanghai
 Longtan	CN	Asia/Shanghai
-Longtan	CN	Asia/Shanghai
 Longshui	CN	Asia/Shanghai
 Longshi	CN	Asia/Shanghai
 Longshan	CN	Asia/Shanghai
@@ -4082,7 +4038,6 @@ Longlin	CN	Asia/Shanghai
 Longgang	CN	Asia/Shanghai
 Longju	CN	Asia/Shanghai
 Longgu	CN	Asia/Shanghai
-Longgang	CN	Asia/Shanghai
 Longfeng	CN	Asia/Shanghai
 Long'e	CN	Asia/Shanghai
 Longchi	CN	Asia/Shanghai
@@ -4111,7 +4066,6 @@ Linqiong	CN	Asia/Shanghai
 Qingnian	CN	Asia/Shanghai
 Linping	CN	Asia/Shanghai
 Linjiang	CN	Asia/Shanghai
-Linjiang	CN	Asia/Shanghai
 Linjiacun	CN	Asia/Shanghai
 Dongta	CN	Asia/Shanghai
 Linghe	CN	Asia/Shanghai
@@ -4126,7 +4080,6 @@ Liji	CN	Asia/Shanghai
 Ligezhuang	CN	Asia/Shanghai
 Lidu	CN	Asia/Shanghai
 Lichuan	CN	Asia/Shanghai
-Licheng	CN	Asia/Shanghai
 Licha	CN	Asia/Shanghai
 Liaolan	CN	Asia/Shanghai
 Liaocheng	CN	Asia/Shanghai
@@ -4182,11 +4135,8 @@ Jinzhou	CN	Asia/Shanghai
 Jinxiang	CN	Asia/Shanghai
 Jinshi	CN	Asia/Shanghai
 Jinsha	CN	Asia/Shanghai
-Jinjiang	CN	Asia/Shanghai
-Jinjiang	CN	Asia/Shanghai
 Jinji	CN	Asia/Shanghai
 Jining	CN	Asia/Shanghai
-Jinhua	CN	Asia/Shanghai
 Jingzhou	CN	Asia/Shanghai
 Jingzhi	CN	Asia/Shanghai
 Tianchang	CN	Asia/Shanghai
@@ -4217,14 +4167,12 @@ Jiaozhou	CN	Asia/Shanghai
 Ningde	CN	Asia/Shanghai
 Jianshan	CN	Asia/Shanghai
 Jian'ou	CN	Asia/Shanghai
-Jiangzhuang	CN	Asia/Shanghai
 Jiangyan	CN	Asia/Shanghai
 Jianguang	CN	Asia/Shanghai
 Jiangshan	CN	Asia/Shanghai
 Jiangping	CN	Asia/Shanghai
 Jiangmen	CN	Asia/Shanghai
 Jiangluo	CN	Asia/Shanghai
-Jiangkou	CN	Asia/Shanghai
 Jiangkou	CN	Asia/Shanghai
 Jiangjia	CN	Asia/Shanghai
 Yangjiang	CN	Asia/Shanghai
@@ -4244,7 +4192,6 @@ Huizhou	CN	Asia/Shanghai
 Huixian Chengguanzhen	CN	Asia/Shanghai
 Huilong	CN	Asia/Shanghai
 Huicheng	CN	Asia/Shanghai
-Huicheng	CN	Asia/Shanghai
 Huguo	CN	Asia/Shanghai
 Hufeng	CN	Asia/Shanghai
 Huazhou	CN	Asia/Shanghai
@@ -4253,7 +4200,6 @@ Huashan	CN	Asia/Shanghai
 Huankou	CN	Asia/Shanghai
 Huangzhou	CN	Asia/Shanghai
 Huangshi	CN	Asia/Shanghai
-Huangshan	CN	Asia/Shanghai
 Dasha	CN	Asia/Shanghai
 Huangpi	CN	Asia/Shanghai
 Huangmei	CN	Asia/Shanghai
@@ -4298,7 +4244,6 @@ Heba	CN	Asia/Shanghai
 Haomen	CN	Asia/Shanghai
 Haojiaqiao	CN	Asia/Shanghai
 Hanzhong	CN	Asia/Shanghai
-Hanyuan	CN	Asia/Shanghai
 Hanyin Chengguanzhen	CN	Asia/Shanghai
 Fu'an	CN	Asia/Shanghai
 Hanting	CN	Asia/Shanghai
@@ -4309,13 +4254,11 @@ Hanfeng	CN	Asia/Shanghai
 Changzhi	CN	Asia/Shanghai
 Handan	CN	Asia/Shanghai
 Hanchuan	CN	Asia/Shanghai
-Hancheng	CN	Asia/Shanghai
 Haizhou	CN	Asia/Shanghai
 Haiyang	CN	Asia/Shanghai
 Haitou	CN	Asia/Shanghai
 Jiaojiang	CN	Asia/Shanghai
 Haimen	CN	Asia/Shanghai
-Haikou	CN	Asia/Shanghai
 Haikou	CN	Asia/Shanghai
 Guyuan	CN	Asia/Shanghai
 Guye	CN	Asia/Shanghai
@@ -4328,7 +4271,6 @@ Gunan	CN	Asia/Shanghai
 Gulin	CN	Asia/Shanghai
 Guli	CN	Asia/Shanghai
 Guiyang	CN	Asia/Shanghai
-Guixi	CN	Asia/Shanghai
 Guiren	CN	Asia/Shanghai
 Guiping	CN	Asia/Shanghai
 Guilin	CN	Asia/Shanghai
@@ -4340,7 +4282,6 @@ Guanhu	CN	Asia/Shanghai
 Guangzhou	CN	Asia/Shanghai
 Guangshun	CN	Asia/Shanghai
 Guangshui	CN	Asia/Shanghai
-Guandu	CN	Asia/Shanghai
 Guandu	CN	Asia/Shanghai
 Gongtan	CN	Asia/Shanghai
 Gongping	CN	Asia/Shanghai
@@ -4355,21 +4296,17 @@ Gaoyou	CN	Asia/Shanghai
 Gaoping	CN	Asia/Shanghai
 Gaomi	CN	Asia/Shanghai
 Gaoliu	CN	Asia/Shanghai
-Gaoliu	CN	Asia/Shanghai
 Gaojia	CN	Asia/Shanghai
 Gaogu	CN	Asia/Shanghai
 Gaogou	CN	Asia/Shanghai
 Gao'an	CN	Asia/Shanghai
 Ganzhou	CN	Asia/Shanghai
 Gantang	CN	Asia/Shanghai
-Gantang	CN	Asia/Shanghai
 Ganshui	CN	Asia/Shanghai
 Gangu Chengguanzhen	CN	Asia/Shanghai
 Gangtou	CN	Asia/Shanghai
 Fuzhou	CN	Asia/Shanghai
-Fuzhou	CN	Asia/Shanghai
 Fujia	CN	Asia/Shanghai
-Fuyang	CN	Asia/Shanghai
 Fuyang	CN	Asia/Shanghai
 Wofo	CN	Asia/Shanghai
 Qingyang	CN	Asia/Shanghai
@@ -4386,7 +4323,6 @@ Fengkou	CN	Asia/Shanghai
 Fengjia	CN	Asia/Shanghai
 Fenggao	CN	Asia/Shanghai
 Fenggang	CN	Asia/Shanghai
-Feicheng	CN	Asia/Shanghai
 Fangshan	CN	Asia/Shanghai
 Fangcun	CN	Asia/Shanghai
 Fangcheng Chengguanzhen	CN	Asia/Shanghai
@@ -4403,7 +4339,6 @@ Duobao	CN	Asia/Shanghai
 Dunhou	CN	Asia/Shanghai
 Ducheng	CN	Asia/Shanghai
 Duoba	CN	Asia/Shanghai
-Xinyi	CN	Asia/Shanghai
 Dongying	CN	Asia/Shanghai
 Dongxing	CN	Asia/Shanghai
 Dongxi	CN	Asia/Shanghai
@@ -4425,7 +4360,6 @@ Dezhou	CN	Asia/Shanghai
 Deyang	CN	Asia/Shanghai
 Deqing	CN	Asia/Shanghai
 Dengzhou	CN	Asia/Shanghai
-Dengzhou	CN	Asia/Shanghai
 Songyang	CN	Asia/Shanghai
 Degan	CN	Asia/Shanghai
 Liping	CN	Asia/Shanghai
@@ -4433,7 +4367,6 @@ Dazhong	CN	Asia/Shanghai
 Zhangjiajie	CN	Asia/Shanghai
 Daye	CN	Asia/Shanghai
 Lijiang	CN	Asia/Shanghai
-Daxing	CN	Asia/Shanghai
 Daxie	CN	Asia/Shanghai
 Dazhou	CN	Asia/Shanghai
 Dawukou	CN	Asia/Shanghai
@@ -4449,7 +4382,6 @@ Danjiangkou	CN	Asia/Shanghai
 Gushu	CN	Asia/Shanghai
 Dangjiang	CN	Asia/Shanghai
 Tanchang Chengguanzhen	CN	Asia/Shanghai
-Xincheng	CN	Asia/Shanghai
 Damiao	CN	Asia/Shanghai
 Dalu	CN	Asia/Shanghai
 Daliang	CN	Asia/Shanghai
@@ -4486,7 +4418,6 @@ Chaozhou	CN	Asia/Shanghai
 Chaotian	CN	Asia/Shanghai
 Chaohu	CN	Asia/Shanghai
 Changzhou	CN	Asia/Shanghai
-Changzhi	CN	Asia/Shanghai
 Changyuan	CN	Asia/Shanghai
 Changyi	CN	Asia/Shanghai
 Changxin	CN	Asia/Shanghai
@@ -4496,13 +4427,11 @@ Changning	CN	Asia/Shanghai
 Changli	CN	Asia/Shanghai
 Changleng	CN	Asia/Shanghai
 Changle	CN	Asia/Shanghai
-Changle	CN	Asia/Shanghai
 Changdian	CN	Asia/Shanghai
 Changcheng	CN	Asia/Shanghai
 Changba	CN	Asia/Shanghai
 Chaigou	CN	Asia/Shanghai
 Chahe	CN	Asia/Shanghai
-Longxing	CN	Asia/Shanghai
 Caoqiao	CN	Asia/Shanghai
 Caohe	CN	Asia/Shanghai
 Weining	CN	Asia/Shanghai
@@ -4533,7 +4462,6 @@ Beibei	CN	Asia/Shanghai
 Bayiji	CN	Asia/Shanghai
 Bayan Hot	CN	Asia/Shanghai
 Baiyang	CN	Asia/Shanghai
-Shuanglong	CN	Asia/Shanghai
 Batang	CN	Asia/Shanghai
 Basuo	CN	Asia/Shanghai
 Bashan	CN	Asia/Shanghai
@@ -4552,7 +4480,6 @@ Baituo	CN	Asia/Shanghai
 Baitu	CN	Asia/Shanghai
 Baitao	CN	Asia/Shanghai
 Baisha	CN	Asia/Shanghai
-Baisha	CN	Asia/Shanghai
 Baimajing	CN	Asia/Shanghai
 Baima	CN	Asia/Shanghai
 Bailin	CN	Asia/Shanghai
@@ -4564,7 +4491,6 @@ Bachuan	CN	Asia/Shanghai
 Babu	CN	Asia/Shanghai
 Qilian	CN	Asia/Shanghai
 Aoxi	CN	Asia/Shanghai
-Qingyang	CN	Asia/Shanghai
 Anyuan	CN	Asia/Shanghai
 Anxiang	CN	Asia/Shanghai
 Anshun	CN	Asia/Shanghai
@@ -4582,9 +4508,7 @@ Anfu	CN	Asia/Shanghai
 Naxi	CN	Asia/Shanghai
 Anbu	CN	Asia/Shanghai
 Ahu	CN	Asia/Shanghai
-Zhonghe	CN	Asia/Shanghai
 Jiangyou	CN	Asia/Shanghai
-Suzhou	CN	Asia/Shanghai
 Zhoushan	CN	Asia/Shanghai
 Dacheng	CN	Asia/Shanghai
 Wuduan	CN	Asia/Shanghai
@@ -4599,10 +4523,7 @@ Caijiagang	CN	Asia/Shanghai
 Tieshan	CN	Asia/Shanghai
 Hebao	CN	Asia/Shanghai
 Baoxing	CN	Asia/Shanghai
-Damiao	CN	Asia/Shanghai
-Daxing	CN	Asia/Shanghai
 Jinlong	CN	Asia/Shanghai
-Sanjiao	CN	Asia/Shanghai
 Guangpu	CN	Asia/Shanghai
 Chenshi	CN	Asia/Shanghai
 Qingfeng	CN	Asia/Shanghai
@@ -4610,12 +4531,10 @@ Wutan	CN	Asia/Shanghai
 Wujian	CN	Asia/Shanghai
 Hegeng	CN	Asia/Shanghai
 Xianlong	CN	Asia/Shanghai
-Ji'an	CN	Asia/Shanghai
 Kaitang	CN	Asia/Shanghai
 Bibo	CN	Asia/Shanghai
 Jiuchao	CN	Asia/Shanghai
 Zhaoxing	CN	Asia/Shanghai
-Anfu	CN	Asia/Shanghai
 Baijiawan	CN	Asia/Shanghai
 Baliwan	CN	Asia/Shanghai
 Dashi	CN	Asia/Shanghai
@@ -4626,34 +4545,25 @@ Jutou	CN	Asia/Shanghai
 Kuanchuan	CN	Asia/Shanghai
 Liuping	CN	Asia/Shanghai
 Qianhu	CN	Asia/Shanghai
-Shiqiao	CN	Asia/Shanghai
 Suhe	CN	Asia/Shanghai
 Wangyao	CN	Asia/Shanghai
 Wangyin	CN	Asia/Shanghai
-Wenquan	CN	Asia/Shanghai
 Xingfeng	CN	Asia/Shanghai
-Xinglong	CN	Asia/Shanghai
-Xinxing	CN	Asia/Shanghai
 Yebao	CN	Asia/Shanghai
 Yongping	CN	Asia/Shanghai
 Zhongshan	CN	Asia/Shanghai
-Shima	CN	Asia/Shanghai
 Banan	CN	Asia/Shanghai
 Dianbu	CN	Asia/Shanghai
-Yunshan	CN	Asia/Shanghai
-Xiasi	CN	Asia/Shanghai
 Conglin	CN	Asia/Shanghai
 Ciyun	CN	Asia/Shanghai
 Xiaba	CN	Asia/Shanghai
 Anlan	CN	Asia/Shanghai
-Shilong	CN	Asia/Shanghai
 Nanpeng	CN	Asia/Shanghai
 Huimin	CN	Asia/Shanghai
 Ersheng	CN	Asia/Shanghai
 Yufengshan	CN	Asia/Shanghai
 Tongjiaxi	CN	Asia/Shanghai
 Dasheng	CN	Asia/Shanghai
-Taiping	CN	Asia/Shanghai
 Tuchang	CN	Asia/Shanghai
 Honghu	CN	Asia/Shanghai
 Lanyang	CN	Asia/Shanghai
@@ -4674,7 +4584,6 @@ Santangpu	CN	Asia/Shanghai
 Zhaojia	CN	Asia/Shanghai
 Gulu	CN	Asia/Shanghai
 Zouma	CN	Asia/Shanghai
-Yantai	CN	Asia/Shanghai
 Sanmiao	CN	Asia/Shanghai
 Rongxi	CN	Asia/Shanghai
 Longsheng	CN	Asia/Shanghai
@@ -4683,7 +4592,6 @@ Hedong	CN	Asia/Shanghai
 Zhenlai	CN	Asia/Shanghai
 Shuangliao	CN	Asia/Shanghai
 Zhaozhou	CN	Asia/Shanghai
-Zhaoyuan	CN	Asia/Shanghai
 Zhaodong	CN	Asia/Shanghai
 Zhangjiakou	CN	Asia/Shanghai
 Zhalantun	CN	Asia/Shanghai
@@ -4691,7 +4599,6 @@ Yushu	CN	Asia/Shanghai
 Youhao	CN	Asia/Shanghai
 Yingkou	CN	Asia/Shanghai
 Yilan	CN	Asia/Shanghai
-Yichun	CN	Asia/Shanghai
 Yebaishou	CN	Asia/Shanghai
 Yantongshan	CN	Asia/Shanghai
 Yanji	CN	Asia/Shanghai
@@ -4699,7 +4606,6 @@ Yakeshi	CN	Asia/Shanghai
 Xuanhua	CN	Asia/Shanghai
 Xiuyan	CN	Asia/Shanghai
 Xinqing	CN	Asia/Shanghai
-Xinmin	CN	Asia/Shanghai
 Xinglongshan	CN	Asia/Shanghai
 Xingcheng	CN	Asia/Shanghai
 Xilin Hot	CN	Asia/Shanghai
@@ -4755,34 +4661,27 @@ Mujiayingzi	CN	Asia/Shanghai
 Mudanjiang	CN	Asia/Shanghai
 Mishan	CN	Asia/Shanghai
 Antu	CN	Asia/Shanghai
-Mingshui	CN	Asia/Shanghai
 Meihekou	CN	Asia/Shanghai
 Manzhouli	CN	Asia/Shanghai
 Longjing	CN	Asia/Shanghai
 Longjiang	CN	Asia/Shanghai
-Longfeng	CN	Asia/Shanghai
 Liuhe	CN	Asia/Shanghai
 Lishu	CN	Asia/Shanghai
 Linkou	CN	Asia/Shanghai
-Linjiang	CN	Asia/Shanghai
 Lingyuan	CN	Asia/Shanghai
 Lingdong	CN	Asia/Shanghai
 Liaozhong	CN	Asia/Shanghai
 Liaoyuan	CN	Asia/Shanghai
 Liaoyang	CN	Asia/Shanghai
-Lanxi	CN	Asia/Shanghai
 Langxiang	CN	Asia/Shanghai
 Langtoucun	CN	Asia/Shanghai
 Kuandian	CN	Asia/Shanghai
-Kaiyuan	CN	Asia/Shanghai
 Kaitong	CN	Asia/Shanghai
 Jixi	CN	Asia/Shanghai
 Jiutai	CN	Asia/Shanghai
 Jiupu	CN	Asia/Shanghai
 Jishu	CN	Asia/Shanghai
-Jinzhou	CN	Asia/Shanghai
 Lianshan	CN	Asia/Shanghai
-Jining	CN	Asia/Shanghai
 Jilin	CN	Asia/Shanghai
 Jidong	CN	Asia/Shanghai
 Jiaohe	CN	Asia/Shanghai
@@ -4816,14 +4715,12 @@ Genhe	CN	Asia/Shanghai
 Gannan	CN	Asia/Shanghai
 Fuyuan	CN	Asia/Shanghai
 Fuyu	CN	Asia/Shanghai
-Fuyu	CN	Asia/Shanghai
 Fuxin	CN	Asia/Shanghai
 Fushun	CN	Asia/Shanghai
 Jixian	CN	Asia/Shanghai
 Fujin	CN	Asia/Shanghai
 Beichengqu	CN	Asia/Shanghai
 Luobei	CN	Asia/Shanghai
-Fengcheng	CN	Asia/Shanghai
 Erenhot	CN	Asia/Shanghai
 Erdaojiang	CN	Asia/Shanghai
 Dunhua	CN	Asia/Shanghai
@@ -4832,7 +4729,6 @@ Dongling	CN	Asia/Shanghai
 Dongfeng	CN	Asia/Shanghai
 Didao	CN	Asia/Shanghai
 Dehui	CN	Asia/Shanghai
-Datong	CN	Asia/Shanghai
 Dashitou	CN	Asia/Shanghai
 Dashiqiao	CN	Asia/Shanghai
 Daqing	CN	Asia/Shanghai
@@ -4843,7 +4739,6 @@ Dalai	CN	Asia/Shanghai
 Chifeng	CN	Asia/Shanghai
 Chengzihe	CN	Asia/Shanghai
 Chengde	CN	Asia/Shanghai
-Chaoyang	CN	Asia/Shanghai
 Chaoyang	CN	Asia/Shanghai
 Changtu	CN	Asia/Shanghai
 Changping	CN	Asia/Shanghai
@@ -4857,7 +4752,6 @@ Beipiao	CN	Asia/Shanghai
 Bei'an	CN	Asia/Shanghai
 Bayan	CN	Asia/Shanghai
 Baotou	CN	Asia/Shanghai
-Baoshan	CN	Asia/Shanghai
 Baoqing	CN	Asia/Shanghai
 Muling	CN	Asia/Shanghai
 Baishishan	CN	Asia/Shanghai
@@ -4868,18 +4762,14 @@ Anshan	CN	Asia/Shanghai
 Anda	CN	Asia/Shanghai
 Oroqen Zizhiqi	CN	Asia/Shanghai
 Acheng	CN	Asia/Shanghai
-Songling	CN	Asia/Shanghai
 Shigang	CN	Asia/Shanghai
 E'zhou	CN	Asia/Shanghai
 Jinniu	CN	Asia/Shanghai
 Xiangjiaba	CN	Asia/Shanghai
 Shilin	CN	Asia/Shanghai
 Bowangshan	CN	Asia/Shanghai
-Shuanglong	CN	Asia/Shanghai
 Panzhihua	CN	Asia/Shanghai
 Taifu	CN	Asia/Shanghai
-Zhongshan	CN	Asia/Shanghai
-Tongchuan	CN	Asia/Shanghai
 Changshu	CN	Asia/Shanghai
 Shixing	CN	Asia/Shanghai
 Jiashan	CN	Asia/Shanghai
@@ -4890,8 +4780,6 @@ Dengbu	CN	Asia/Shanghai
 Baihe	CN	Asia/Shanghai
 Puchi	CN	Asia/Shanghai
 Maying	CN	Asia/Shanghai
-Hanwang	CN	Asia/Shanghai
-Majie	CN	Asia/Shanghai
 Dianga	CN	Asia/Shanghai
 Dongjiang	CN	Asia/Shanghai
 Chengjiao	CN	Asia/Shanghai
@@ -4915,7 +4803,6 @@ Tange	CN	Asia/Shanghai
 Mali	CN	Asia/Shanghai
 Shandan	CN	Asia/Shanghai
 Gaolou	CN	Asia/Shanghai
-Yuanyang	CN	Asia/Shanghai
 Hualin	CN	Asia/Shanghai
 Hezhou	CN	Asia/Shanghai
 Zhu Cheng City	CN	Asia/Shanghai
@@ -4925,7 +4812,6 @@ Daocheng	CN	Asia/Shanghai
 Chengxiang	CN	Asia/Shanghai
 Tangfang	CN	Asia/Shanghai
 Fengling	CN	Asia/Shanghai
-Longjing	CN	Asia/Shanghai
 Baolong	CN	Asia/Shanghai
 Tonggu	CN	Asia/Shanghai
 Sanxi	CN	Asia/Shanghai
@@ -4947,7 +4833,6 @@ Heqian	CN	Asia/Shanghai
 Maliu	CN	Asia/Shanghai
 Heyan	CN	Asia/Shanghai
 Guojia	CN	Asia/Shanghai
-Baihe	CN	Asia/Shanghai
 Dunhao	CN	Asia/Shanghai
 Gaoqiao	CN	Asia/Shanghai
 Yihe	CN	Asia/Shanghai
@@ -4957,12 +4842,8 @@ Dade	CN	Asia/Shanghai
 Fengle	CN	Asia/Shanghai
 Zhendong	CN	Asia/Shanghai
 Houba	CN	Asia/Shanghai
-Changsha	CN	Asia/Shanghai
 Nanmen	CN	Asia/Shanghai
-Wushan	CN	Asia/Shanghai
 Nanya	CN	Asia/Shanghai
-Zhuxi	CN	Asia/Shanghai
-Taizhou	CN	Asia/Shanghai
 Houshan	CN	Asia/Shanghai
 Lihe	CN	Asia/Shanghai
 Xiongjia	CN	Asia/Shanghai
@@ -4979,54 +4860,38 @@ Shuanghekou	CN	Asia/Shanghai
 Zhushan	CN	Asia/Shanghai
 Danzi	CN	Asia/Shanghai
 Changtan	CN	Asia/Shanghai
-Tai'an	CN	Asia/Shanghai
 Luotian	CN	Asia/Shanghai
 Guocun	CN	Asia/Shanghai
 Longsha	CN	Asia/Shanghai
 Ganning	CN	Asia/Shanghai
 Gaofeng	CN	Asia/Shanghai
-Linxi	CN	Asia/Shanghai
 Xialu	CN	Asia/Shanghai
 Caohui	CN	Asia/Shanghai
-Xinmin	CN	Asia/Shanghai
 Changlong	CN	Asia/Shanghai
-Yong'an	CN	Asia/Shanghai
 Pushun	CN	Asia/Shanghai
 Gangjia	CN	Asia/Shanghai
-Gaofeng	CN	Asia/Shanghai
-Pingshan	CN	Asia/Shanghai
 Baijia	CN	Asia/Shanghai
-Panlong	CN	Asia/Shanghai
 Yinping	CN	Asia/Shanghai
 Jukui	CN	Asia/Shanghai
-Bishan	CN	Asia/Shanghai
-Huilong	CN	Asia/Shanghai
 Mingda	CN	Asia/Shanghai
 Lirang	CN	Asia/Shanghai
 Hucheng	CN	Asia/Shanghai
-Xinsheng	CN	Asia/Shanghai
 Hexing	CN	Asia/Shanghai
 Baohe	CN	Asia/Shanghai
 Dongjia	CN	Asia/Shanghai
 Shizhi	CN	Asia/Shanghai
 Huwei	CN	Asia/Shanghai
 Sanhe	CN	Asia/Shanghai
-Xingyi	CN	Asia/Shanghai
 Longkong	CN	Asia/Shanghai
 Longhe	CN	Asia/Shanghai
 Qingxichang	CN	Asia/Shanghai
 Pingkai	CN	Asia/Shanghai
 Zhongling	CN	Asia/Shanghai
 Erong	CN	Asia/Shanghai
-Guanzhuang	CN	Asia/Shanghai
 Wanmu	CN	Asia/Shanghai
-Tonggu	CN	Asia/Shanghai
 Apengjiang	CN	Asia/Shanghai
-Qianjiang	CN	Asia/Shanghai
 Zhoubai	CN	Asia/Shanghai
 Dianshui	CN	Asia/Shanghai
-Sanhe	CN	Asia/Shanghai
-Xintian	CN	Asia/Shanghai
 Longshe	CN	Asia/Shanghai
 Lianhu	CN	Asia/Shanghai
 Tongle	CN	Asia/Shanghai
@@ -5036,52 +4901,37 @@ Lizhi	CN	Asia/Shanghai
 Nantuo	CN	Asia/Shanghai
 Qingxi	CN	Asia/Shanghai
 Baisheng	CN	Asia/Shanghai
-Yihe	CN	Asia/Shanghai
 Yunji	CN	Asia/Shanghai
 Changshouhu	CN	Asia/Shanghai
 Haitang	CN	Asia/Shanghai
-Shiyan	CN	Asia/Shanghai
-Longhe	CN	Asia/Shanghai
-Fengcheng	CN	Asia/Shanghai
 Jiangnan	CN	Asia/Shanghai
 Bake	CN	Asia/Shanghai
 Dawan	CN	Asia/Shanghai
-Gulu	CN	Asia/Shanghai
 Lijia	CN	Asia/Shanghai
 Shuangfengqiao	CN	Asia/Shanghai
 Huixing	CN	Asia/Shanghai
 Cuiyun	CN	Asia/Shanghai
 Wangjia	CN	Asia/Shanghai
-Tianfu	CN	Asia/Shanghai
 Fuxing	CN	Asia/Shanghai
-Dongyang	CN	Asia/Shanghai
-Longfeng	CN	Asia/Shanghai
 Shuanghuai	CN	Asia/Shanghai
 Shuangfeng	CN	Asia/Shanghai
 Shitan	CN	Asia/Shanghai
 Xiaojia	CN	Asia/Shanghai
 Laitan	CN	Asia/Shanghai
 Qiantang	CN	Asia/Shanghai
-Dashi	CN	Asia/Shanghai
 Gulou	CN	Asia/Shanghai
 Yanwo	CN	Asia/Shanghai
 Erlang	CN	Asia/Shanghai
-Longfeng	CN	Asia/Shanghai
-Longxing	CN	Asia/Shanghai
 Yangcheng	CN	Asia/Shanghai
 Diaoyucheng	CN	Asia/Shanghai
 Nanjin	CN	Asia/Shanghai
-Baoding	CN	Asia/Shanghai
 Zhifeng	CN	Asia/Shanghai
-Shiwan	CN	Asia/Shanghai
-Yulong	CN	Asia/Shanghai
 Shuanglu	CN	Asia/Shanghai
 Tangxiang	CN	Asia/Shanghai
 Guchang	CN	Asia/Shanghai
 Shenglilu	CN	Asia/Shanghai
 Nandajie	CN	Asia/Shanghai
 Shaoyun	CN	Asia/Shanghai
-Qinggang	CN	Asia/Shanghai
 Jianlong	CN	Asia/Shanghai
 Shuangfu	CN	Asia/Shanghai
 Zhiping	CN	Asia/Shanghai
@@ -5089,14 +4939,10 @@ Wenshan City	CN	Asia/Shanghai
 Tuanbao	CN	Asia/Shanghai
 Bole	CN	Asia/Shanghai
 Liupanshui	CN	Asia/Shanghai
-Huanggang	CN	Asia/Shanghai
 Nanchuan	CN	Asia/Shanghai
 Anwen	CN	Asia/Shanghai
-Datong	CN	Asia/Shanghai
 Guanba	CN	Asia/Shanghai
-Nantong	CN	Asia/Shanghai
 Maliuzui	CN	Asia/Shanghai
-Anxiang	CN	Asia/Shanghai
 Mugala	CN	Asia/Urumqi
 Xingning	CN	Asia/Shanghai
 Damoujia	CN	Asia/Shanghai
@@ -5106,15 +4952,12 @@ Han'airike	CN	Asia/Urumqi
 Ying'awati	CN	Asia/Urumqi
 Rizhao	CN	Asia/Shanghai
 Shanwang	CN	Asia/Shanghai
-Puyang	CN	Asia/Shanghai
 Taxkowruek	CN	Asia/Urumqi
 Onyar	CN	Asia/Urumqi
 Fudong	CN	Asia/Shanghai
 Jianshui	CN	Asia/Shanghai
 Tuantian	CN	Asia/Shanghai
-Zhonghe	CN	Asia/Shanghai
 Liuzhi	CN	Asia/Shanghai
-Taoyuan	CN	Asia/Shanghai
 Wanghong	CN	Asia/Shanghai
 Hongguang Qidui	CN	Asia/Shanghai
 Linhe	CN	Asia/Shanghai
@@ -5144,10 +4987,7 @@ Dali Old Town	CN	Asia/Shanghai
 Haidong Zhen	CN	Asia/Shanghai
 Yinqiao Zhen	CN	Asia/Shanghai
 Wanqiao Zhen	CN	Asia/Shanghai
-Yunlong	CN	Asia/Shanghai
 Shuangtang	CN	Asia/Shanghai
-Xindian	CN	Asia/Shanghai
-Xinhe	CN	Asia/Shanghai
 Dapeng	CN	Asia/Shanghai
 Daxu	CN	Asia/Shanghai
 Liguo	CN	Asia/Shanghai
@@ -5158,15 +4998,11 @@ Jing'an	CN	Asia/Shanghai
 Yingqiu	CN	Asia/Shanghai
 Liushan	CN	Asia/Shanghai
 Yishan	CN	Asia/Shanghai
-Dasheng	CN	Asia/Shanghai
 Huiqu	CN	Asia/Shanghai
 Jinzhongzi	CN	Asia/Shanghai
-Wushan	CN	Asia/Shanghai
 Zheshan	CN	Asia/Shanghai
 Buzhuang	CN	Asia/Shanghai
-Longchi	CN	Asia/Shanghai
 Xiaying	CN	Asia/Shanghai
-Baicheng	CN	Asia/Shanghai
 Jinggou	CN	Asia/Shanghai
 Kanjia	CN	Asia/Shanghai
 Huanglou	CN	Asia/Shanghai
@@ -5189,7 +5025,6 @@ Ningdong	CN	Asia/Shanghai
 Wangyuan	CN	Asia/Shanghai
 Minning	CN	Asia/Shanghai
 Lijun	CN	Asia/Shanghai
-Shizuishan	CN	Asia/Shanghai
 Heshan	CN	Asia/Shanghai
 Xihu	CN	Asia/Shanghai
 Shangchong	CN	Asia/Shanghai
@@ -5199,21 +5034,16 @@ Xingdaohu	CN	Asia/Shanghai
 Donghui	CN	Asia/Shanghai
 Fazhanhe	CN	Asia/Shanghai
 Fubang	CN	Asia/Shanghai
-Huimin	CN	Asia/Shanghai
 Mujia	CN	Asia/Shanghai
 Nanling	CN	Asia/Shanghai
 Nuofu	CN	Asia/Shanghai
 Nuozhadu	CN	Asia/Shanghai
 Zhutang	CN	Asia/Shanghai
 Menghuan	CN	Asia/Shanghai
-Fengping	CN	Asia/Shanghai
 Nongzhang	CN	Asia/Shanghai
-Taiping	CN	Asia/Shanghai
-Beihai	CN	Asia/Shanghai
 Hehua	CN	Asia/Shanghai
 Mangbang	CN	Asia/Shanghai
 Mazhan	CN	Asia/Shanghai
-Mingguang	CN	Asia/Shanghai
 Puchuan	CN	Asia/Shanghai
 Wuhe	CN	Asia/Shanghai
 Xinhua	CN	Asia/Shanghai
@@ -5226,7 +5056,6 @@ Shunzhou	CN	Asia/Shanghai
 Jiuhe	CN	Asia/Shanghai
 Xinyingpan	CN	Asia/Shanghai
 Shilongba	CN	Asia/Shanghai
-Hongqiao	CN	Asia/Shanghai
 Wanzhou	CN	Asia/Shanghai
 Zhuyi	CN	Asia/Shanghai
 Yintai	CN	Asia/Shanghai
@@ -5234,12 +5063,10 @@ Jifeng	CN	Asia/Shanghai
 Changdao	CN	Asia/Shanghai
 Liufeng	CN	Asia/Shanghai
 Xiejiawan	CN	Asia/Shanghai
-Guojia	CN	Asia/Shanghai
 Hongbao	CN	Asia/Shanghai
 Dayang	CN	Asia/Shanghai
 Maguan	CN	Asia/Shanghai
 Muhe	CN	Asia/Shanghai
-Qingyang	CN	Asia/Shanghai
 Quankou	CN	Asia/Shanghai
 Alamaiti	CN	Asia/Urumqi
 Arele	CN	Asia/Urumqi
@@ -5263,7 +5090,6 @@ Arewusitang	CN	Asia/Urumqi
 Awuliya	CN	Asia/Urumqi
 Samuyuzi	CN	Asia/Urumqi
 Weiwu'eryuqiwen	CN	Asia/Urumqi
-Arele	CN	Asia/Urumqi
 Jiayi	CN	Asia/Urumqi
 Buzhake	CN	Asia/Urumqi
 Yisilamu'awati	CN	Asia/Urumqi
@@ -5281,20 +5107,13 @@ Yawa	CN	Asia/Urumqi
 Zhawa	CN	Asia/Urumqi
 Dazeshan	CN	Asia/Shanghai
 Dianzi	CN	Asia/Shanghai
-Yanghe	CN	Asia/Shanghai
 Dongwenquan	CN	Asia/Shanghai
-Jieshi	CN	Asia/Shanghai
 Qitang	CN	Asia/Shanghai
 Shuanglonghu	CN	Asia/Shanghai
 Jiaping	CN	Asia/Shanghai
-Xihu	CN	Asia/Shanghai
-Zhongshan	CN	Asia/Shanghai
 Mingshan	CN	Asia/Shanghai
 Caojie	CN	Asia/Shanghai
-Liangping	CN	Asia/Shanghai
-Xinglong	CN	Asia/Shanghai
 Fuhuan	CN	Asia/Shanghai
-Qingnian	CN	Asia/Shanghai
 Shihao	CN	Asia/Shanghai
 Yongcheng	CN	Asia/Shanghai
 Zhuantang	CN	Asia/Shanghai
@@ -5303,9 +5122,7 @@ Longling County	CN	Asia/Shanghai
 Mianzhu, Deyang, Sichuan	CN	Asia/Shanghai
 Pingwu County	CN	Asia/Shanghai
 Tianjia	CN	Asia/Shanghai
-Changling	CN	Asia/Shanghai
 Weixinghu	CN	Asia/Shanghai
-Zhuhai	CN	Asia/Shanghai
 Zipaquira	CO	America/Bogota
 Zarzal	CO	America/Bogota
 Zaragoza	CO	America/Bogota
@@ -5316,7 +5133,6 @@ Yarumal	CO	America/Bogota
 Villeta	CO	America/Bogota
 Villavicencio	CO	America/Bogota
 Villa del Rosario	CO	America/Bogota
-Villanueva	CO	America/Bogota
 Villanueva	CO	America/Bogota
 Villamaria	CO	America/Bogota
 Velez	CO	America/Bogota
@@ -5479,8 +5295,6 @@ Leticia	CO	America/Bogota
 Lerida	CO	America/Bogota
 La Virginia	CO	America/Bogota
 La Union	CO	America/Bogota
-La Union	CO	America/Bogota
-La Union	CO	America/Bogota
 La Tebaida	CO	America/Bogota
 La Plata	CO	America/Bogota
 La Mesa	CO	America/Bogota
@@ -5505,7 +5319,6 @@ Giron	CO	America/Bogota
 Girardot City	CO	America/Bogota
 Gigante	CO	America/Bogota
 Garzon	CO	America/Bogota
-Nueva Granada	CO	America/Bogota
 Galapa	CO	America/Bogota
 Fusagasuga	CO	America/Bogota
 Funza	CO	America/Bogota
@@ -5561,7 +5374,6 @@ Cartago	CO	America/Bogota
 Cartagena	CO	America/Bogota
 Carmen de Viboral	CO	America/Bogota
 Candelaria	CO	America/Bogota
-Candelaria	CO	America/Bogota
 Campo de la Cruz	CO	America/Bogota
 Campoalegre	CO	America/Bogota
 Cali	CO	America/Bogota
@@ -5572,7 +5384,6 @@ Caicedonia	CO	America/Bogota
 Guadalajara de Buga	CO	America/Bogota
 Buesaco	CO	America/Bogota
 Buenaventura	CO	America/Bogota
-Buenaventura	CO	America/Bogota
 Bucaramanga	CO	America/Bogota
 Bogota	CO	America/Bogota
 Betulia	CO	America/Bogota
@@ -5582,7 +5393,6 @@ Becerril	CO	America/Bogota
 Barranquilla	CO	America/Bogota
 Barrancas	CO	America/Bogota
 Barrancabermeja	CO	America/Bogota
-Barbosa	CO	America/Bogota
 Barbosa	CO	America/Bogota
 Baranoa	CO	America/Bogota
 Balboa	CO	America/Bogota
@@ -5605,14 +5415,12 @@ Aguadas	CO	America/Bogota
 Aguachica	CO	America/Bogota
 Acacias	CO	America/Bogota
 Abejorral	CO	America/Bogota
-Morales	CO	America/Bogota
 Villa Rica	CO	America/Bogota
 Fredonia	CO	America/Bogota
 Carepa	CO	America/Bogota
 Ciudad Bolivar	CO	America/Bogota
 Tiquisio	CO	America/Bogota
 Agustin Codazzi	CO	America/Bogota
-San Martin	CO	America/Bogota
 Isnos	CO	America/Bogota
 Plato	CO	America/Bogota
 San Jose del Guaviare	CO	America/Bogota
@@ -5630,7 +5438,6 @@ San Pablo	CR	America/Costa_Rica
 San Miguel	CR	America/Costa_Rica
 San Juan de Dios	CR	America/Costa_Rica
 San Juan	CR	America/Costa_Rica
-San Jose	CR	America/Costa_Rica
 San Jose	CR	America/Costa_Rica
 San Isidro	CR	America/Costa_Rica
 San Francisco	CR	America/Costa_Rica
@@ -5719,7 +5526,6 @@ La Salud	CU	America/Havana
 Lajas	CU	America/Havana
 Havana	CU	America/Havana
 Jovellanos	CU	America/Havana
-Jobabo	CU	America/Havana
 Jobabo	CU	America/Havana
 Jiguani	CU	America/Havana
 Jesus Menendez	CU	America/Havana
@@ -6093,7 +5899,6 @@ Siegburg	DE	Europe/Berlin
 Langenhorn	DE	Europe/Berlin
 Senftenberg	DE	Europe/Berlin
 Senden	DE	Europe/Berlin
-Senden	DE	Europe/Berlin
 Selm	DE	Europe/Berlin
 Seligenstadt	DE	Europe/Berlin
 Selb	DE	Europe/Berlin
@@ -6422,7 +6227,6 @@ Lankwitz	DE	Europe/Berlin
 Langenhagen	DE	Europe/Berlin
 Langenfeld	DE	Europe/Berlin
 Langen	DE	Europe/Berlin
-Langen	DE	Europe/Berlin
 Landshut	DE	Europe/Berlin
 Landsberg am Lech	DE	Europe/Berlin
 Landau in der Pfalz	DE	Europe/Berlin
@@ -6582,7 +6386,6 @@ Hannover	DE	Europe/Berlin
 Hanau am Main	DE	Europe/Berlin
 Hamminkeln	DE	Europe/Berlin
 Hamm	DE	Europe/Berlin
-Hamm	DE	Europe/Berlin
 Hameln	DE	Europe/Berlin
 Wandsbek	DE	Europe/Berlin
 Marienthal	DE	Europe/Berlin
@@ -6676,7 +6479,6 @@ Friedrichsfelde	DE	Europe/Berlin
 Friedrichsdorf	DE	Europe/Berlin
 Friedenau	DE	Europe/Berlin
 Friedberg	DE	Europe/Berlin
-Friedberg	DE	Europe/Berlin
 Freudenstadt	DE	Europe/Berlin
 Freudenberg	DE	Europe/Berlin
 Freital	DE	Europe/Berlin
@@ -6689,7 +6491,6 @@ Frechen	DE	Europe/Berlin
 Frankfurt am Main	DE	Europe/Berlin
 Frankfurt (Oder)	DE	Europe/Berlin
 Frankenthal	DE	Europe/Berlin
-Frankenberg	DE	Europe/Berlin
 Frankenberg	DE	Europe/Berlin
 Forst	DE	Europe/Berlin
 Forchheim	DE	Europe/Berlin
@@ -7000,7 +6801,6 @@ Neustadt/Nord	DE	Europe/Berlin
 Neustadt/Sued	DE	Europe/Berlin
 Kalk	DE	Europe/Berlin
 Rodenkirchen	DE	Europe/Berlin
-Muelheim	DE	Europe/Berlin
 Gartenstadt	DE	Europe/Berlin
 Kroepeliner-Tor-Vorstadt	DE	Europe/Berlin
 Duesseldorf-Pempelfort	DE	Europe/Berlin
@@ -8153,7 +7953,6 @@ Arganzuela	ES	Europe/Madrid
 San Blas-Canillejas	ES	Europe/Madrid
 Latina	ES	Europe/Madrid
 Usera	ES	Europe/Madrid
-Salamanca	ES	Europe/Madrid
 Chamberi	ES	Europe/Madrid
 Carabanchel	ES	Europe/Madrid
 Madrid Centro	ES	Europe/Madrid
@@ -9327,7 +9126,6 @@ Newry	GB	Europe/London
 Newquay	GB	Europe/London
 Newport Pagnell	GB	Europe/London
 Newport	GB	Europe/London
-Newport	GB	Europe/London
 New Milton	GB	Europe/London
 New Mills	GB	Europe/London
 Newmarket	GB	Europe/London
@@ -9472,7 +9270,6 @@ Hebburn	GB	Europe/London
 Heanor	GB	Europe/London
 Hazel Grove	GB	Europe/London
 Haywards Heath	GB	Europe/London
-Hayes	GB	Europe/London
 Hayes	GB	Europe/London
 Haydock	GB	Europe/London
 Hawarden	GB	Europe/London
@@ -9764,7 +9561,6 @@ Barnes	GB	Europe/London
 Barking	GB	Europe/London
 Banstead	GB	Europe/London
 Bangor	GB	Europe/London
-Bangor	GB	Europe/London
 Banbury	GB	Europe/London
 Banbridge	GB	Europe/London
 Ballymena	GB	Europe/London
@@ -9776,7 +9572,6 @@ Aston	GB	Europe/London
 Ashton-under-Lyne	GB	Europe/London
 Ashton in Makerfield	GB	Europe/London
 Ashington	GB	Europe/London
-Ashford	GB	Europe/London
 Ashford	GB	Europe/London
 Ascot	GB	Europe/London
 Arnold	GB	Europe/London
@@ -9805,7 +9600,6 @@ Aberdare	GB	Europe/London
 Crosby	GB	Europe/London
 Tonypandy	GB	Europe/London
 Blackwood	GB	Europe/London
-Neston	GB	Europe/London
 Camden Town	GB	Europe/London
 Telford	GB	Europe/London
 Craigavon	GB	Europe/London
@@ -9815,7 +9609,6 @@ Bowthorpe	GB	Europe/London
 Hedge End	GB	Europe/London
 Gerrards Cross	GB	Europe/London
 Erskine	GB	Europe/London
-Hale	GB	Europe/London
 Kilburn	GB	Europe/London
 Chalk Farm	GB	Europe/London
 Amersham on the Hill	GB	Europe/London
@@ -10121,7 +9914,6 @@ Zografos	GR	Europe/Athens
 Pefki	GR	Europe/Athens
 Agioi Anargyroi	GR	Europe/Athens
 Agios Ioannis Rentis	GR	Europe/Athens
-Nea Ionia	GR	Europe/Athens
 Neapoli	GR	Europe/Athens
 Grytviken	GS	Atlantic/South_Georgia
 Zaragoza	GT	America/Guatemala
@@ -10750,7 +10542,6 @@ Driyorejo	ID	Asia/Jakarta
 Dompu	ID	Asia/Makassar
 Diwek	ID	Asia/Jakarta
 Depok	ID	Asia/Jakarta
-Depok	ID	Asia/Jakarta
 Denpasar	ID	Asia/Makassar
 Demak	ID	Asia/Jakarta
 Delanggu	ID	Asia/Jakarta
@@ -11091,8 +10882,6 @@ Unnao	IN	Asia/Kolkata
 Unjha	IN	Asia/Kolkata
 Unhel	IN	Asia/Kolkata
 Una	IN	Asia/Kolkata
-Una	IN	Asia/Kolkata
-Un	IN	Asia/Kolkata
 Un	IN	Asia/Kolkata
 Umreth	IN	Asia/Kolkata
 Umred	IN	Asia/Kolkata
@@ -11111,8 +10900,6 @@ Udgir	IN	Asia/Kolkata
 Udangudi	IN	Asia/Kolkata
 Udalguri	IN	Asia/Kolkata
 Udaipura	IN	Asia/Kolkata
-Udaipur	IN	Asia/Kolkata
-Udaipur	IN	Asia/Kolkata
 Udaipur	IN	Asia/Kolkata
 Ooty	IN	Asia/Kolkata
 Bara Uchana	IN	Asia/Kolkata
@@ -11197,7 +10984,6 @@ Taoru	IN	Asia/Kolkata
 Tanuku	IN	Asia/Kolkata
 Tandur	IN	Asia/Kolkata
 Tanda	IN	Asia/Kolkata
-Tanda	IN	Asia/Kolkata
 Tanakpur	IN	Asia/Kolkata
 Tamluk	IN	Asia/Kolkata
 Tambaram	IN	Asia/Kolkata
@@ -11233,7 +11019,6 @@ Sulya	IN	Asia/Kolkata
 Suluru	IN	Asia/Kolkata
 Sulur	IN	Asia/Kolkata
 Sultanpur	IN	Asia/Kolkata
-Sultanpur	IN	Asia/Kolkata
 Suket	IN	Asia/Kolkata
 Sujangarh	IN	Asia/Kolkata
 Suar	IN	Asia/Kolkata
@@ -11244,7 +11029,6 @@ Srisailain	IN	Asia/Kolkata
 Sriramnagar	IN	Asia/Kolkata
 Sriperumbudur	IN	Asia/Kolkata
 Srinivaspur	IN	Asia/Kolkata
-Srinagar	IN	Asia/Kolkata
 Srinagar	IN	Asia/Kolkata
 Sri Madhopur	IN	Asia/Kolkata
 Karanpur	IN	Asia/Kolkata
@@ -11272,7 +11056,6 @@ Siwana	IN	Asia/Kolkata
 Siwan	IN	Asia/Kolkata
 Sivakasi	IN	Asia/Kolkata
 Sivagiri	IN	Asia/Kolkata
-Sivagiri	IN	Asia/Kolkata
 Sivaganga	IN	Asia/Kolkata
 Siuri	IN	Asia/Kolkata
 Sitarganj	IN	Asia/Kolkata
@@ -11284,7 +11067,6 @@ Sirur	IN	Asia/Kolkata
 Sirumugai	IN	Asia/Kolkata
 Siruguppa	IN	Asia/Kolkata
 Sirsilla	IN	Asia/Kolkata
-Sirsi	IN	Asia/Kolkata
 Sirsi	IN	Asia/Kolkata
 Sirsaganj	IN	Asia/Kolkata
 Sirsa	IN	Asia/Kolkata
@@ -11338,7 +11120,6 @@ Shillong	IN	Asia/Kolkata
 Siliguri	IN	Asia/Kolkata
 Shikohabad	IN	Asia/Kolkata
 Shikarpur	IN	Asia/Kolkata
-Shikarpur	IN	Asia/Kolkata
 Shiggaon	IN	Asia/Kolkata
 Shertallai	IN	Asia/Kolkata
 Sherkot	IN	Asia/Kolkata
@@ -11349,25 +11130,17 @@ Sheoganj	IN	Asia/Kolkata
 Shegaon	IN	Asia/Kolkata
 Shantipur	IN	Asia/Kolkata
 Shamsabad	IN	Asia/Kolkata
-Shamsabad	IN	Asia/Kolkata
 Shamli	IN	Asia/Kolkata
 Shamgarh	IN	Asia/Kolkata
 Shajapur	IN	Asia/Kolkata
 Sheikhpura	IN	Asia/Kolkata
 Shahpura	IN	Asia/Kolkata
-Shahpura	IN	Asia/Kolkata
-Shahpur	IN	Asia/Kolkata
-Shahpur	IN	Asia/Kolkata
-Shahpur	IN	Asia/Kolkata
 Shahpur	IN	Asia/Kolkata
 Shahjanpur	IN	Asia/Kolkata
 Shahi	IN	Asia/Kolkata
 Shahganj	IN	Asia/Kolkata
 Shahdol	IN	Asia/Kolkata
 Shahada	IN	Asia/Kolkata
-Shahabad	IN	Asia/Kolkata
-Shahabad	IN	Asia/Kolkata
-Shahabad	IN	Asia/Kolkata
 Shahabad	IN	Asia/Kolkata
 Serchhip	IN	Asia/Kolkata
 Seram	IN	Asia/Kolkata
@@ -11514,15 +11287,10 @@ Ranaghat	IN	Asia/Kolkata
 Ramtek	IN	Asia/Kolkata
 Rampur Hat	IN	Asia/Kolkata
 Rampura	IN	Asia/Kolkata
-Rampura	IN	Asia/Kolkata
 Rampur	IN	Asia/Kolkata
-Rampur	IN	Asia/Kolkata
-Ramnagar	IN	Asia/Kolkata
-Ramnagar	IN	Asia/Kolkata
 Ramnagar	IN	Asia/Kolkata
 Ramjibanpur	IN	Asia/Kolkata
 Ramgundam	IN	Asia/Kolkata
-Ramgarh	IN	Asia/Kolkata
 Ramgarh	IN	Asia/Kolkata
 Ramganj Mandi	IN	Asia/Kolkata
 Rameswaram	IN	Asia/Kolkata
@@ -11535,16 +11303,12 @@ Rajula	IN	Asia/Kolkata
 Rajsamand	IN	Asia/Kolkata
 Rajpura	IN	Asia/Kolkata
 Rajpur	IN	Asia/Kolkata
-Rajpur	IN	Asia/Kolkata
 Rajpipla	IN	Asia/Kolkata
 Raj-Nandgaon	IN	Asia/Kolkata
 Rajmahal	IN	Asia/Kolkata
 Rajkot	IN	Asia/Kolkata
 Rajgurunagar	IN	Asia/Kolkata
 Rajgir	IN	Asia/Kolkata
-Rajgarh	IN	Asia/Kolkata
-Rajgarh	IN	Asia/Kolkata
-Rajgarh	IN	Asia/Kolkata
 Rajgarh	IN	Asia/Kolkata
 Rajaori	IN	Asia/Kolkata
 Rajapalaiyam	IN	Asia/Kolkata
@@ -11554,8 +11318,6 @@ Rajakhera	IN	Asia/Kolkata
 Rajahmundry	IN	Asia/Kolkata
 Raisinghnagar	IN	Asia/Kolkata
 Raisen	IN	Asia/Kolkata
-Raipur	IN	Asia/Kolkata
-Raipur	IN	Asia/Kolkata
 Raipur	IN	Asia/Kolkata
 Raikot	IN	Asia/Kolkata
 Raigarh	IN	Asia/Kolkata
@@ -11573,7 +11335,6 @@ Rabkavi	IN	Asia/Kolkata
 Kollam	IN	Asia/Kolkata
 Kasba	IN	Asia/Kolkata
 Qadian	IN	Asia/Kolkata
-Puttur	IN	Asia/Kolkata
 Puttur	IN	Asia/Kolkata
 Pushkar	IN	Asia/Kolkata
 Pusad	IN	Asia/Kolkata
@@ -11725,7 +11486,6 @@ Palkonda	IN	Asia/Kolkata
 Palitana	IN	Asia/Kolkata
 Palia Kalan	IN	Asia/Kolkata
 Pali	IN	Asia/Kolkata
-Pali	IN	Asia/Kolkata
 Palghat	IN	Asia/Kolkata
 Palghar	IN	Asia/Kolkata
 Palera	IN	Asia/Kolkata
@@ -11740,7 +11500,6 @@ Pahasu	IN	Asia/Kolkata
 Padrauna	IN	Asia/Kolkata
 Padra	IN	Asia/Kolkata
 Padmanabhapuram	IN	Asia/Kolkata
-Padampur	IN	Asia/Kolkata
 Padampur	IN	Asia/Kolkata
 Padam	IN	Asia/Kolkata
 Pachperwa	IN	Asia/Kolkata
@@ -11792,8 +11551,6 @@ Nawanshahr	IN	Asia/Kolkata
 Nawalgarh	IN	Asia/Kolkata
 Niwai	IN	Asia/Kolkata
 Nawada	IN	Asia/Kolkata
-Nawabganj	IN	Asia/Kolkata
-Nawabganj	IN	Asia/Kolkata
 Nawabganj	IN	Asia/Kolkata
 Nawa	IN	Asia/Kolkata
 Navsari	IN	Asia/Kolkata
@@ -11909,8 +11666,6 @@ Muktsar	IN	Asia/Kolkata
 Mukher	IN	Asia/Kolkata
 Mukerian	IN	Asia/Kolkata
 Muhammadabad	IN	Asia/Kolkata
-Muhammadabad	IN	Asia/Kolkata
-Muhammadabad	IN	Asia/Kolkata
 Mughal Sarai	IN	Asia/Kolkata
 Mudkhed	IN	Asia/Kolkata
 Mudhol	IN	Asia/Kolkata
@@ -11963,7 +11718,6 @@ Mauganj	IN	Asia/Kolkata
 Maudaha	IN	Asia/Kolkata
 Mau Aimma	IN	Asia/Kolkata
 Mau	IN	Asia/Kolkata
-Mau	IN	Asia/Kolkata
 Mattanur	IN	Asia/Kolkata
 Mathura	IN	Asia/Kolkata
 Matabhanga	IN	Asia/Kolkata
@@ -11982,7 +11736,6 @@ Manwat	IN	Asia/Kolkata
 Manvi	IN	Asia/Kolkata
 Manthani	IN	Asia/Kolkata
 Mansa	IN	Asia/Kolkata
-Mansa	IN	Asia/Kolkata
 Manoharpur	IN	Asia/Kolkata
 Mannargudi	IN	Asia/Kolkata
 Mannarakkat	IN	Asia/Kolkata
@@ -11996,14 +11749,12 @@ Manihari	IN	Asia/Kolkata
 Maniar	IN	Asia/Kolkata
 Mangrul Pir	IN	Asia/Kolkata
 Mangrol	IN	Asia/Kolkata
-Mangrol	IN	Asia/Kolkata
 Manglaur	IN	Asia/Kolkata
 Mangalore	IN	Asia/Kolkata
 Mangaldai	IN	Asia/Kolkata
 Mangalagiri	IN	Asia/Kolkata
 Maner	IN	Asia/Kolkata
 Mandya	IN	Asia/Kolkata
-Mandvi	IN	Asia/Kolkata
 Mandvi	IN	Asia/Kolkata
 Mandsaur	IN	Asia/Kolkata
 Mandla	IN	Asia/Kolkata
@@ -12105,7 +11856,6 @@ Lalitpur	IN	Asia/Kolkata
 Lalgudi	IN	Asia/Kolkata
 Lalgola	IN	Asia/Kolkata
 Lalganj	IN	Asia/Kolkata
-Lalganj	IN	Asia/Kolkata
 Lakshmeshwar	IN	Asia/Kolkata
 Laksar	IN	Asia/Kolkata
 Lakhyabad	IN	Asia/Kolkata
@@ -12170,7 +11920,6 @@ Kotdwara	IN	Asia/Kolkata
 Kotaparh	IN	Asia/Kolkata
 Kotamangalam	IN	Asia/Kolkata
 Kotagiri	IN	Asia/Kolkata
-Kota	IN	Asia/Kolkata
 Kota	IN	Asia/Kolkata
 Kosigi	IN	Asia/Kolkata
 Kosi	IN	Asia/Kolkata
@@ -12244,7 +11993,6 @@ Khardah	IN	Asia/Kolkata
 Kharar	IN	Asia/Kolkata
 Kharakvasla	IN	Asia/Kolkata
 Kharagpur	IN	Asia/Kolkata
-Kharagpur	IN	Asia/Kolkata
 Khapa	IN	Asia/Kolkata
 Khanna	IN	Asia/Kolkata
 Khandwa	IN	Asia/Kolkata
@@ -12257,7 +12005,6 @@ Khambhaliya	IN	Asia/Kolkata
 Khamaria	IN	Asia/Kolkata
 Khalilabad	IN	Asia/Kolkata
 Khajuraho Group of Monuments	IN	Asia/Kolkata
-Khairagarh	IN	Asia/Kolkata
 Khairagarh	IN	Asia/Kolkata
 Khairabad	IN	Asia/Kolkata
 Khair	IN	Asia/Kolkata
@@ -12288,7 +12035,6 @@ Katihar	IN	Asia/Kolkata
 Kathua	IN	Asia/Kolkata
 Kathor	IN	Asia/Kolkata
 Katghora	IN	Asia/Kolkata
-Katangi	IN	Asia/Kolkata
 Katangi	IN	Asia/Kolkata
 Kasrawad	IN	Asia/Kolkata
 Kashipur	IN	Asia/Kolkata
@@ -12399,7 +12145,6 @@ Jalarpet	IN	Asia/Kolkata
 Jogbani	IN	Asia/Kolkata
 Jodiya Bandar	IN	Asia/Kolkata
 Jodhpur	IN	Asia/Kolkata
-Jodhpur	IN	Asia/Kolkata
 Jintur	IN	Asia/Kolkata
 Jind	IN	Asia/Kolkata
 Jhusi	IN	Asia/Kolkata
@@ -12465,8 +12210,6 @@ Jalalpur	IN	Asia/Kolkata
 Jalalpore	IN	Asia/Kolkata
 Jalali	IN	Asia/Kolkata
 Jalalabad	IN	Asia/Kolkata
-Jalalabad	IN	Asia/Kolkata
-Jalalabad	IN	Asia/Kolkata
 Jajpur	IN	Asia/Kolkata
 Jaito	IN	Asia/Kolkata
 Jaitaran	IN	Asia/Kolkata
@@ -12490,7 +12233,6 @@ Jabalpur	IN	Asia/Kolkata
 Itimadpur	IN	Asia/Kolkata
 Itarsi	IN	Asia/Kolkata
 Itanagar	IN	Asia/Kolkata
-Islampur	IN	Asia/Kolkata
 Islampur	IN	Asia/Kolkata
 Islamnagar	IN	Asia/Kolkata
 Irugur	IN	Asia/Kolkata
@@ -12567,7 +12309,6 @@ Hansi	IN	Asia/Kolkata
 Hangal	IN	Asia/Kolkata
 Handia	IN	Asia/Kolkata
 Hamirpur	IN	Asia/Kolkata
-Hamirpur	IN	Asia/Kolkata
 Halvad	IN	Asia/Kolkata
 Halol	IN	Asia/Kolkata
 Haliyal	IN	Asia/Kolkata
@@ -12612,7 +12353,6 @@ Goyerkata	IN	Asia/Kolkata
 Govardhan	IN	Asia/Kolkata
 Gosaba	IN	Asia/Kolkata
 Gorantla	IN	Asia/Kolkata
-Gorakhpur	IN	Asia/Kolkata
 Gorakhpur	IN	Asia/Kolkata
 Gobichettipalayam	IN	Asia/Kolkata
 Gopalganj	IN	Asia/Kolkata
@@ -12664,8 +12404,6 @@ Gangoh	IN	Asia/Kolkata
 Gangawati	IN	Asia/Kolkata
 Gangarampur	IN	Asia/Kolkata
 Gangapur	IN	Asia/Kolkata
-Gangapur	IN	Asia/Kolkata
-Gangapur	IN	Asia/Kolkata
 Ganganagar	IN	Asia/Kolkata
 Gangakher	IN	Asia/Kolkata
 Gandhinagar	IN	Asia/Kolkata
@@ -12689,11 +12427,8 @@ Fazilka	IN	Asia/Kolkata
 Fatwa	IN	Asia/Kolkata
 Fatehpur Sikri	IN	Asia/Kolkata
 Fatehpur	IN	Asia/Kolkata
-Fatehpur	IN	Asia/Kolkata
-Fatehpur	IN	Asia/Kolkata
 Fatehgarh Churian	IN	Asia/Kolkata
 Fatehganj West	IN	Asia/Kolkata
-Fatehabad	IN	Asia/Kolkata
 Fatehabad	IN	Asia/Kolkata
 Farrukhnagar	IN	Asia/Kolkata
 Farrukhabad	IN	Asia/Kolkata
@@ -12716,7 +12451,6 @@ Ellenabad	IN	Asia/Kolkata
 Elamanchili	IN	Asia/Kolkata
 Egra	IN	Asia/Kolkata
 Dwarka	IN	Asia/Kolkata
-Durgapur	IN	Asia/Kolkata
 Durgapur	IN	Asia/Kolkata
 Durg	IN	Asia/Kolkata
 Dungarpur	IN	Asia/Kolkata
@@ -12805,7 +12539,6 @@ Depalpur	IN	Asia/Kolkata
 Deori Khas	IN	Asia/Kolkata
 Deoria	IN	Asia/Kolkata
 Deoranian	IN	Asia/Kolkata
-Deoli	IN	Asia/Kolkata
 Deolali	IN	Asia/Kolkata
 Deoghar	IN	Asia/Kolkata
 Deogarh	IN	Asia/Kolkata
@@ -12848,7 +12581,6 @@ Dabhoi	IN	Asia/Kolkata
 Cuttack	IN	Asia/Kolkata
 Curchorem	IN	Asia/Kolkata
 Cuncolim	IN	Asia/Kolkata
-Cumbum	IN	Asia/Kolkata
 Cuddapah	IN	Asia/Kolkata
 Cuddalore	IN	Asia/Kolkata
 Coondapoor	IN	Asia/Kolkata
@@ -12922,7 +12654,6 @@ Changanacheri	IN	Asia/Kolkata
 Chandor	IN	Asia/Kolkata
 Chandur Bazar	IN	Asia/Kolkata
 Chandur	IN	Asia/Kolkata
-Chandur	IN	Asia/Kolkata
 Chanda	IN	Asia/Kolkata
 Chandrakona	IN	Asia/Kolkata
 Chandpur	IN	Asia/Kolkata
@@ -12992,7 +12723,6 @@ Bilimora	IN	Asia/Kolkata
 Bilhaur	IN	Asia/Kolkata
 Bilgram	IN	Asia/Kolkata
 Bilgi	IN	Asia/Kolkata
-Bilaspur	IN	Asia/Kolkata
 Bilaspur	IN	Asia/Kolkata
 Bilasipara	IN	Asia/Kolkata
 Bilari	IN	Asia/Kolkata
@@ -13105,8 +12835,6 @@ Basoda	IN	Asia/Kolkata
 Basni	IN	Asia/Kolkata
 Basmat	IN	Asia/Kolkata
 Basi	IN	Asia/Kolkata
-Basi	IN	Asia/Kolkata
-Basi	IN	Asia/Kolkata
 Basavana Bagevadi	IN	Asia/Kolkata
 Basavakalyan	IN	Asia/Kolkata
 Barwani	IN	Asia/Kolkata
@@ -13156,13 +12884,11 @@ Banka	IN	Asia/Kolkata
 Bangarmau	IN	Asia/Kolkata
 Bangarapet	IN	Asia/Kolkata
 Bangaon	IN	Asia/Kolkata
-Bangaon	IN	Asia/Kolkata
 Banganapalle	IN	Asia/Kolkata
 Bengaluru	IN	Asia/Kolkata
 Banga	IN	Asia/Kolkata
 Bandipura	IN	Asia/Kolkata
 Bandikui	IN	Asia/Kolkata
-Banda	IN	Asia/Kolkata
 Banda	IN	Asia/Kolkata
 Banat	IN	Asia/Kolkata
 Banapur	IN	Asia/Kolkata
@@ -13175,7 +12901,6 @@ Baloda Bazar	IN	Asia/Kolkata
 Balod	IN	Asia/Kolkata
 Bali	IN	Asia/Kolkata
 Ballalpur	IN	Asia/Kolkata
-Bali	IN	Asia/Kolkata
 Balasore	IN	Asia/Kolkata
 Balarampur	IN	Asia/Kolkata
 Balapur	IN	Asia/Kolkata
@@ -13205,7 +12930,6 @@ Bagasra	IN	Asia/Kolkata
 Bagar	IN	Asia/Kolkata
 Bagalkot	IN	Asia/Kolkata
 Bagaha	IN	Asia/Kolkata
-Bagaha	IN	Asia/Kolkata
 Badvel	IN	Asia/Kolkata
 Baduria	IN	Asia/Kolkata
 Badnawar	IN	Asia/Kolkata
@@ -13227,7 +12951,6 @@ Avinashi	IN	Asia/Kolkata
 Avadi	IN	Asia/Kolkata
 Ausa	IN	Asia/Kolkata
 Aurangabad	IN	Asia/Kolkata
-Aurangabad	IN	Asia/Kolkata
 Auraiya	IN	Asia/Kolkata
 Aurad	IN	Asia/Kolkata
 Attur	IN	Asia/Kolkata
@@ -13242,7 +12965,6 @@ Atarra	IN	Asia/Kolkata
 Asind	IN	Asia/Kolkata
 Asika	IN	Asia/Kolkata
 Asifabad	IN	Asia/Kolkata
-Ashta	IN	Asia/Kolkata
 Ashta	IN	Asia/Kolkata
 Ashoknagar	IN	Asia/Kolkata
 Asansol	IN	Asia/Kolkata
@@ -13335,7 +13057,6 @@ Akot	IN	Asia/Kolkata
 Akola	IN	Asia/Kolkata
 Aklera	IN	Asia/Kolkata
 Akividu	IN	Asia/Kolkata
-Akbarpur	IN	Asia/Kolkata
 Akbarpur	IN	Asia/Kolkata
 Akaltara	IN	Asia/Kolkata
 Akalkot	IN	Asia/Kolkata
@@ -13448,7 +13169,6 @@ V.S.K.Valasai (Dindigul-Dist.)	IN	Asia/Kolkata
 Neelankarai	IN	Asia/Kolkata
 Injambakkam	IN	Asia/Kolkata
 Shahbazpur	IN	Asia/Kolkata
-Deoli	IN	Asia/Kolkata
 Kumbalam	IN	Asia/Kolkata
 Aroor	IN	Asia/Kolkata
 Kadakkavoor	IN	Asia/Kolkata
@@ -13460,7 +13180,6 @@ Abrama	IN	Asia/Kolkata
 Phusro	IN	Asia/Kolkata
 Alangad	IN	Asia/Kolkata
 Savarkundla	IN	Asia/Kolkata
-Malkapur	IN	Asia/Kolkata
 Podaturpet	IN	Asia/Kolkata
 Rohini	IN	Asia/Kolkata
 Mulugu	IN	Asia/Kolkata
@@ -13470,7 +13189,6 @@ Chirmiri	IN	Asia/Kolkata
 Paramathi Velur	IN	Asia/Kolkata
 Kanayannur	IN	Asia/Kolkata
 Shahuwadi	IN	Asia/Kolkata
-Lalganj	IN	Asia/Kolkata
 Zaxo	IQ	Asia/Baghdad
 Umm Qasr	IQ	Asia/Baghdad
 Tuz Khurmatu	IQ	Asia/Baghdad
@@ -13553,7 +13271,6 @@ Shahre Jadide Andisheh	IR	Asia/Tehran
 Khorramdarreh	IR	Asia/Tehran
 Padegan-e Manjil	IR	Asia/Tehran
 Yasuj	IR	Asia/Tehran
-Azadshahr	IR	Asia/Tehran
 Zarand	IR	Asia/Tehran
 Zanjan	IR	Asia/Tehran
 Yazd	IR	Asia/Tehran
@@ -13608,7 +13325,6 @@ Parsabad	IR	Asia/Tehran
 Oshnaviyeh	IR	Asia/Tehran
 Orumiyeh	IR	Asia/Tehran
 Omidiyeh	IR	Asia/Tehran
-Nurabad	IR	Asia/Tehran
 Nowshahr	IR	Asia/Tehran
 Neyshabur	IR	Asia/Tehran
 Neyriz	IR	Asia/Tehran
@@ -13709,7 +13425,6 @@ Ardakan	IR	Asia/Tehran
 Ardabil	IR	Asia/Tehran
 Arak	IR	Asia/Tehran
 Amol	IR	Asia/Tehran
-Alvand	IR	Asia/Tehran
 Shahriar	IR	Asia/Tehran
 Aligudarz	IR	Asia/Tehran
 Aleshtar	IR	Asia/Tehran
@@ -14508,7 +14223,6 @@ Tanuma	JP	Asia/Tokyo
 Nishi-Tokyo-shi	JP	Asia/Tokyo
 Tanashicho	JP	Asia/Tokyo
 Tanabe	JP	Asia/Tokyo
-Tanabe	JP	Asia/Tokyo
 Tamano	JP	Asia/Tokyo
 Tamana	JP	Asia/Tokyo
 Tamamura	JP	Asia/Tokyo
@@ -14557,7 +14271,6 @@ Shiozawa	JP	Asia/Tokyo
 Shiojiri	JP	Asia/Tokyo
 Shinshiro	JP	Asia/Tokyo
 Shin'ichi	JP	Asia/Tokyo
-Shingu	JP	Asia/Tokyo
 Shimonoseki	JP	Asia/Tokyo
 Shimodate	JP	Asia/Tokyo
 Shimoda	JP	Asia/Tokyo
@@ -14589,7 +14302,6 @@ Sakaiminato	JP	Asia/Tokyo
 Sakaidecho	JP	Asia/Tokyo
 Sakai-nakajima	JP	Asia/Tokyo
 Sakai	JP	Asia/Tokyo
-Sakai	JP	Asia/Tokyo
 Sakado	JP	Asia/Tokyo
 Saiki	JP	Asia/Tokyo
 Sagara	JP	Asia/Tokyo
@@ -14599,7 +14311,6 @@ Ryuo	JP	Asia/Tokyo
 Ryotsu-minato	JP	Asia/Tokyo
 Ozu	JP	Asia/Tokyo
 Oyama	JP	Asia/Tokyo
-Oyama	JP	Asia/Tokyo
 Owase	JP	Asia/Tokyo
 Otsuki	JP	Asia/Tokyo
 Otsu	JP	Asia/Tokyo
@@ -14608,7 +14319,6 @@ Ota	JP	Asia/Tokyo
 Osaka	JP	Asia/Tokyo
 Onomichi	JP	Asia/Tokyo
 Onoda	JP	Asia/Tokyo
-Ono	JP	Asia/Tokyo
 Ono	JP	Asia/Tokyo
 Ono-hara	JP	Asia/Tokyo
 Omuta	JP	Asia/Tokyo
@@ -14695,7 +14405,6 @@ Mitsukaido	JP	Asia/Tokyo
 Mitake	JP	Asia/Tokyo
 Mishima	JP	Asia/Tokyo
 Mino	JP	Asia/Tokyo
-Mino	JP	Asia/Tokyo
 Minamirinkan	JP	Asia/Tokyo
 Minamata	JP	Asia/Tokyo
 Minakuchicho-matoba	JP	Asia/Tokyo
@@ -14748,7 +14457,6 @@ Komaki	JP	Asia/Tokyo
 Kokubunji	JP	Asia/Tokyo
 Kokubu-matsuki	JP	Asia/Tokyo
 Koga	JP	Asia/Tokyo
-Koga	JP	Asia/Tokyo
 Kofu	JP	Asia/Tokyo
 Kodamacho-kodamaminami	JP	Asia/Tokyo
 Kochi	JP	Asia/Tokyo
@@ -14765,7 +14473,6 @@ Kisai	JP	Asia/Tokyo
 Kiryu	JP	Asia/Tokyo
 Kikuchi	JP	Asia/Tokyo
 Kazo	JP	Asia/Tokyo
-Kawasaki	JP	Asia/Tokyo
 Kawasaki	JP	Asia/Tokyo
 Kawanishi	JP	Asia/Tokyo
 Kawaminami	JP	Asia/Tokyo
@@ -14818,7 +14525,6 @@ Kadogawa	JP	Asia/Tokyo
 Izumo	JP	Asia/Tokyo
 Izumisano	JP	Asia/Tokyo
 Izumiotsu	JP	Asia/Tokyo
-Izumi	JP	Asia/Tokyo
 Izumi	JP	Asia/Tokyo
 Iwatsuki	JP	Asia/Tokyo
 Iwata	JP	Asia/Tokyo
@@ -14874,7 +14580,6 @@ Hirara	JP	Asia/Tokyo
 Hirakata	JP	Asia/Tokyo
 Hirado	JP	Asia/Tokyo
 Hino	JP	Asia/Tokyo
-Hino	JP	Asia/Tokyo
 Himimachi	JP	Asia/Tokyo
 Himeji	JP	Asia/Tokyo
 Hikone	JP	Asia/Tokyo
@@ -14926,7 +14631,6 @@ Fukiage-fujimi	JP	Asia/Tokyo
 Fukayacho	JP	Asia/Tokyo
 Fujisawa	JP	Asia/Tokyo
 Fujioka	JP	Asia/Tokyo
-Fujioka	JP	Asia/Tokyo
 Fujinomiya	JP	Asia/Tokyo
 Fujieda	JP	Asia/Tokyo
 Fuji	JP	Asia/Tokyo
@@ -14947,7 +14651,6 @@ Ashiya	JP	Asia/Tokyo
 Ashikaga	JP	Asia/Tokyo
 Arita	JP	Asia/Tokyo
 Arai	JP	Asia/Tokyo
-Arai	JP	Asia/Tokyo
 Annaka	JP	Asia/Tokyo
 Anjo	JP	Asia/Tokyo
 Anan	JP	Asia/Tokyo
@@ -14955,7 +14658,6 @@ Anamizu	JP	Asia/Tokyo
 Amagi	JP	Asia/Tokyo
 Amagasaki	JP	Asia/Tokyo
 Akune	JP	Asia/Tokyo
-Kariya	JP	Asia/Tokyo
 Aki	JP	Asia/Tokyo
 Aioi	JP	Asia/Tokyo
 Ageoshimo	JP	Asia/Tokyo
@@ -14976,7 +14678,6 @@ Wakayama	JP	Asia/Tokyo
 Iyo	JP	Asia/Tokyo
 Uwajima	JP	Asia/Tokyo
 Saijo	JP	Asia/Tokyo
-Ozu	JP	Asia/Tokyo
 Matsuyama	JP	Asia/Tokyo
 Masaki-cho	JP	Asia/Tokyo
 Kawanoecho	JP	Asia/Tokyo
@@ -15067,7 +14768,6 @@ Iwaki	JP	Asia/Tokyo
 Itako	JP	Asia/Tokyo
 Ishioka	JP	Asia/Tokyo
 Ishinomaki	JP	Asia/Tokyo
-Ishikawa	JP	Asia/Tokyo
 Ichinoseki	JP	Asia/Tokyo
 Ichihara	JP	Asia/Tokyo
 Hobaramachi	JP	Asia/Tokyo
@@ -15110,7 +14810,6 @@ Obihiro	JP	Asia/Tokyo
 Noshiro	JP	Asia/Tokyo
 Nemuro	JP	Asia/Tokyo
 Nayoro	JP	Asia/Tokyo
-Honcho	JP	Asia/Tokyo
 Namioka	JP	Asia/Tokyo
 Nakashibetsu	JP	Asia/Tokyo
 Muroran	JP	Asia/Tokyo
@@ -15133,7 +14832,6 @@ Hakodate	JP	Asia/Tokyo
 Hachinohe	JP	Asia/Tokyo
 Fukagawa	JP	Asia/Tokyo
 Ebetsu	JP	Asia/Tokyo
-Date	JP	Asia/Tokyo
 Chitose	JP	Asia/Tokyo
 Bibai	JP	Asia/Tokyo
 Ashibetsu	JP	Asia/Tokyo
@@ -15189,7 +14887,6 @@ Towada	JP	Asia/Tokyo
 Kitanagoya	JP	Asia/Tokyo
 Nisshin	JP	Asia/Tokyo
 Chita	JP	Asia/Tokyo
-Yamagata	JP	Asia/Tokyo
 Hashima	JP	Asia/Tokyo
 Kaizu	JP	Asia/Tokyo
 Kani	JP	Asia/Tokyo
@@ -15214,7 +14911,6 @@ Dazaifu	JP	Asia/Tokyo
 Amakusa	JP	Asia/Tokyo
 Kamigyo-ku	JP	Asia/Tokyo
 Buzen	JP	Asia/Tokyo
-Nakano	JP	Asia/Tokyo
 Kanmaki	JP	Asia/Tokyo
 Sue	JP	Asia/Tokyo
 Fujiyoshida	JP	Asia/Tokyo
@@ -15226,7 +14922,6 @@ Arao	JP	Asia/Tokyo
 Miyota	JP	Asia/Tokyo
 Iga	JP	Asia/Tokyo
 Kuwana	JP	Asia/Tokyo
-Hokuto	JP	Asia/Tokyo
 Himi	JP	Asia/Tokyo
 Takizawa	JP	Asia/Tokyo
 Yasu	JP	Asia/Tokyo
@@ -15234,14 +14929,12 @@ Yamato	JP	Asia/Tokyo
 Saito	JP	Asia/Tokyo
 Mitoyo	JP	Asia/Tokyo
 Hyuga	JP	Asia/Tokyo
-Sakai	JP	Asia/Tokyo
 Hamura	JP	Asia/Tokyo
 Fuchu	JP	Asia/Tokyo
 Arida	JP	Asia/Tokyo
 Kato	JP	Asia/Tokyo
 Tome	JP	Asia/Tokyo
 Kai	JP	Asia/Tokyo
-Sakura	JP	Asia/Tokyo
 Shirakawa	JP	Asia/Tokyo
 Mizuho	JP	Asia/Tokyo
 Kasai	JP	Asia/Tokyo
@@ -15251,7 +14944,6 @@ Tanba	JP	Asia/Tokyo
 Higashikagawa	JP	Asia/Tokyo
 Koshi	JP	Asia/Tokyo
 Uki	JP	Asia/Tokyo
-Konan	JP	Asia/Tokyo
 Chuo	JP	Asia/Tokyo
 Fuefuki	JP	Asia/Tokyo
 Koshu	JP	Asia/Tokyo
@@ -15441,7 +15133,6 @@ Neietsu	KR	Asia/Seoul
 Eisen	KR	Asia/Seoul
 Yeonggwang	KR	Asia/Seoul
 Yeongdong	KR	Asia/Seoul
-Eisen	KR	Asia/Seoul
 Yeoju	KR	Asia/Seoul
 Yesan	KR	Asia/Seoul
 Yangsan	KR	Asia/Seoul
@@ -15490,7 +15181,6 @@ Masan	KR	Asia/Seoul
 Gyeongsan-si	KR	Asia/Seoul
 Gyeongju	KR	Asia/Seoul
 Kwangyang	KR	Asia/Seoul
-Gwangju	KR	Asia/Seoul
 Gwangju	KR	Asia/Seoul
 Kurye	KR	Asia/Seoul
 Guri-si	KR	Asia/Seoul
@@ -15647,7 +15337,6 @@ Ekibastuz	KZ	Asia/Almaty
 Shiyeli	KZ	Asia/Qyzylorda
 Shardara	KZ	Asia/Almaty
 Burunday	KZ	Asia/Almaty
-Aksu	KZ	Asia/Almaty
 Balqash	KZ	Asia/Almaty
 Ayagoz	KZ	Asia/Almaty
 Atbasar	KZ	Asia/Almaty
@@ -16074,7 +15763,6 @@ Radovis	MK	Europe/Skopje
 Prilep	MK	Europe/Skopje
 Ohrid	MK	Europe/Skopje
 Negotino	MK	Europe/Skopje
-Negotino	MK	Europe/Skopje
 Lipkovo	MK	Europe/Skopje
 Kumanovo	MK	Europe/Skopje
 Kriva Palanka	MK	Europe/Skopje
@@ -16286,7 +15974,6 @@ Xochitepec	MX	America/Mexico_City
 Xochimilco	MX	America/Mexico_City
 Xicotepec de Juarez	MX	America/Mexico_City
 Xico	MX	America/Mexico_City
-Xico	MX	America/Mexico_City
 Santa Ana Xalmimilulco	MX	America/Mexico_City
 Alvaro Obregon	MX	America/Mexico_City
 Villahermosa	MX	America/Mexico_City
@@ -16485,7 +16172,6 @@ Fortin de las Flores	MX	America/Mexico_City
 Felipe Carrillo Puerto	MX	America/Cancun
 Escarcega	MX	America/Merida
 Emiliano Zapata	MX	America/Mexico_City
-Emiliano Zapata	MX	America/Mexico_City
 Ciudad Mante	MX	America/Monterrey
 Ecatepec de Morelos	MX	America/Mexico_City
 Ebano	MX	America/Mexico_City
@@ -16535,7 +16221,6 @@ Chalco	MX	America/Mexico_City
 Cerro Azul	MX	America/Mexico_City
 Catemaco	MX	America/Mexico_City
 Carlos A. Carrillo	MX	America/Mexico_City
-Cardenas	MX	America/Mexico_City
 Cardenas	MX	America/Mexico_City
 Capulhuac de Mirafuentes	MX	America/Mexico_City
 Cancun	MX	America/Cancun
@@ -16601,7 +16286,6 @@ San Pedro Totoltepec	MX	America/Mexico_City
 Santa Maria Totoltepec	MX	America/Mexico_City
 San Francisco Cuaxusco	MX	America/Mexico_City
 Benito Juarez	MX	America/Mexico_City
-Venustiano Carranza	MX	America/Mexico_City
 Miguel Hidalgo	MX	America/Mexico_City
 Cuauhtemoc	MX	America/Mexico_City
 Huixquilucan	MX	America/Mexico_City
@@ -16641,7 +16325,6 @@ Tuzantla	MX	America/Mexico_City
 Tuxpan	MX	America/Mazatlan
 Tuxpan	MX	America/Mexico_City
 Torreon	MX	America/Monterrey
-Tonala	MX	America/Mexico_City
 Tlaquepaque	MX	America/Mexico_City
 Tlajomulco de Zuniga	MX	America/Mexico_City
 Tijuana	MX	America/Tijuana
@@ -16670,7 +16353,6 @@ Santa Rosa Jauregui	MX	America/Mexico_City
 Santa Catarina	MX	America/Monterrey
 Santa Anita	MX	America/Mexico_City
 San Sebastian el Grande	MX	America/Mexico_City
-San Pedro	MX	America/Monterrey
 San Pedro	MX	America/Monterrey
 San Nicolas de los Garza	MX	America/Monterrey
 San Miguel el Alto	MX	America/Mexico_City
@@ -16802,7 +16484,6 @@ Empalme	MX	America/Hermosillo
 El Salto	MX	America/Monterrey
 Pueblo Nuevo	MX	America/Monterrey
 El Salto	MX	America/Mexico_City
-El Salto	MX	America/Mexico_City
 El Quince	MX	America/Mexico_City
 El Grullo	MX	America/Mexico_City
 Puebla	MX	America/Tijuana
@@ -16863,7 +16544,6 @@ Dolores Hidalgo	MX	America/Mexico_City
 Guacamayas	MX	America/Mexico_City
 Ciudad Lazaro Cardenas	MX	America/Mexico_City
 San Jose del Valle	MX	America/Mazatlan
-Benito Juarez	MX	America/Mexico_City
 Colonia del Valle	MX	America/Mexico_City
 Colonia Lindavista	MX	America/Mexico_City
 Colonia Nativitas	MX	America/Mexico_City
@@ -16882,7 +16562,6 @@ San Isidro	MX	America/Mexico_City
 Centro Familiar la Soledad	MX	America/Mexico_City
 San Jose Guadalupe Otzacatipan	MX	America/Mexico_City
 Las Pintitas	MX	America/Mexico_City
-Emiliano Zapata	MX	America/Mexico_City
 San Antonio Tecomitl	MX	America/Mexico_City
 Licenciado Benito Juarez	MX	America/Mazatlan
 Teotihuacan de Arista	MX	America/Mexico_City
@@ -16907,7 +16586,6 @@ Venceremos	MX	America/Mexico_City
 Alborada Jaltenco	MX	America/Mexico_City
 Crucecita	MX	America/Mexico_City
 San Jose de los Olvera	MX	America/Mexico_City
-Zacapu	MX	America/Mexico_City
 Colonia del Sol	MX	America/Mazatlan
 Tres Valles	MX	America/Mexico_City
 Kuah	MY	Asia/Kuala_Lumpur
@@ -17316,7 +16994,6 @@ Doma	NG	Africa/Lagos
 Dikwa	NG	Africa/Lagos
 Deba	NG	Africa/Lagos
 Daura	NG	Africa/Lagos
-Daura	NG	Africa/Lagos
 Darazo	NG	Africa/Lagos
 Damboa	NG	Africa/Lagos
 Damaturu	NG	Africa/Lagos
@@ -17709,7 +17386,6 @@ Baglung	NP	Asia/Kathmandu
 Birendranagar	NP	Asia/Kathmandu
 Dipayal	NP	Asia/Kathmandu
 Nepalgunj	NP	Asia/Kathmandu
-Panauti	NP	Asia/Kathmandu
 Inaruwa	NP	Asia/Kathmandu
 Triyuga	NP	Asia/Kathmandu
 Madhyapur Thimi	NP	Asia/Kathmandu
@@ -17803,7 +17479,6 @@ San Miguelito	PA	America/Panama
 Sabanitas	PA	America/Panama
 Rio Abajo	PA	America/Panama
 Penonome	PA	America/Panama
-Pedregal	PA	America/Panama
 Pedregal	PA	America/Panama
 Parque Lefevre	PA	America/Panama
 Panama	PA	America/Panama
@@ -17947,7 +17622,6 @@ Centenario	PE	America/Lima
 Cono Norte	PE	America/Lima
 Carmen De La Legua Reynoso	PE	America/Lima
 La Banda	PE	America/Lima
-Yanacancha	PE	America/Lima
 El Pedregal	PE	America/Lima
 Santa Rosa	PE	America/Lima
 San Antonio	PE	America/Lima
@@ -17999,10 +17673,7 @@ Tangub	PH	Asia/Manila
 Tandag	PH	Asia/Manila
 Tanay	PH	Asia/Manila
 Tanauan	PH	Asia/Manila
-Tanauan	PH	Asia/Manila
 Taloc	PH	Asia/Manila
-Talisay	PH	Asia/Manila
-Talisay	PH	Asia/Manila
 Talisay	PH	Asia/Manila
 Talavera	PH	Asia/Manila
 Talacogon	PH	Asia/Manila
@@ -18039,10 +17710,6 @@ Santol	PH	Asia/Manila
 Santiago	PH	Asia/Manila
 Santa Rosa	PH	Asia/Manila
 Santa Maria	PH	Asia/Manila
-Santa Maria	PH	Asia/Manila
-Santa Cruz	PH	Asia/Manila
-Santa Cruz	PH	Asia/Manila
-Santa Cruz	PH	Asia/Manila
 Santa Cruz	PH	Asia/Manila
 Santa Catalina	PH	Asia/Manila
 Santa Barbara	PH	Asia/Manila
@@ -18054,8 +17721,6 @@ San Pablo	PH	Asia/Manila
 San Nicolas	PH	Asia/Manila
 San Narciso	PH	Asia/Manila
 San Miguel	PH	Asia/Manila
-San Miguel	PH	Asia/Manila
-San Mateo	PH	Asia/Manila
 San Mateo	PH	Asia/Manila
 San Mariano	PH	Asia/Manila
 San Marcelino	PH	Asia/Manila
@@ -18064,24 +17729,17 @@ San Leonardo	PH	Asia/Manila
 San Juan	PH	Asia/Manila
 San Jose del Monte	PH	Asia/Manila
 San Jose	PH	Asia/Manila
-San Jose	PH	Asia/Manila
 San Ildefonso	PH	Asia/Manila
 San Francisco	PH	Asia/Manila
 Aurora	PH	Asia/Manila
-San Francisco	PH	Asia/Manila
 San Fernando	PH	Asia/Manila
-San Fernando	PH	Asia/Manila
-San Fernando	PH	Asia/Manila
-San Antonio	PH	Asia/Manila
 San Antonio	PH	Asia/Manila
 Sampaloc	PH	Asia/Manila
-Samal	PH	Asia/Manila
 Samal	PH	Asia/Manila
 Sagay	PH	Asia/Manila
 Sablayan	PH	Asia/Manila
 Roxas	PH	Asia/Manila
 Roxas City	PH	Asia/Manila
-Roxas	PH	Asia/Manila
 Romblon	PH	Asia/Manila
 Rizal	PH	Asia/Manila
 Recodo	PH	Asia/Manila
@@ -18089,7 +17747,6 @@ Ramos	PH	Asia/Manila
 Ramon	PH	Asia/Manila
 Quiapo	PH	Asia/Manila
 Quezon City	PH	Asia/Manila
-Quezon	PH	Asia/Manila
 Quezon	PH	Asia/Manila
 Pulupandan	PH	Asia/Manila
 Pulong Santa Cruz	PH	Asia/Manila
@@ -18146,13 +17803,11 @@ Narra	PH	Asia/Manila
 Naic	PH	Asia/Manila
 Nagcarlan	PH	Asia/Manila
 Naga	PH	Asia/Manila
-Naga	PH	Asia/Manila
 Nabunturan	PH	Asia/Manila
 Nabua	PH	Asia/Manila
 Muricay	PH	Asia/Manila
 Murcia	PH	Asia/Manila
 Munoz	PH	Asia/Manila
-Morong	PH	Asia/Manila
 Morong	PH	Asia/Manila
 Rodriguez	PH	Asia/Manila
 Monkayo	PH	Asia/Manila
@@ -18197,7 +17852,6 @@ Malita	PH	Asia/Manila
 Malilipot	PH	Asia/Manila
 Malaybalay	PH	Asia/Manila
 Malapatan	PH	Asia/Manila
-Malanday	PH	Asia/Manila
 Malanday	PH	Asia/Manila
 Malabanban Norte	PH	Asia/Manila
 Makati City	PH	Asia/Manila
@@ -18296,7 +17950,6 @@ Davao	PH	Asia/Manila
 Dasmarinas	PH	Asia/Manila
 Dapitan	PH	Asia/Manila
 Danao	PH	Asia/Manila
-Danao	PH	Asia/Manila
 Dagupan	PH	Asia/Manila
 Daet	PH	Asia/Manila
 Cuenca	PH	Asia/Manila
@@ -18305,7 +17958,6 @@ Cordova	PH	Asia/Manila
 Consolacion	PH	Asia/Manila
 Concepcion	PH	Asia/Manila
 Concepcion Ibaba	PH	Asia/Manila
-Compostela	PH	Asia/Manila
 Compostela	PH	Asia/Manila
 Cebu City	PH	Asia/Manila
 Cavite City	PH	Asia/Manila
@@ -18498,7 +18150,6 @@ Sangla Hill	PK	Asia/Karachi
 Sanghar	PK	Asia/Karachi
 Sambrial	PK	Asia/Karachi
 Sakrand	PK	Asia/Karachi
-Sahiwal	PK	Asia/Karachi
 Sahiwal	PK	Asia/Karachi
 Saddiqabad	PK	Asia/Karachi
 Rohri	PK	Asia/Karachi
@@ -18739,7 +18390,6 @@ Alipur	PK	Asia/Karachi
 Akora	PK	Asia/Karachi
 Ahmadpur East	PK	Asia/Karachi
 Abbottabad	PK	Asia/Karachi
-Bahawalnagar	PK	Asia/Karachi
 Nowshera Cantonment	PK	Asia/Karachi
 Ahmadpur Sial	PK	Asia/Karachi
 New Badah	PK	Asia/Karachi
@@ -19194,7 +18844,6 @@ Linda-a-Velha	PT	Europe/Lisbon
 Leiria	PT	Europe/Lisbon
 Lavradio	PT	Europe/Lisbon
 Laranjeiro	PT	Europe/Lisbon
-Laranjeiro	PT	Europe/Lisbon
 Lagos	PT	Europe/Lisbon
 Funchal	PT	Atlantic/Madeira
 Faro	PT	Europe/Lisbon
@@ -19580,7 +19229,6 @@ Vyatskiye Polyany	RU	Europe/Kirov
 Vsevolozhsk	RU	Europe/Moscow
 Votkinsk	RU	Europe/Samara
 Vostryakovo	RU	Europe/Moscow
-Vostryakovo	RU	Europe/Moscow
 Voskresensk	RU	Europe/Moscow
 Voronezh	RU	Europe/Moscow
 Altuf'yevskiy	RU	Europe/Moscow
@@ -19694,7 +19342,6 @@ Sol'-Iletsk	RU	Asia/Yekaterinburg
 Solikamsk	RU	Asia/Yekaterinburg
 Sokol'niki	RU	Europe/Moscow
 Sokol	RU	Europe/Moscow
-Sokol	RU	Europe/Moscow
 Sofrino	RU	Europe/Moscow
 Sochi	RU	Europe/Moscow
 Sobinka	RU	Europe/Moscow
@@ -19767,7 +19414,6 @@ Rostov-na-Donu	RU	Europe/Moscow
 Rostov	RU	Europe/Moscow
 Rostokino	RU	Europe/Moscow
 Rossosh'	RU	Europe/Moscow
-Rossosh'	RU	Europe/Moscow
 Roslavl'	RU	Europe/Moscow
 Roshal'	RU	Europe/Moscow
 Rodniki	RU	Europe/Moscow
@@ -19823,13 +19469,11 @@ Pechora	RU	Europe/Moscow
 Pavlovskiy Posad	RU	Europe/Moscow
 Pavlovskaya	RU	Europe/Moscow
 Pavlovsk	RU	Europe/Moscow
-Pavlovsk	RU	Europe/Moscow
 Pashkovskiy	RU	Europe/Moscow
 Pallasovka	RU	Europe/Volgograd
 Ozery	RU	Europe/Moscow
 Ozerki	RU	Europe/Moscow
 Otradnyy	RU	Europe/Samara
-Otradnoye	RU	Europe/Moscow
 Otradnoye	RU	Europe/Moscow
 Otradnaya	RU	Europe/Moscow
 Ostrov	RU	Europe/Moscow
@@ -19892,7 +19536,6 @@ Nizhniy Novgorod	RU	Europe/Moscow
 Nizhniy Lomov	RU	Europe/Moscow
 Nizhnekamsk	RU	Europe/Moscow
 Nikulino	RU	Europe/Moscow
-Nikol'skoye	RU	Europe/Moscow
 Nikol'skoye	RU	Europe/Moscow
 Nikol'sk	RU	Europe/Moscow
 Nikolayevsk	RU	Europe/Volgograd
@@ -20061,7 +19704,6 @@ Kizel	RU	Asia/Yekaterinburg
 Kislovodsk	RU	Europe/Moscow
 Kirzhach	RU	Europe/Moscow
 Kirsanov	RU	Europe/Moscow
-Kirovsk	RU	Europe/Moscow
 Kirovsk	RU	Europe/Moscow
 Kirovo-Chepetsk	RU	Europe/Kirov
 Kirov	RU	Europe/Kirov
@@ -20283,7 +19925,6 @@ Amin'yevo	RU	Europe/Moscow
 Al'met'yevsk	RU	Europe/Moscow
 Aleksin	RU	Europe/Moscow
 Alekseyevka	RU	Europe/Moscow
-Alekseyevka	RU	Europe/Moscow
 Aleksandrovskoye	RU	Europe/Moscow
 Aleksandrovsk	RU	Asia/Yekaterinburg
 Aleksandrov	RU	Europe/Moscow
@@ -20303,7 +19944,6 @@ Ryl'sk	RU	Europe/Moscow
 Neftekumsk	RU	Europe/Moscow
 Alagir	RU	Europe/Moscow
 Persianovka	RU	Europe/Moscow
-Annino	RU	Europe/Moscow
 Dagomys	RU	Europe/Moscow
 Pavlovo	RU	Europe/Moscow
 Belidzhi	RU	Europe/Moscow
@@ -20311,7 +19951,6 @@ Lesnoy	RU	Asia/Yekaterinburg
 Trekhgornyy	RU	Asia/Yekaterinburg
 Mirnyy	RU	Europe/Moscow
 Znamensk	RU	Europe/Astrakhan
-Zarechnyy	RU	Europe/Moscow
 Kochubeyevskoye	RU	Europe/Moscow
 Vnukovo	RU	Europe/Moscow
 Moskovskiy	RU	Europe/Moscow
@@ -20354,7 +19993,6 @@ Tarko-Sale	RU	Asia/Yekaterinburg
 Tara	RU	Asia/Omsk
 Talnakh	RU	Asia/Krasnoyarsk
 Tal'menka	RU	Asia/Barnaul
-Talitsa	RU	Asia/Yekaterinburg
 Talitsa	RU	Asia/Yekaterinburg
 Sysert'	RU	Asia/Yekaterinburg
 Suzun	RU	Asia/Novosibirsk
@@ -20583,7 +20221,6 @@ Metrogorodok	RU	Europe/Moscow
 Kogalym	RU	Asia/Yekaterinburg
 Pyt-Yakh	RU	Asia/Yekaterinburg
 Langepas	RU	Asia/Yekaterinburg
-Lesnoy	RU	Asia/Yekaterinburg
 Zarya	RU	Europe/Moscow
 Raduzhnyy	RU	Europe/Moscow
 Nizhnesortymskiy	RU	Asia/Yekaterinburg
@@ -21846,7 +21483,6 @@ Ferizli	TR	Europe/Istanbul
 Fatsa	TR	Europe/Istanbul
 Esenyurt	TR	Europe/Istanbul
 Esenler	TR	Europe/Istanbul
-Eregli	TR	Europe/Istanbul
 Erdek	TR	Europe/Istanbul
 Erbaa	TR	Europe/Istanbul
 Eminoenue	TR	Europe/Istanbul
@@ -22327,7 +21963,6 @@ Horodok	UA	Europe/Kyiv
 Horlivka	UA	Europe/Kyiv
 Hlukhiv	UA	Europe/Kyiv
 Hostomel	UA	Europe/Kyiv
-Horodok	UA	Europe/Kyiv
 Henichesk	UA	Europe/Kyiv
 Haysyn	UA	Europe/Kyiv
 Hadyach	UA	Europe/Kyiv
@@ -22405,7 +22040,6 @@ Soroti	UG	Africa/Kampala
 Pallisa	UG	Africa/Kampala
 Paidha	UG	Africa/Kampala
 Nyachera	UG	Africa/Kampala
-Ntungamo	UG	Africa/Kampala
 Ntungamo	UG	Africa/Kampala
 Njeru	UG	Africa/Kampala
 Nebbi	UG	Africa/Kampala
@@ -22776,7 +22410,6 @@ East Point	US	America/New_York
 Evans	US	America/New_York
 Fayetteville	US	America/New_York
 Forest Park	US	America/New_York
-Gainesville	US	America/New_York
 Griffin	US	America/New_York
 Hinesville	US	America/New_York
 Kennesaw	US	America/New_York
@@ -22826,13 +22459,11 @@ Belleville	US	America/Chicago
 Carbondale	US	America/Chicago
 Charleston	US	America/Chicago
 Collinsville	US	America/Chicago
-Decatur	US	America/Chicago
 East Saint Louis	US	America/Chicago
 Edwardsville	US	America/Chicago
 Fairview Heights	US	America/Chicago
 Godfrey	US	America/Chicago
 Granite City	US	America/Chicago
-Jacksonville	US	America/Chicago
 Marion	US	America/Chicago
 Mattoon	US	America/Chicago
 Mount Vernon	US	America/Chicago
@@ -23073,7 +22704,6 @@ Hazelwood	US	America/Chicago
 Independence	US	America/Chicago
 Jefferson City	US	America/Chicago
 Joplin	US	America/Chicago
-Kansas City	US	America/Chicago
 Kirkwood	US	America/Chicago
 Lee's Summit	US	America/Chicago
 Lemay	US	America/Chicago
@@ -23082,7 +22712,6 @@ Manchester	US	America/Chicago
 Maryland Heights	US	America/Chicago
 Mehlville	US	America/Chicago
 Nixa	US	America/Chicago
-O'Fallon	US	America/Chicago
 Oakville	US	America/Chicago
 Overland	US	America/Chicago
 Ozark	US	America/Chicago
@@ -23098,7 +22727,6 @@ Saint Peters	US	America/Chicago
 Sedalia	US	America/Chicago
 Sikeston	US	America/Chicago
 Spanish Lake	US	America/Chicago
-Springfield	US	America/Chicago
 University City	US	America/Chicago
 Warrensburg	US	America/Chicago
 Webster Groves	US	America/Chicago
@@ -23119,12 +22747,10 @@ Horn Lake	US	America/Chicago
 Jackson	US	America/Chicago
 Laurel	US	America/Chicago
 Long Beach	US	America/Chicago
-Madison	US	America/Chicago
 Meridian	US	America/Chicago
 Natchez	US	America/Chicago
 Ocean Springs	US	America/Chicago
 Olive Branch	US	America/Chicago
-Oxford	US	America/Chicago
 Pascagoula	US	America/Chicago
 Pearl	US	America/Chicago
 Ridgeland	US	America/Chicago
@@ -23138,7 +22764,6 @@ Apex	US	America/New_York
 Asheboro	US	America/New_York
 Asheville	US	America/New_York
 Boone	US	America/New_York
-Burlington	US	America/New_York
 Carrboro	US	America/New_York
 Cary	US	America/New_York
 Chapel Hill	US	America/New_York
@@ -23150,7 +22775,6 @@ Cornelius	US	America/New_York
 Durham	US	America/New_York
 Eden	US	America/New_York
 Elizabeth City	US	America/New_York
-Fayetteville	US	America/New_York
 Fuquay-Varina	US	America/New_York
 Garner	US	America/New_York
 Gastonia	US	America/New_York
@@ -23165,14 +22789,12 @@ Holly Springs	US	America/New_York
 Hope Mills	US	America/New_York
 Huntersville	US	America/New_York
 Indian Trail	US	America/New_York
-Jacksonville	US	America/New_York
 Kannapolis	US	America/New_York
 Kernersville	US	America/New_York
 Kinston	US	America/New_York
 Laurinburg	US	America/New_York
 Leland	US	America/New_York
 Lenoir	US	America/New_York
-Lexington	US	America/New_York
 Lumberton	US	America/New_York
 Matthews	US	America/New_York
 Mint Hill	US	America/New_York
@@ -23185,15 +22807,11 @@ Pinehurst	US	America/New_York
 Raleigh	US	America/New_York
 Roanoke Rapids	US	America/New_York
 Rocky Mount	US	America/New_York
-Salisbury	US	America/New_York
-Sanford	US	America/New_York
 Shelby	US	America/New_York
 Stallings	US	America/New_York
 Statesville	US	America/New_York
-Thomasville	US	America/New_York
 Wake Forest	US	America/New_York
 West Raleigh	US	America/New_York
-Wilmington	US	America/New_York
 Wilson	US	America/New_York
 Winston-Salem	US	America/New_York
 Atlantic City	US	America/New_York
@@ -23217,15 +22835,12 @@ Toms River	US	America/New_York
 Vincentown	US	America/New_York
 Vineland	US	America/New_York
 Williamstown	US	America/New_York
-Athens	US	America/New_York
 Beavercreek	US	America/New_York
 Centerville	US	America/New_York
 Cincinnati	US	America/New_York
-Columbus	US	America/New_York
 Dayton	US	America/New_York
 Fairborn	US	America/New_York
 Fairfield	US	America/New_York
-Forest Park	US	America/New_York
 Grove City	US	America/New_York
 Hamilton	US	America/New_York
 Huber Heights	US	America/New_York
@@ -23234,7 +22849,6 @@ Lancaster	US	America/New_York
 Lebanon	US	America/New_York
 Mason	US	America/New_York
 Miamisburg	US	America/New_York
-Middletown	US	America/New_York
 Norwood	US	America/New_York
 Oxford	US	America/New_York
 Pataskala	US	America/New_York
@@ -23247,7 +22861,6 @@ Springfield	US	America/New_York
 Trotwood	US	America/New_York
 Upper Arlington	US	America/New_York
 Vandalia	US	America/New_York
-White Oak	US	America/New_York
 Whitehall	US	America/New_York
 Xenia	US	America/New_York
 Zanesville	US	America/New_York
@@ -23279,7 +22892,6 @@ Owasso	US	America/Chicago
 Ponca City	US	America/Chicago
 Sand Springs	US	America/Chicago
 Sapulpa	US	America/Chicago
-Shawnee	US	America/Chicago
 Stillwater	US	America/Chicago
 Tahlequah	US	America/Chicago
 Tulsa	US	America/Chicago
@@ -23287,10 +22899,8 @@ Yukon	US	America/Chicago
 Chambersburg	US	America/New_York
 Chester	US	America/New_York
 Drexel Hill	US	America/New_York
-Hanover	US	America/New_York
 Pennsport	US	America/New_York
 Philadelphia	US	America/New_York
-Springfield	US	America/New_York
 West Chester	US	America/New_York
 Wharton	US	America/New_York
 Whitman	US	America/New_York
@@ -23300,18 +22910,14 @@ Anderson	US	America/New_York
 Bluffton	US	America/New_York
 Charleston	US	America/New_York
 Clemson	US	America/New_York
-Columbia	US	America/New_York
 Conway	US	America/New_York
 Easley	US	America/New_York
-Florence	US	America/New_York
 Goose Creek	US	America/New_York
-Greenville	US	America/New_York
 Greenwood	US	America/New_York
 Greer	US	America/New_York
 Hanahan	US	America/New_York
 Hilton Head Island	US	America/New_York
 Hilton Head	US	America/New_York
-Lexington	US	America/New_York
 Mauldin	US	America/New_York
 Mount Pleasant	US	America/New_York
 Myrtle Beach	US	America/New_York
@@ -23337,7 +22943,6 @@ Chattanooga	US	America/New_York
 Clarksville	US	America/Chicago
 Cleveland	US	America/New_York
 Collierville	US	America/Chicago
-Columbia	US	America/Chicago
 Cookeville	US	America/Chicago
 Dickson	US	America/Chicago
 Dyersburg	US	America/Chicago
@@ -23353,7 +22958,6 @@ Goodlettsville	US	America/Chicago
 Greeneville	US	America/New_York
 Hendersonville	US	America/Chicago
 Hermitage	US	America/Chicago
-Jackson	US	America/Chicago
 Johnson City	US	America/New_York
 Kingsport	US	America/New_York
 Knoxville	US	America/New_York
@@ -23366,12 +22970,10 @@ Mount Juliet	US	America/Chicago
 Murfreesboro	US	America/Chicago
 Nashville	US	America/Chicago
 New South Memphis	US	America/Chicago
-Oak Ridge	US	America/New_York
 Sevierville	US	America/New_York
 Shelbyville	US	America/Chicago
 Smyrna	US	America/Chicago
 Spring Hill	US	America/Chicago
-Springfield	US	America/Chicago
 Tullahoma	US	America/Chicago
 Abilene	US	America/Chicago
 Addison	US	America/Chicago
@@ -23380,7 +22982,6 @@ Aldine	US	America/Chicago
 Alice	US	America/Chicago
 Alief	US	America/Chicago
 Allen	US	America/Chicago
-Alton	US	America/Chicago
 Alvin	US	America/Chicago
 Angleton	US	America/Chicago
 Arlington	US	America/Chicago
@@ -23391,7 +22992,6 @@ Baytown	US	America/Chicago
 Beaumont	US	America/Chicago
 Bedford	US	America/Chicago
 Bellaire	US	America/Chicago
-Belton	US	America/Chicago
 Benbrook	US	America/Chicago
 Brenham	US	America/Chicago
 Brownsville	US	America/Chicago
@@ -23443,7 +23043,6 @@ Gatesville	US	America/Chicago
 Georgetown	US	America/Chicago
 Grand Prairie	US	America/Chicago
 Grapevine	US	America/Chicago
-Greenville	US	America/Chicago
 Groves	US	America/Chicago
 Haltom City	US	America/Chicago
 Harker Heights	US	America/Chicago
@@ -23451,7 +23050,6 @@ Harlingen	US	America/Chicago
 Highland Village	US	America/Chicago
 Houston	US	America/Chicago
 Humble	US	America/Chicago
-Huntsville	US	America/Chicago
 Hurst	US	America/Chicago
 Hutto	US	America/Chicago
 Irving	US	America/Chicago
@@ -23528,7 +23126,6 @@ Sulphur Springs	US	America/Chicago
 Taylor	US	America/Chicago
 Temple	US	America/Chicago
 Terrell	US	America/Chicago
-Texarkana	US	America/Chicago
 Texas City	US	America/Chicago
 The Colony	US	America/Chicago
 The Woodlands	US	America/Chicago
@@ -23553,21 +23150,17 @@ Ashburn	US	America/New_York
 Baileys Crossroads	US	America/New_York
 Blacksburg	US	America/New_York
 Bon Air	US	America/New_York
-Bristol	US	America/New_York
 Buckhall	US	America/New_York
 Burke	US	America/New_York
 Cave Spring	US	America/New_York
 Centreville	US	America/New_York
 Chantilly	US	America/New_York
 Charlottesville	US	America/New_York
-Cherry Hill	US	America/New_York
 Chesapeake	US	America/New_York
-Chester	US	America/New_York
 Christiansburg	US	America/New_York
 Colonial Heights	US	America/New_York
 Culpeper	US	America/New_York
 Dale City	US	America/New_York
-Danville	US	America/New_York
 East Hampton	US	America/New_York
 Fairfax	US	America/New_York
 Franconia	US	America/New_York
@@ -23582,8 +23175,6 @@ Hopewell	US	America/New_York
 Hybla Valley	US	America/New_York
 Idylwood	US	America/New_York
 Lake Ridge	US	America/New_York
-Laurel	US	America/New_York
-Leesburg	US	America/New_York
 Lincolnia	US	America/New_York
 Linton Hall	US	America/New_York
 Lorton	US	America/New_York
@@ -23598,18 +23189,15 @@ Newport News	US	America/New_York
 Norfolk	US	America/New_York
 Oakton	US	America/New_York
 Petersburg	US	America/New_York
-Portsmouth	US	America/New_York
 Portsmouth Heights	US	America/New_York
 Radford	US	America/New_York
 Reston	US	America/New_York
-Richmond	US	America/New_York
 Roanoke	US	America/New_York
 Rose Hill	US	America/New_York
 Salem	US	America/New_York
 Short Pump	US	America/New_York
 South Riding	US	America/New_York
 South Suffolk	US	America/New_York
-Springfield	US	America/New_York
 Staunton	US	America/New_York
 Sterling	US	America/New_York
 Sudley	US	America/New_York
@@ -23622,11 +23210,8 @@ Waynesboro	US	America/New_York
 West Lynchburg	US	America/New_York
 West Springfield	US	America/New_York
 Williamsburg	US	America/New_York
-Winchester	US	America/New_York
 Wolf Trap	US	America/New_York
-Woodlawn	US	America/New_York
 Beckley	US	America/New_York
-Charleston	US	America/New_York
 Clarksburg	US	America/New_York
 Fairmont	US	America/New_York
 Huntington	US	America/New_York
@@ -23653,7 +23238,6 @@ East Hartford	US	America/New_York
 East Haven	US	America/New_York
 East Norwalk	US	America/New_York
 Enfield	US	America/New_York
-Fairfield	US	America/New_York
 Farmington	US	America/New_York
 Glastonbury	US	America/New_York
 Guilford	US	America/New_York
@@ -23665,7 +23249,6 @@ Madison	US	America/New_York
 Manchester	US	America/New_York
 Mansfield City	US	America/New_York
 Meriden	US	America/New_York
-Middletown	US	America/New_York
 Milford	US	America/New_York
 Montville Center	US	America/New_York
 Naugatuck	US	America/New_York
@@ -23708,7 +23291,6 @@ Bettendorf	US	America/Chicago
 Burlington	US	America/Chicago
 Cedar Falls	US	America/Chicago
 Cedar Rapids	US	America/Chicago
-Clinton	US	America/Chicago
 Clive	US	America/Chicago
 Coralville	US	America/Chicago
 Council Bluffs	US	America/Chicago
@@ -23719,11 +23301,9 @@ Fort Dodge	US	America/Chicago
 Indianola	US	America/Chicago
 Iowa City	US	America/Chicago
 Johnston	US	America/Chicago
-Marion	US	America/Chicago
 Marshalltown	US	America/Chicago
 Mason City	US	America/Chicago
 Muscatine	US	America/Chicago
-Newton	US	America/Chicago
 North Liberty	US	America/Chicago
 Ottumwa	US	America/Chicago
 Sioux City	US	America/Chicago
@@ -23731,7 +23311,6 @@ Urbandale	US	America/Chicago
 Waterloo	US	America/Chicago
 Waukee	US	America/Chicago
 West Des Moines	US	America/Chicago
-Addison	US	America/Chicago
 Albany Park	US	America/Chicago
 Algonquin	US	America/Chicago
 Alsip	US	America/Chicago
@@ -23739,7 +23318,6 @@ Arlington Heights	US	America/Chicago
 Ashburn	US	America/Chicago
 Aurora	US	America/Chicago
 Avondale	US	America/Chicago
-Bartlett	US	America/Chicago
 Batavia	US	America/Chicago
 Bellwood	US	America/Chicago
 Belmont Cragin	US	America/Chicago
@@ -23804,12 +23382,10 @@ Grand Boulevard	US	America/Chicago
 Grayslake	US	America/Chicago
 Gurnee	US	America/Chicago
 Hanover Park	US	America/Chicago
-Harvey	US	America/Chicago
 Highland Park	US	America/Chicago
 Hinsdale	US	America/Chicago
 Hoffman Estates	US	America/Chicago
 Homer Glen	US	America/Chicago
-Homewood	US	America/Chicago
 Huntley	US	America/Chicago
 Hyde Park	US	America/Chicago
 Irving Park	US	America/Chicago
@@ -23840,7 +23416,6 @@ McKinley Park	US	America/Chicago
 Melrose Park	US	America/Chicago
 Mokena	US	America/Chicago
 Moline	US	America/Chicago
-Montgomery	US	America/Chicago
 Morgan Park	US	America/Chicago
 Morton	US	America/Chicago
 Morton Grove	US	America/Chicago
@@ -23932,7 +23507,6 @@ Gary	US	America/Chicago
 Goshen	US	America/Indiana/Indianapolis
 Granger	US	America/Indiana/Indianapolis
 Griffith	US	America/Chicago
-Hammond	US	America/Chicago
 Highland	US	America/Chicago
 Hobart	US	America/Chicago
 Huntington	US	America/Indiana/Indianapolis
@@ -23961,8 +23535,6 @@ Agawam	US	America/New_York
 Amesbury	US	America/New_York
 Amherst	US	America/New_York
 Amherst Center	US	America/New_York
-Arlington	US	America/New_York
-Ashland	US	America/New_York
 Attleboro	US	America/New_York
 Auburn	US	America/New_York
 Barnstable	US	America/New_York
@@ -23973,20 +23545,16 @@ Billerica	US	America/New_York
 Boston	US	America/New_York
 Brockton	US	America/New_York
 Brookline	US	America/New_York
-Burlington	US	America/New_York
 Cambridge	US	America/New_York
-Canton	US	America/New_York
 Chelmsford	US	America/New_York
 Chelsea	US	America/New_York
 Chicopee	US	America/New_York
-Concord	US	America/New_York
 Danvers	US	America/New_York
 Dedham	US	America/New_York
 Dracut	US	America/New_York
 Duxbury	US	America/New_York
 East Longmeadow	US	America/New_York
 Easthampton	US	America/New_York
-Easton	US	America/New_York
 Everett	US	America/New_York
 Fairhaven	US	America/New_York
 Fall River	US	America/New_York
@@ -23998,14 +23566,12 @@ Gardner	US	America/New_York
 Gloucester	US	America/New_York
 Grafton	US	America/New_York
 Greenfield	US	America/New_York
-Hanover	US	America/New_York
 Haverhill	US	America/New_York
 Holden	US	America/New_York
 Holyoke	US	America/New_York
 Jamaica Plain	US	America/New_York
 Lawrence	US	America/New_York
 Leominster	US	America/New_York
-Lexington	US	America/New_York
 Longmeadow	US	America/New_York
 Lowell	US	America/New_York
 Ludlow	US	America/New_York
@@ -24018,7 +23584,6 @@ Medford	US	America/New_York
 Melrose	US	America/New_York
 Methuen	US	America/New_York
 Middleborough	US	America/New_York
-Milford	US	America/New_York
 Milton	US	America/New_York
 Natick	US	America/New_York
 Needham	US	America/New_York
@@ -24028,7 +23593,6 @@ Newton	US	America/New_York
 North Chicopee	US	America/New_York
 Northampton	US	America/New_York
 Norton	US	America/New_York
-Norwood	US	America/New_York
 Palmer	US	America/New_York
 Peabody	US	America/New_York
 Pittsfield	US	America/New_York
@@ -24036,7 +23600,6 @@ Quincy	US	America/New_York
 Randolph	US	America/New_York
 Reading	US	America/New_York
 Rockland	US	America/New_York
-Salem	US	America/New_York
 Saugus	US	America/New_York
 Shrewsbury	US	America/New_York
 Somerset	US	America/New_York
@@ -24045,7 +23608,6 @@ South Boston	US	America/New_York
 South Hadley	US	America/New_York
 South Peabody	US	America/New_York
 Southbridge	US	America/New_York
-Springfield	US	America/New_York
 Stoneham	US	America/New_York
 Stoughton	US	America/New_York
 Sudbury	US	America/New_York
@@ -24056,25 +23618,18 @@ Wakefield	US	America/New_York
 Waltham	US	America/New_York
 Watertown	US	America/New_York
 Wellesley	US	America/New_York
-West Springfield	US	America/New_York
 Westfield	US	America/New_York
 Westford	US	America/New_York
 Weymouth	US	America/New_York
-Wilmington	US	America/New_York
-Winchester	US	America/New_York
 Winthrop	US	America/New_York
 Woburn	US	America/New_York
 Worcester	US	America/New_York
 Yarmouth	US	America/New_York
-Auburn	US	America/New_York
-Augusta	US	America/New_York
 Bangor	US	America/New_York
 Biddeford	US	America/New_York
-Brunswick	US	America/New_York
 Lewiston	US	America/New_York
 Portland	US	America/New_York
 Saco	US	America/New_York
-Sanford	US	America/New_York
 South Portland	US	America/New_York
 South Portland Gardens	US	America/New_York
 Waterville	US	America/New_York
@@ -24159,9 +23714,7 @@ Albert Lea	US	America/Chicago
 Andover	US	America/Chicago
 Anoka	US	America/Chicago
 Apple Valley	US	America/Chicago
-Austin	US	America/Chicago
 Blaine	US	America/Chicago
-Bloomington	US	America/Chicago
 Brooklyn Center	US	America/Chicago
 Brooklyn Park	US	America/Chicago
 Buffalo	US	America/Chicago
@@ -24179,7 +23732,6 @@ Eden Prairie	US	America/Chicago
 Edina	US	America/Chicago
 Elk River	US	America/Chicago
 Faribault	US	America/Chicago
-Farmington	US	America/Chicago
 Forest Lake	US	America/Chicago
 Fridley	US	America/Chicago
 Golden Valley	US	America/Chicago
@@ -24220,7 +23772,6 @@ Savage	US	America/Chicago
 Shakopee	US	America/Chicago
 Shoreview	US	America/Chicago
 South Saint Paul	US	America/Chicago
-Stillwater	US	America/Chicago
 West Coon Rapids	US	America/Chicago
 West Saint Paul	US	America/Chicago
 White Bear Lake	US	America/Chicago
@@ -24233,10 +23784,8 @@ Grand Forks	US	America/Chicago
 Jamestown	US	America/Chicago
 West Fargo	US	America/Chicago
 Bellevue	US	America/Chicago
-Columbus	US	America/Chicago
 Fremont	US	America/Chicago
 Grand Island	US	America/Chicago
-Hastings	US	America/Chicago
 Kearney	US	America/Chicago
 La Vista	US	America/Chicago
 Lincoln	US	America/Chicago
@@ -24244,19 +23793,14 @@ Norfolk	US	America/Chicago
 Omaha	US	America/Chicago
 Papillion	US	America/Chicago
 Bedford	US	America/New_York
-Concord	US	America/New_York
 Derry	US	America/New_York
 Derry Village	US	America/New_York
-Dover	US	America/New_York
 East Concord	US	America/New_York
 Keene	US	America/New_York
 Laconia	US	America/New_York
-Manchester	US	America/New_York
 Merrimack	US	America/New_York
 Nashua	US	America/New_York
-Portsmouth	US	America/New_York
 Rochester	US	America/New_York
-Salem	US	America/New_York
 Asbury Park	US	America/New_York
 Avenel	US	America/New_York
 Basking Ridge	US	America/New_York
@@ -24270,7 +23814,6 @@ Clifton	US	America/New_York
 Colonia	US	America/New_York
 Cranford	US	America/New_York
 Denville	US	America/New_York
-Dover	US	America/New_York
 Dumont	US	America/New_York
 East Brunswick	US	America/New_York
 East Orange	US	America/New_York
@@ -24300,16 +23843,11 @@ Livingston	US	America/New_York
 Lodi	US	America/New_York
 Long Branch	US	America/New_York
 Lyndhurst	US	America/New_York
-Madison	US	America/New_York
 Mahwah	US	America/New_York
 Maplewood	US	America/New_York
 Marlboro	US	America/New_York
-Middletown	US	America/New_York
-Montclair	US	America/New_York
-Morristown	US	America/New_York
 New Brunswick	US	America/New_York
 New Milford	US	America/New_York
-Newark	US	America/New_York
 North Arlington	US	America/New_York
 North Bergen	US	America/New_York
 North Plainfield	US	America/New_York
@@ -24323,9 +23861,7 @@ Passaic	US	America/New_York
 Paterson	US	America/New_York
 Perth Amboy	US	America/New_York
 Piscataway	US	America/New_York
-Plainfield	US	America/New_York
 Point Pleasant	US	America/New_York
-Princeton	US	America/New_York
 Rahway	US	America/New_York
 Ramsey	US	America/New_York
 Ridgewood	US	America/New_York
@@ -24335,7 +23871,6 @@ Sayreville	US	America/New_York
 Sayreville Junction	US	America/New_York
 Scotch Plains	US	America/New_York
 Secaucus	US	America/New_York
-Somerset	US	America/New_York
 South Old Bridge	US	America/New_York
 South Orange	US	America/New_York
 South Plainfield	US	America/New_York
@@ -24346,21 +23881,16 @@ Teaneck	US	America/New_York
 Tinton Falls	US	America/New_York
 Trenton	US	America/New_York
 Union	US	America/New_York
-Union City	US	America/New_York
 Voorhees	US	America/New_York
 Wayne	US	America/New_York
 West Milford	US	America/New_York
 West New York	US	America/New_York
 West Orange	US	America/New_York
-Westfield	US	America/New_York
 Willingboro	US	America/New_York
 Woodbridge	US	America/New_York
 Wyckoff	US	America/New_York
-Albany	US	America/New_York
-Amherst	US	America/New_York
 Amsterdam	US	America/New_York
 Astoria	US	America/New_York
-Auburn	US	America/New_York
 Baldwin	US	America/New_York
 Batavia	US	America/New_York
 Bath Beach	US	America/New_York
@@ -24378,7 +23908,6 @@ Brighton Beach	US	America/New_York
 The Bronx	US	America/New_York
 Brooklyn	US	America/New_York
 Brooklyn Heights	US	America/New_York
-Brownsville	US	America/New_York
 Buffalo	US	America/New_York
 Bushwick	US	America/New_York
 Cambria Heights	US	America/New_York
@@ -24442,18 +23971,15 @@ Great Kills	US	America/New_York
 Greenburgh	US	America/New_York
 Greenpoint	US	America/New_York
 Harlem	US	America/New_York
-Harrison	US	America/New_York
 Hauppauge	US	America/New_York
 Hell's Kitchen	US	America/New_York
 Hempstead	US	America/New_York
 Henrietta	US	America/New_York
 Hicksville	US	America/New_York
-Hillside	US	America/New_York
 Holbrook	US	America/New_York
 Hollis	US	America/New_York
 Holtsville	US	America/New_York
 Howard Beach	US	America/New_York
-Huntington	US	America/New_York
 Huntington Station	US	America/New_York
 Hunts Point	US	America/New_York
 Irondequoit	US	America/New_York
@@ -24486,12 +24012,9 @@ Maspeth	US	America/New_York
 Massapequa	US	America/New_York
 Massapequa Park	US	America/New_York
 Mastic	US	America/New_York
-Medford	US	America/New_York
-Melrose	US	America/New_York
 Melville	US	America/New_York
 Merrick	US	America/New_York
 Middle Village	US	America/New_York
-Middletown	US	America/New_York
 Mineola	US	America/New_York
 Monsey	US	America/New_York
 Morris Heights	US	America/New_York
@@ -24531,14 +24054,9 @@ Queens	US	America/New_York
 Queensbury	US	America/New_York
 Rego Park	US	America/New_York
 Richmond Hill	US	America/New_York
-Ridgewood	US	America/New_York
-Rochester	US	America/New_York
 Rockville Centre	US	America/New_York
-Rome	US	America/New_York
 Ronkonkoma	US	America/New_York
 Roosevelt	US	America/New_York
-Rosedale	US	America/New_York
-Rossville	US	America/New_York
 Rotterdam	US	America/New_York
 Rye	US	America/New_York
 Saratoga Springs	US	America/New_York
@@ -24568,10 +24086,8 @@ Utica	US	America/New_York
 Valley Stream	US	America/New_York
 Van Nest	US	America/New_York
 Vestal	US	America/New_York
-Wakefield	US	America/New_York
 Wantagh	US	America/New_York
 Washington Heights	US	America/New_York
-Watertown	US	America/New_York
 West Albany	US	America/New_York
 West Babylon	US	America/New_York
 West Hempstead	US	America/New_York
@@ -24580,7 +24096,6 @@ West Seneca	US	America/New_York
 Westbury	US	America/New_York
 White Plains	US	America/New_York
 Whitestone	US	America/New_York
-Williamsburg	US	America/New_York
 Woodhaven	US	America/New_York
 Woodmere	US	America/New_York
 Woodrow	US	America/New_York
@@ -24588,7 +24103,6 @@ Woodside	US	America/New_York
 Yonkers	US	America/New_York
 Akron	US	America/New_York
 Alliance	US	America/New_York
-Ashland	US	America/New_York
 Ashtabula	US	America/New_York
 Aurora	US	America/New_York
 Austintown	US	America/New_York
@@ -24602,14 +24116,10 @@ Boardman	US	America/New_York
 Bowling Green	US	America/New_York
 Broadview Heights	US	America/New_York
 Brook Park	US	America/New_York
-Brunswick	US	America/New_York
-Canton	US	America/New_York
-Cleveland	US	America/New_York
 Collinwood	US	America/New_York
 Cuyahoga Falls	US	America/New_York
 Defiance	US	America/New_York
 Delaware	US	America/New_York
-Dublin	US	America/New_York
 East Cleveland	US	America/New_York
 Eastlake	US	America/New_York
 Elyria	US	America/New_York
@@ -24625,10 +24135,8 @@ Hilliard	US	America/New_York
 Hough	US	America/New_York
 Hudson	US	America/New_York
 Kent	US	America/New_York
-Lakewood	US	America/New_York
 Lima	US	America/New_York
 Lorain	US	America/New_York
-Mansfield	US	America/New_York
 Maple Heights	US	America/New_York
 Marion	US	America/New_York
 Marysville	US	America/New_York
@@ -24637,15 +24145,12 @@ Mayfield Heights	US	America/New_York
 Medina	US	America/New_York
 Mentor	US	America/New_York
 Middleburg Heights	US	America/New_York
-Mount Vernon	US	America/New_York
 New Philadelphia	US	America/New_York
-Newark	US	America/New_York
 Niles	US	America/New_York
 North Canton	US	America/New_York
 North Olmsted	US	America/New_York
 North Ridgeville	US	America/New_York
 North Royalton	US	America/New_York
-Norwalk	US	America/New_York
 Oregon	US	America/New_York
 Painesville	US	America/New_York
 Parma	US	America/New_York
@@ -24666,7 +24171,6 @@ Sylvania	US	America/New_York
 Tallmadge	US	America/New_York
 Tiffin	US	America/New_York
 Toledo	US	America/New_York
-Troy	US	America/New_York
 Twinsburg	US	America/New_York
 Wadsworth	US	America/New_York
 Warren	US	America/New_York
@@ -24675,27 +24179,21 @@ Westlake	US	America/New_York
 Willoughby	US	America/New_York
 Wooster	US	America/New_York
 Youngstown	US	America/New_York
-Abington	US	America/New_York
 Allentown	US	America/New_York
 Allison Park	US	America/New_York
 Altoona	US	America/New_York
 Back Mountain	US	America/New_York
-Baldwin	US	America/New_York
 Bensalem	US	America/New_York
 Bethel Park	US	America/New_York
 Bethlehem	US	America/New_York
 Carlisle	US	America/New_York
-Easton	US	America/New_York
 Erie	US	America/New_York
 Harrisburg	US	America/New_York
 Hazleton	US	America/New_York
 Hermitage	US	America/New_York
 Johnstown	US	America/New_York
 King of Prussia	US	America/New_York
-Lancaster	US	America/New_York
 Lansdale	US	America/New_York
-Lebanon	US	America/New_York
-Levittown	US	America/New_York
 Limerick	US	America/New_York
 McKeesport	US	America/New_York
 Monroeville	US	America/New_York
@@ -24710,11 +24208,9 @@ Pittsburgh	US	America/New_York
 Plum	US	America/New_York
 Pottstown	US	America/New_York
 Radnor	US	America/New_York
-Reading	US	America/New_York
 Scranton	US	America/New_York
 State College	US	America/New_York
 Upper Saint Clair	US	America/New_York
-Wayne	US	America/New_York
 West Mifflin	US	America/New_York
 Whitehall Township	US	America/New_York
 Wilkes-Barre	US	America/New_York
@@ -24722,19 +24218,14 @@ Wilkinsburg	US	America/New_York
 Williamsport	US	America/New_York
 Willow Grove	US	America/New_York
 Barrington	US	America/New_York
-Bristol	US	America/New_York
 Central Falls	US	America/New_York
 Coventry	US	America/New_York
 Cranston	US	America/New_York
-Cumberland	US	America/New_York
 East Providence	US	America/New_York
-Middletown	US	America/New_York
 Narragansett	US	America/New_York
-Newport	US	America/New_York
 North Kingstown	US	America/New_York
 North Providence	US	America/New_York
 Pawtucket	US	America/New_York
-Portsmouth	US	America/New_York
 Providence	US	America/New_York
 Smithfield	US	America/New_York
 Warwick	US	America/New_York
@@ -24746,24 +24237,19 @@ Brookings	US	America/Chicago
 Mitchell	US	America/Chicago
 Sioux Falls	US	America/Chicago
 Watertown	US	America/Chicago
-Burlington	US	America/New_York
 Colchester	US	America/New_York
 Rutland	US	America/New_York
 South Burlington	US	America/New_York
 Appleton	US	America/Chicago
 Ashwaubenon	US	America/Chicago
 Beaver Dam	US	America/Chicago
-Bellevue	US	America/Chicago
 Beloit	US	America/Chicago
-Brookfield	US	America/Chicago
 Caledonia	US	America/Chicago
 Cudahy	US	America/Chicago
 De Pere	US	America/Chicago
 Eau Claire	US	America/Chicago
 Fitchburg	US	America/Chicago
 Fond du Lac	US	America/Chicago
-Franklin	US	America/Chicago
-Germantown	US	America/Chicago
 Green Bay	US	America/Chicago
 Greenfield	US	America/Chicago
 Howard	US	America/Chicago
@@ -24771,7 +24257,6 @@ Janesville	US	America/Chicago
 Kaukauna	US	America/Chicago
 Kenosha	US	America/Chicago
 La Crosse	US	America/Chicago
-Madison	US	America/Chicago
 Manitowoc	US	America/Chicago
 Marshfield	US	America/Chicago
 Menasha	US	America/Chicago
@@ -24796,7 +24281,6 @@ South Milwaukee	US	America/Chicago
 Stevens Point	US	America/Chicago
 Sun Prairie	US	America/Chicago
 Superior	US	America/Chicago
-Watertown	US	America/Chicago
 Waukesha	US	America/Chicago
 Wausau	US	America/Chicago
 Wauwatosa	US	America/Chicago
@@ -24808,9 +24292,7 @@ Weirton	US	America/New_York
 Weirton Heights	US	America/New_York
 Wheeling	US	America/New_York
 Ansonia	US	America/New_York
-Bloomfield	US	America/New_York
 Bridgeport	US	America/New_York
-Bristol	US	America/New_York
 Branford	US	America/New_York
 Cheshire	US	America/New_York
 Fillmore	US	America/Los_Angeles
@@ -25333,11 +24815,9 @@ Las Vegas	US	America/Los_Angeles
 Mesquite	US	America/Los_Angeles
 North Las Vegas	US	America/Los_Angeles
 Pahrump	US	America/Los_Angeles
-Paradise	US	America/Los_Angeles
 Reno	US	America/Los_Angeles
 Spanish Springs	US	America/Los_Angeles
 Sparks	US	America/Los_Angeles
-Spring Valley	US	America/Los_Angeles
 Sun Valley	US	America/Los_Angeles
 Sunrise Manor	US	America/Los_Angeles
 Whitney	US	America/Los_Angeles
@@ -25413,10 +24893,8 @@ Minot	US	America/Chicago
 Williston	US	America/Chicago
 North Platte	US	America/Chicago
 Elko	US	America/Los_Angeles
-Albany	US	America/Los_Angeles
 Aloha	US	America/Los_Angeles
 Altamont	US	America/Los_Angeles
-Ashland	US	America/Los_Angeles
 Beaverton	US	America/Los_Angeles
 Bend	US	America/Los_Angeles
 Bethany	US	America/Los_Angeles
@@ -25469,7 +24947,6 @@ Cottonwood Heights	US	America/Denver
 Draper	US	America/Denver
 Eagle Mountain	US	America/Denver
 East Millcreek	US	America/Denver
-Farmington	US	America/Denver
 Herriman	US	America/Denver
 Highland	US	America/Denver
 Holladay	US	America/Denver
@@ -25538,7 +25015,6 @@ Kent	US	America/Los_Angeles
 Kirkland	US	America/Los_Angeles
 Lacey	US	America/Los_Angeles
 Lake Stevens	US	America/Los_Angeles
-Lakewood	US	America/Los_Angeles
 Longview	US	America/Los_Angeles
 Lynnwood	US	America/Los_Angeles
 Maple Valley	US	America/Los_Angeles
@@ -25561,7 +25037,6 @@ Pasco	US	America/Los_Angeles
 Port Angeles	US	America/Los_Angeles
 Pullman	US	America/Los_Angeles
 Puyallup	US	America/Los_Angeles
-Redmond	US	America/Los_Angeles
 Renton	US	America/Los_Angeles
 Richland	US	America/Los_Angeles
 Salmon Creek	US	America/Los_Angeles
@@ -25611,7 +25086,6 @@ Eagle River	US	America/Anchorage
 Fairbanks	US	America/Anchorage
 Anchorage	US	America/Anchorage
 Badger	US	America/Anchorage
-Milton	US	America/New_York
 Johns Creek	US	America/New_York
 Cutler Bay	US	America/New_York
 Morningside Heights	US	America/New_York
@@ -25666,7 +25140,6 @@ East Hill-Meridian	US	America/Los_Angeles
 Picnic Point-North Lynnwood	US	America/Los_Angeles
 Security-Widefield	US	America/Denver
 Union Hill-Novelty Hill	US	America/Los_Angeles
-Vincent	US	America/Los_Angeles
 West Whittier-Los Nietos	US	America/Los_Angeles
 Summerlin South	US	America/Los_Angeles
 Makakilo	US	Pacific/Honolulu
@@ -25698,9 +25171,6 @@ Sunset Park	US	America/New_York
 South Kingstown	US	America/New_York
 Noe Valley	US	America/Los_Angeles
 Visitacion Valley	US	America/Los_Angeles
-La Porte	US	America/Chicago
-Randolph	US	America/New_York
-Mount Pleasant	US	America/Chicago
 Northdale	US	America/New_York
 Waterford	US	America/New_York
 Meadowbrook	US	America/New_York
@@ -25893,7 +25363,6 @@ Santa Cruz de Mora	VE	America/Caracas
 Santa Cruz de Mara	VE	America/Caracas
 Santa Barbara	VE	America/Caracas
 Santa Ana	VE	America/Caracas
-Santa Ana	VE	America/Caracas
 San Rafael de Onoto	VE	America/Caracas
 San Rafael	VE	America/Caracas
 San Mateo	VE	America/Caracas
@@ -25962,7 +25431,6 @@ La Vela de Coro	VE	America/Caracas
 Las Vegas	VE	America/Caracas
 Las Tejerias	VE	America/Caracas
 La Paragua	VE	America/Caracas
-Lagunillas	VE	America/Caracas
 Lagunillas	VE	America/Caracas
 La Guaira	VE	America/Caracas
 La Concepcion	VE	America/Caracas
@@ -26040,7 +25508,6 @@ Bocono	VE	America/Caracas
 Biruaca	VE	America/Caracas
 Bejuma	VE	America/Caracas
 Baruta	VE	America/Caracas
-Barrancas	VE	America/Caracas
 Barrancas	VE	America/Caracas
 Barquisimeto	VE	America/Caracas
 Barinitas	VE	America/Caracas
@@ -26311,7 +25778,6 @@ Mossel Bay	ZA	Africa/Johannesburg
 Montagu	ZA	Africa/Johannesburg
 Mondlo	ZA	Africa/Johannesburg
 Mmabatho	ZA	Africa/Johannesburg
-Middelburg	ZA	Africa/Johannesburg
 Middelburg	ZA	Africa/Johannesburg
 Margate	ZA	Africa/Johannesburg
 Mabopane	ZA	Africa/Johannesburg
