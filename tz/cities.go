@@ -1,0 +1,169 @@
+package main
+
+import (
+	"embed"
+	"encoding/csv"
+	"fmt"
+	"io"
+	"sort"
+	"strings"
+
+	"github.com/charmbracelet/lipgloss"
+)
+
+//go:embed cities15000-tz.tsv
+var f embed.FS
+
+type City struct {
+	Name        string
+	CountryCode string
+	TimeZone    string
+}
+
+// CityMap is a map of city names to City.
+type CityMap struct {
+	m      map[string][]*City
+	loaded bool
+}
+
+func NewCities() *CityMap {
+	return &CityMap{
+		m:      make(map[string][]*City),
+		loaded: false,
+	}
+}
+
+// Returns a list of cities with the given name and optionally a country code.
+func (c *CityMap) Get(name, countryCode string) ([]*City, error) {
+	if !c.loaded {
+		err := c.load()
+		if err != nil {
+			return []*City{}, fmt.Errorf("failed to load cities table: %w", err)
+		}
+	}
+	cities, ok := c.m[name]
+	if !ok {
+		return []*City{}, fmt.Errorf("no cities found for '%s'", name)
+	}
+	if len(cities) == 1 || countryCode == "" {
+		return cities, nil
+	}
+	cc := []*City{}
+	for _, city := range cities {
+		if city.CountryCode == countryCode {
+			cc = append(cc, city)
+		}
+	}
+	return cc, nil
+}
+
+func (c *CityMap) Search(name, countryCode string) ([]City, error) {
+	if !c.loaded {
+		err := c.load()
+		if err != nil {
+			return []City{}, fmt.Errorf("failed to load cities table: %w", err)
+		}
+	}
+	count := 0
+	cc := []*City{}
+	for n, cities := range c.m {
+		for _, city := range cities {
+			count++
+			if strings.Contains(strings.ToLower(n), strings.ToLower(name)) {
+				if countryCode == "" || strings.EqualFold(countryCode, city.CountryCode) {
+					cc = append(cc, city)
+				}
+			}
+		}
+	}
+	sort.Slice(cc, func(i, j int) bool {
+		return cc[i].Name < cc[j].Name
+	})
+	PrintCities(cc)
+	return []City{}, nil
+}
+
+func (c *CityMap) load() error {
+	tableFilename := "cities15000-tz.tsv"
+	tableFH, err := f.Open(tableFilename)
+	if err != nil {
+		return fmt.Errorf("failed to open '%s': %w", tableFilename, err)
+	}
+	defer tableFH.Close()
+
+	r := csv.NewReader(tableFH)
+	r.Comma = '\t'
+	r.FieldsPerRecord = -1
+	for {
+		record, err := r.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return fmt.Errorf("failed to read table: %w", err)
+		}
+
+		// 37, 2, 30
+		// name, countryCode, timeZone
+		// Logger.Printf("%#v\n", record)
+		if c.m[record[0]] == nil {
+			c.m[record[0]] = []*City{{
+				Name:        record[0],
+				CountryCode: record[1],
+				TimeZone:    record[2],
+			}}
+		} else {
+			c.m[record[0]] = append(c.m[record[0]], &City{
+				Name:        record[0],
+				CountryCode: record[1],
+				TimeZone:    record[2],
+			})
+		}
+	}
+
+	return nil
+}
+
+func PrintCities(cities []*City) {
+	light := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#eef2f3"))
+	dark := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#dce3e6"))
+	for i, city := range cities {
+		if i%2 == 0 {
+			fmt.Printf("%s%s%s\n",
+				light.
+					Width(41).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.Name),
+				light.
+					Width(2).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.CountryCode),
+				light.
+					Width(32).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.TimeZone),
+			)
+		} else {
+			fmt.Printf("%s%s%s\n",
+				dark.
+					Width(41).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.Name),
+				dark.
+					Width(2).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.CountryCode),
+				dark.
+					Width(32).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.TimeZone),
+			)
+		}
+	}
+}

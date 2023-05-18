@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/DavidGamba/dgtools/run"
@@ -36,6 +37,11 @@ func program(args []string) int {
 
 	list := opt.NewCommand("list", "list all timezones")
 	list.SetCommandFn(ListRun)
+
+	cities := opt.NewCommand("cities", "filter cities list")
+	cities.Bool("all", false, opt.Alias("a"), opt.Description("Show all cities"))
+	cities.String("country-code", "", opt.Alias("c"), opt.Description("Filter by country code"))
+	cities.SetCommandFn(CitiesRun)
 
 	opt.HelpCommand("help", opt.Alias("?"))
 	remaining, err := opt.Parse(args[1:])
@@ -126,9 +132,28 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	}
 	Logger.Printf("Total: %d\n", count)
 
-	// p := PurpleYellow
-	// p := BlueGreen
 	p := NewPalette("BlueYellow")
 	PrintActors(am, short, p)
+	return nil
+}
+
+func CitiesRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+	Logger.Printf("Cities")
+	all := opt.Value("all").(bool)
+	countryCode := opt.Value("country-code").(string)
+
+	if len(args) == 0 && !all {
+		fmt.Fprintf(os.Stderr, "ERROR: %s\n", "Missing city name")
+		fmt.Fprintf(os.Stderr, "%s", opt.Help(getoptions.HelpSynopsis))
+		return getoptions.ErrorHelpCalled
+	}
+
+	nameQuery := strings.Join(args, " ")
+	cc := NewCities()
+	_, err := cc.Search(nameQuery, countryCode)
+	if err != nil {
+		return fmt.Errorf("failed search: %w", err)
+	}
+
 	return nil
 }
