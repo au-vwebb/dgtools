@@ -34,12 +34,12 @@ func program(args []string) int {
 	opt.Bool("verbose", false, opt.GetEnv("TZ_VERBOSE"), opt.Description("Enable logging"))
 	opt.Bool("standard", false, opt.Alias("analog", "civilian", "12-hour", "12h", "am-pm"), opt.Description("Use standard 12 hour AM/PM time format"))
 	opt.Bool("short", false, opt.Alias("s"), opt.Description("Don't show timezone bars"))
-	opt.SetCommandFn(Run)
-	opt.HelpCommand("help", opt.Alias("?"))
+	opt.SetCommandFn(ListRun)
 
 	list := opt.NewCommand("list", "list all timezones")
 	list.SetCommandFn(ListRun)
 
+	opt.HelpCommand("help", opt.Alias("?"))
 	remaining, err := opt.Parse(args[1:])
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
@@ -170,168 +170,13 @@ func PrintActorsLine(p *Palette, att []ActorTime) {
 
 	t := att[0].Time
 
+	// Line length is 141
+
 	fmt.Printf("%s %s   ", ClockEmoji[t.Hour()], p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)))
 	for _, d := range display {
 		fmt.Printf("%s  ", p.LipglossPalette.Actor.Render(d))
 	}
 	fmt.Println()
-}
-
-var ClockEmoji = map[int]string{
-	0:  "🕛",
-	12: "🕛",
-	24: "🕛",
-
-	1:  "🕐",
-	13: "🕐",
-
-	2:  "🕑",
-	14: "🕑",
-
-	3:  "🕒",
-	15: "🕒",
-
-	4:  "🕓",
-	16: "🕓",
-
-	5:  "🕔",
-	17: "🕔",
-
-	6:  "🕕",
-	18: "🕕",
-
-	7:  "🕖",
-	19: "🕖",
-
-	8:  "🕗",
-	20: "🕗",
-
-	9:  "🕘",
-	21: "🕘",
-
-	10: "🕙",
-	22: "🕙",
-
-	11: "🕚",
-	23: "🕚",
-}
-
-type Palette struct {
-	Night     string
-	Dawn      string
-	Morning   string
-	Noon      string // work hours
-	AfterNoon string
-	Dusk      string
-	Evening   string
-
-	FgNight     string
-	FgDawn      string
-	FgMorning   string
-	FgNoon      string // work hours
-	FgAfterNoon string
-	FgDusk      string
-	FgEvening   string
-
-	Highlight   string
-	FgHighlight string
-
-	Actor   string
-	FgActor string
-
-	LipglossPalette struct {
-		Night     lipgloss.Style
-		Dawn      lipgloss.Style
-		Morning   lipgloss.Style
-		Noon      lipgloss.Style // work hours
-		AfterNoon lipgloss.Style
-		Dusk      lipgloss.Style
-		Evening   lipgloss.Style
-		Highlight lipgloss.Style
-
-		Actor lipgloss.Style
-	}
-}
-
-func NewPalette(theme string) *Palette {
-	p := &BlueYellow
-
-	p.LipglossPalette.Night = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgNight)).Background(lipgloss.Color(p.Night))
-	p.LipglossPalette.Dawn = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgDawn)).Background(lipgloss.Color(p.Dawn))
-	p.LipglossPalette.Morning = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgMorning)).Background(lipgloss.Color(p.Morning))
-	p.LipglossPalette.Noon = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgNoon)).Background(lipgloss.Color(p.Noon))
-	p.LipglossPalette.AfterNoon = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgAfterNoon)).Background(lipgloss.Color(p.AfterNoon))
-	p.LipglossPalette.Dusk = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgDusk)).Background(lipgloss.Color(p.Dusk))
-	p.LipglossPalette.Evening = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgEvening)).Background(lipgloss.Color(p.Evening))
-	p.LipglossPalette.Highlight = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgHighlight)).Background(lipgloss.Color(p.Highlight))
-	p.LipglossPalette.Actor = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgActor)).Background(lipgloss.Color(p.Actor))
-
-	return p
-}
-
-func (p *Palette) Style(timeOfDay int) lipgloss.Style {
-	switch timeOfDay {
-	case 22, 23, 24, 0, 1, 2, 3, 4:
-		return p.LipglossPalette.Night
-	case 5, 6:
-		return p.LipglossPalette.Dawn
-	case 7, 8:
-		return p.LipglossPalette.Morning
-	case 9, 10, 11, 12, 13, 14:
-		return p.LipglossPalette.Noon
-	case 15, 16:
-		return p.LipglossPalette.AfterNoon
-	case 17, 18, 19:
-		return p.LipglossPalette.Dusk
-	case 20, 21:
-		return p.LipglossPalette.Evening
-	default:
-		return p.LipglossPalette.Night
-	}
-}
-
-var PurpleYellow = Palette{
-	Night:     "#3d0066",
-	Dawn:      "#5c0099",
-	Morning:   "#c86bfa",
-	Noon:      "#fdc500",
-	AfterNoon: "#ffd500",
-	Dusk:      "#ffee32",
-	Evening:   "#03071e",
-}
-
-var BlueGreen = Palette{
-	Night:     "#003e7f",
-	Dawn:      "#0068af",
-	Morning:   "#5495e1",
-	Noon:      "#dddddd",
-	AfterNoon: "#44a75e",
-	Dusk:      "#008239",
-	Evening:   "#00540e",
-}
-
-var BlueYellow = Palette{
-	Night:     "#003e7f",
-	Dawn:      "#0068af",
-	Morning:   "#5495e1",
-	Noon:      "#dddddd",
-	AfterNoon: "#fef4d7",
-	Dusk:      "#f9b16e",
-	Evening:   "#00540e",
-
-	FgNight:     "#FFFFFF",
-	FgDawn:      "#FFFFFF",
-	FgMorning:   "#646970",
-	FgNoon:      "#000000",
-	FgAfterNoon: "#646970",
-	FgDusk:      "#FFFFFF",
-	FgEvening:   "#FFFFFF",
-
-	Highlight:   "#fafa00",
-	FgHighlight: "#000000",
-
-	Actor:   "#fbabb2",
-	FgActor: "#000000",
 }
 
 func PrintHours(p *Palette, t, base time.Time) {
