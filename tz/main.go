@@ -33,6 +33,7 @@ func program(args []string) int {
 	opt.Bool("format-standard", false, opt.Alias("format-12-hour", "format-12h"), opt.Description("Use standard 12 hour AM/PM time format"))
 	opt.Bool("short", false, opt.Alias("s"), opt.Description("Don't show timezone bars"))
 	opt.String("config", "", opt.Alias("c"), opt.Description("Config file"))
+	opt.String("group", "", opt.Description("Group to show"))
 	opt.SetCommandFn(Run)
 
 	list := opt.NewCommand("list", "list all timezones")
@@ -74,7 +75,12 @@ func program(args []string) int {
 
 func Run(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	configFile := opt.Value("config").(string)
+	group := opt.Value("group").(string)
 	short := opt.Value("short").(bool)
+
+	if configFile == "" {
+		configFile = os.Getenv("HOME") + "/.tz.cue"
+	}
 
 	c, err := ReadConfig(ctx, configFile)
 	if err != nil {
@@ -82,7 +88,11 @@ func Run(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	}
 	Logger.Printf("%+v\n", c)
 
-	am, err := ConfigToActorMap(c, "work")
+	if group == "" {
+		group = c.DefaultGroup
+	}
+
+	am, err := ConfigToActorMap(c, group)
 	if err != nil {
 		return fmt.Errorf("failed to parse config: %w", err)
 	}
