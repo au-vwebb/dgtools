@@ -2,20 +2,53 @@
 
 Show time zones based on actors (team members, cities, etc).
 
+Place your config file in `~/.tz/config`.
+
+.config file
+[source, cue]
+----
+default_group: "work"
+
+group: "work": {
+	actor: "John": {city: "Palo Alto"}
+	actor: "Alan": {city: "Toronto"}
+	actor: "Mike": {city: "Rochester", country_code: "gb"}
+	actor: "Steve": {time_zone: "Europe/London"}
+}
+
+group: "family": {
+	actor: "Melqui": {city: "Miami"}
+	actor: "David": {city: "Calgary"}
+	actor: "Todos": {city: "San Jose", country_code: "CR"}
+	actor: "Colombia": {city: "Bogota"}
+}
+----
+
+Run `tz` to see the time zones of your team members.
+
+----
+$ tz
+🕙 22:55   @John (PDT)
+  18    19    20    21  22  23    00    01    02    03    04    05    06    07    08    09    10    11    12    13    14    15    16    17
+
+🕐 01:55   @Alan (EDT)
+  21    22    23    00  01  02    03    04    05    06    07    08    09    10    11    12    13    14    15    16    17    18    19    20
+
+🕕 06:55   @Mike (BST)  @Steve (BST)
+  02    03    04    05  06  07    08    09    10    11    12    13    14    15    16    17    18    19    20    21    22    23    00    01
+----
+
+Use `tz -s` to see a short version:
+
+----
+🕙 22:56   @John (PDT)  
+🕐 01:56   @Alan (EDT)  
+🕕 06:56   @Mike (BST)  @Steve (BST)  
+----
+
 == Features
 
 * Show the time zone of your team members.
-+
-----
-UTC
-    1 2 3 4 5 6 7 8 9 10 11 12 [13] 14 15 16 17 18 19 20 21 22 23 24
-
-EST @jane @john
-               1 2 3 4 5 6 7 8  [9] 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-
-MDT @david
-                   1 2 3 4 5 6  [7] 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-----
 
 * Use a config file to configure your time zones.
 
