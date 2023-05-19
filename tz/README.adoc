@@ -41,9 +41,25 @@ $ tz
 Use `tz -s` to see a short version:
 
 ----
-🕙 22:56   @John (PDT)  
-🕐 01:56   @Alan (EDT)  
-🕕 06:56   @Mike (BST)  @Steve (BST)  
+🕙 22:56   @John (PDT)
+🕐 01:56   @Alan (EDT)
+🕕 06:56   @Mike (BST)  @Steve (BST)
+----
+
+== Finding the time zone for a city
+
+Run: `tz cities <city>` to find the time zone for a city.
+Narrow down results using the `-cc` flag.
+
+----
+$ tz cities rochester
+ Rochester                                GB  Europe/London
+ Rochester                                US  America/Chicago
+ Rochester                                US  America/New_York
+ Rochester Hills                          US  America/Detroit
+
+$ tz cities rochester -cc gb
+ Rochester                                GB  Europe/London
 ----
 
 == Features
