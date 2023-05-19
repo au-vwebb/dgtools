@@ -10,7 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
 )
 
@@ -31,16 +30,17 @@ func program(args []string) int {
 	opt := getoptions.New()
 	opt.SetUnknownMode(getoptions.Pass)
 	opt.Bool("verbose", false, opt.GetEnv("TZ_VERBOSE"), opt.Description("Enable logging"))
-	opt.Bool("standard", false, opt.Alias("analog", "civilian", "12-hour", "12h", "am-pm"), opt.Description("Use standard 12 hour AM/PM time format"))
+	opt.Bool("format-standard", false, opt.Alias("format-12-hour", "format-12h"), opt.Description("Use standard 12 hour AM/PM time format"))
 	opt.Bool("short", false, opt.Alias("s"), opt.Description("Don't show timezone bars"))
-	opt.SetCommandFn(ListRun)
+	opt.String("config", "", opt.Alias("c"), opt.Description("Config file"))
+	opt.SetCommandFn(Run)
 
 	list := opt.NewCommand("list", "list all timezones")
 	list.SetCommandFn(ListRun)
 
 	cities := opt.NewCommand("cities", "filter cities list")
 	cities.Bool("all", false, opt.Alias("a"), opt.Description("Show all cities"))
-	cities.String("country-code", "", opt.Alias("c"), opt.Description("Filter by country code"))
+	cities.String("country-code", "", opt.Alias("cc"), opt.Description("Filter by country code"))
 	cities.SetCommandFn(CitiesRun)
 
 	opt.HelpCommand("help", opt.Alias("?"))
@@ -52,7 +52,7 @@ func program(args []string) int {
 	if opt.Called("verbose") {
 		Logger.SetOutput(os.Stderr)
 	}
-	if opt.Called("standard") {
+	if opt.Called("format-standard") {
 		HourMinuteFormat = "03:04 PM"
 		HourFormat = "03"
 	}
@@ -73,14 +73,78 @@ func program(args []string) int {
 }
 
 func Run(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
-	Logger.Printf("Running")
+	configFile := opt.Value("config").(string)
+	short := opt.Value("short").(bool)
 
-	cmd := []string{"echo", "hello", "world"}
-	err := run.CMD(cmd...).Log().Run()
+	c, err := ReadConfig(ctx, configFile)
 	if err != nil {
-		return fmt.Errorf("failed: %w", err)
+		return fmt.Errorf("failed to read config: %w", err)
 	}
+	Logger.Printf("%+v\n", c)
+
+	am, err := ConfigToActorMap(c, "work")
+	if err != nil {
+		return fmt.Errorf("failed to parse config: %w", err)
+	}
+	Logger.Printf("%+v\n", am)
+
+	p := NewPalette("BlueYellow")
+	PrintActors(am, short, p)
+
 	return nil
+}
+
+func ConfigToActorMap(c *Config, group string) (ActorMap, error) {
+	cc := NewCities()
+	am := make(ActorMap)
+	for _, actor := range c.Group[group].Actor {
+		at := ActorTime{
+			Actor: actor.Name,
+		}
+		if actor.TimeZone != "" {
+			location := actor.TimeZone
+			loc, err := time.LoadLocation(location)
+			if err != nil {
+				return am, fmt.Errorf("failed to load '%s': %w", location, err)
+			}
+			now := time.Now().In(loc)
+			_, offset := now.Zone()
+			at.Location = location
+			at.Time = now
+			at.Offset = offset
+			at.Display = fmt.Sprintf("@%s (%s)", actor.Name, now.Format("MST"))
+			am[offset] = append(am[offset], at)
+		}
+		if actor.City != "" {
+			Logger.Printf("Searching for city: %s - %s\n", actor.City, actor.CountryCode)
+			cities, err := cc.Get(actor.City, actor.CountryCode)
+			if err != nil {
+				return am, fmt.Errorf("failed search: %w", err)
+			}
+			Logger.Printf("Found cities: %+v\n", len(cities))
+			if len(cities) > 1 {
+				PrintCities(cities)
+			}
+			if len(cities) == 1 {
+				location := cities[0].TimeZone
+				loc, err := time.LoadLocation(location)
+				if err != nil {
+					return am, fmt.Errorf("failed to load '%s': %w", location, err)
+				}
+				now := time.Now().In(loc)
+				_, offset := now.Zone()
+				at.Location = location
+				at.Time = now
+				at.Offset = offset
+				at.Display = fmt.Sprintf("@%s (%s)", actor.Name, now.Format("MST"))
+				am[offset] = append(am[offset], at)
+			}
+		}
+
+		Logger.Printf("%+v\n", at)
+	}
+
+	return am, nil
 }
 
 // List of locations can be found in "/usr/share/zoneinfo" in both Linux and macOS

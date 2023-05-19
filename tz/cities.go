@@ -45,12 +45,12 @@ func (c *CityMap) Get(name, countryCode string) ([]*City, error) {
 	if !ok {
 		return []*City{}, fmt.Errorf("no cities found for '%s'", name)
 	}
-	if len(cities) == 1 || countryCode == "" {
+	if len(cities) <= 1 || countryCode == "" {
 		return cities, nil
 	}
 	cc := []*City{}
 	for _, city := range cities {
-		if city.CountryCode == countryCode {
+		if strings.EqualFold(countryCode, city.CountryCode) {
 			cc = append(cc, city)
 		}
 	}
@@ -84,6 +84,10 @@ func (c *CityMap) Search(name, countryCode string) ([]City, error) {
 }
 
 func (c *CityMap) load() error {
+	if c.loaded {
+		return nil
+	}
+
 	tableFilename := "cities15000-tz.tsv"
 	tableFH, err := f.Open(tableFilename)
 	if err != nil {
@@ -120,6 +124,7 @@ func (c *CityMap) load() error {
 			})
 		}
 	}
+	c.loaded = true
 
 	return nil
 }
