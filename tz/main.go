@@ -109,7 +109,8 @@ func ConfigToActorMap(c *Config, group string) (ActorMap, error) {
 	am := make(ActorMap)
 	for _, actor := range c.Group[group].Actor {
 		at := ActorTime{
-			Actor: actor.Name,
+			Actor:   actor.Name,
+			Display: fmt.Sprintf("@%s", actor.Name),
 		}
 		if actor.TimeZone != "" {
 			location := actor.TimeZone
@@ -122,7 +123,7 @@ func ConfigToActorMap(c *Config, group string) (ActorMap, error) {
 			at.Location = location
 			at.Time = now
 			at.Offset = offset
-			at.Display = fmt.Sprintf("@%s (%s)", actor.Name, now.Format("MST"))
+			at.Abbreviation = now.Format("MST")
 			am[offset] = append(am[offset], at)
 		}
 		if actor.City != "" {
@@ -146,7 +147,7 @@ func ConfigToActorMap(c *Config, group string) (ActorMap, error) {
 				at.Location = location
 				at.Time = now
 				at.Offset = offset
-				at.Display = fmt.Sprintf("@%s (%s)", actor.Name, now.Format("MST"))
+				at.Abbreviation = now.Format("MST")
 				am[offset] = append(am[offset], at)
 			}
 		}
