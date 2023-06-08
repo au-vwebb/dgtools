@@ -74,7 +74,11 @@ func PrintHours(p *Palette, t, base time.Time) {
 		if h < 0 {
 			h = 24 + h
 		}
-		PrintBlock(fmt.Sprintf("%02d", h), p.Style(h), h == x, p.LipglossPalette.Highlight)
+		if h == x {
+			PrintBlock(t.Format("15:04"), p.Style(h), h == x, p.LipglossPalette.Highlight)
+		} else {
+			PrintBlock(fmt.Sprintf("%02d", h), p.Style(h), h == x, p.LipglossPalette.Highlight)
+		}
 		h++
 	}
 	fmt.Println()
