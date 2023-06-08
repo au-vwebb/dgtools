@@ -79,7 +79,13 @@ func Run(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	short := opt.Value("short").(bool)
 
 	if configFile == "" {
+		configFile = os.Getenv("HOME") + "/.config/tz/config.cue"
+	}
+	if _, err := os.Stat(configFile); os.IsNotExist(err) {
 		configFile = os.Getenv("HOME") + "/.tz.cue"
+	}
+	if _, err := os.Stat(configFile); os.IsNotExist(err) {
+		return fmt.Errorf("config file not provided and not found in ~/.config/tz/config.cue or ~/.tz.cue")
 	}
 
 	c, err := ReadConfig(ctx, configFile)

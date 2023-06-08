@@ -3,7 +3,7 @@
 Show time zones based on user defined groups.
 The group members can be team members, family members, cities, etc.
 
-Place your config file in `~/.tz/config`.
+Place your config file in `~/.config/tz/config.cue`, `~/.tz.cue` or pass it as a CLI option.
 
 .config file
 [source, cue]
