@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strings"
 	"time"
 
 	"github.com/charmbracelet/lipgloss"
@@ -52,14 +53,24 @@ func PrintMembersLine(p *Palette, att []MemberTime) {
 
 	// Line length is 141
 
-	fmt.Printf("%s %s   ", ClockEmoji[t.Hour()], p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)))
+	fmt.Print(
+		p.Style(t.Hour()).Render(ClockEmoji[t.Hour()]+" "),
+		p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)),
+		p.Style(t.Hour()).Render("   "),
+	)
+	str := ""
 	for abb, list := range displayLine {
-		fmt.Printf("(%s)   ", abb)
-		for _, d := range list {
-			fmt.Printf("%s  ", p.LipglossPalette.Member.Render(d))
-		}
+		str += p.Style(t.Hour()).Render(fmt.Sprintf(" %s ", abb))
+		// for _, d := range list {
+		// 	str += fmt.Sprint(p.LipglossPalette.Member.Render(fmt.Sprintf("%s", d)))
+		// 	str += p.Style(t.Hour()).Render(" ")
+		// }
+		str += p.LipglossPalette.Member.Render(fmt.Sprintf(" %s ", strings.Join(list, " ")))
 	}
-	fmt.Println()
+	// fmt.Println(lipgloss.PlaceHorizontal(132, lipgloss.Left, str, lipgloss.WithWhitespaceBackground(p.LipglossPalette.Noon.GetBackground())))
+	fmt.Println(lipgloss.PlaceHorizontal(132, lipgloss.Left, str, lipgloss.WithWhitespaceBackground(p.Style(t.Hour()).GetBackground())))
+	// 🕕 06:56   .
+	// fmt.Println(str)
 }
 
 func PrintHours(p *Palette, t, base time.Time) {

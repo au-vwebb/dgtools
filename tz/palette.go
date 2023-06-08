@@ -116,26 +116,33 @@ func (p *Palette) Style(timeOfDay int) lipgloss.Style {
 }
 
 var BlueYellow = Palette{
-	Night:     "#003e7f",
-	Dawn:      "#0068af",
-	Morning:   "#5495e1",
-	Noon:      "#dddddd",
-	AfterNoon: "#fef4d7",
-	Dusk:      "#f9b16e",
-	Evening:   "#00540e",
+	Night: "#003E7F",
+
+	Dawn:    "#406C95",
+	Evening: "#406C95",
+
+	Morning: "#7F99AB",
+	Dusk:    "#7F99AB",
+
+	Noon: "#FEF4D7",
+
+	AfterNoon: "#B9C49F",
 
 	FgNight:     "#FFFFFF",
 	FgDawn:      "#FFFFFF",
-	FgMorning:   "#646970",
+	FgMorning:   "#FFFFFF",
 	FgNoon:      "#000000",
-	FgAfterNoon: "#646970",
+	FgAfterNoon: "#000000",
 	FgDusk:      "#FFFFFF",
 	FgEvening:   "#FFFFFF",
 
 	Highlight:   "#fafa00",
 	FgHighlight: "#000000",
 
-	Member:   "#fbabb2",
+	// Member: "#5495e1",
+	Member: "#A3D8BD",
+	// Member:   "#F6F6F6",
+	// Member:   "#FEF4D7",
 	FgMember: "#000000",
 }
 

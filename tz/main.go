@@ -116,7 +116,7 @@ func ConfigToMemberMap(c *Config, group string) (MemberMap, error) {
 	for _, member := range c.Group[group].Member {
 		at := MemberTime{
 			Member:  member.Name,
-			Display: fmt.Sprintf("@%s", member.Name),
+			Display: fmt.Sprintf("%s", member.Name),
 		}
 		if member.TimeZone != "" {
 			location := member.TimeZone
