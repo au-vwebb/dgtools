@@ -65,7 +65,7 @@ func PrintActorsLine(p *Palette, att []ActorTime) {
 func PrintHours(p *Palette, t, base time.Time) {
 	x := t.Hour()
 	h := t.Hour()
-	h -= 4
+	h -= 12
 
 	for i := 0; i < 24; i++ {
 		if h >= 24 {
