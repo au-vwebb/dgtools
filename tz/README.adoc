@@ -1,6 +1,7 @@
 = tz: Time Zone CLI app
 
-Show time zones based on actors (team members, cities, etc).
+Show time zones based on user defined groups.
+The group members can be team members, family members, cities, etc.
 
 Place your config file in `~/.tz/config`.
 
@@ -10,17 +11,17 @@ Place your config file in `~/.tz/config`.
 default_group: "work"
 
 group: "work": {
-	actor: "John": {city: "Palo Alto"}
-	actor: "Alan": {city: "Toronto"}
-	actor: "Mike": {city: "Rochester", country_code: "gb"}
-	actor: "Steve": {time_zone: "Europe/London"}
+	member: "John": {city: "Palo Alto"}
+	member: "Alan": {city: "Toronto"}
+	member: "Mike": {city: "Rochester", country_code: "gb"}
+	member: "Steve": {time_zone: "Europe/London"}
 }
 
 group: "family": {
-	actor: "Melqui": {city: "Miami"}
-	actor: "David": {city: "Calgary"}
-	actor: "Todos": {city: "San Jose", country_code: "CR"}
-	actor: "Colombia": {city: "Bogota"}
+	member: "Melqui": {city: "Miami"}
+	member: "David": {city: "Calgary"}
+	member: "Todos": {city: "San Jose", country_code: "CR"}
+	member: "Colombia": {city: "Bogota"}
 }
 ----
 

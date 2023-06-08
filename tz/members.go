@@ -8,8 +8,8 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-type ActorTime struct {
-	Actor        string
+type MemberTime struct {
+	Member       string
 	Time         time.Time
 	Location     string
 	Offset       int // in seconds
@@ -17,9 +17,9 @@ type ActorTime struct {
 	Abbreviation string
 }
 
-type ActorMap map[int][]ActorTime
+type MemberMap map[int][]MemberTime
 
-func PrintActors(am ActorMap, short bool, p *Palette) {
+func PrintMembers(am MemberMap, short bool, p *Palette) {
 	offsets := []int{}
 	for offset := range am {
 		offsets = append(offsets, offset)
@@ -27,7 +27,7 @@ func PrintActors(am ActorMap, short bool, p *Palette) {
 	sort.Ints(offsets)
 	Logger.Println(len(offsets))
 	for _, offset := range offsets {
-		PrintActorsLine(p, am[offset])
+		PrintMembersLine(p, am[offset])
 		if !short {
 			PrintHours(p, am[offset][0].Time, am[offsets[0]][0].Time)
 			fmt.Println()
@@ -35,7 +35,7 @@ func PrintActors(am ActorMap, short bool, p *Palette) {
 	}
 }
 
-func PrintActorsLine(p *Palette, att []ActorTime) {
+func PrintMembersLine(p *Palette, att []MemberTime) {
 	// map[abbreviation] = display
 	displayLine := map[string][]string{}
 	for _, at := range att {
@@ -56,7 +56,7 @@ func PrintActorsLine(p *Palette, att []ActorTime) {
 	for abb, list := range displayLine {
 		fmt.Printf("(%s)   ", abb)
 		for _, d := range list {
-			fmt.Printf("%s  ", p.LipglossPalette.Actor.Render(d))
+			fmt.Printf("%s  ", p.LipglossPalette.Member.Render(d))
 		}
 	}
 	fmt.Println()

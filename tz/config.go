@@ -16,7 +16,7 @@ var schema embed.FS
 type Config struct {
 	DefaultGroup string `json:"default_group"`
 	Group        map[string]struct {
-		Actor map[string]struct {
+		Member map[string]struct {
 			Name        string
 			City        string
 			CountryCode string `json:"country_code"`

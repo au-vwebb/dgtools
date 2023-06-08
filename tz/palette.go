@@ -61,8 +61,8 @@ type Palette struct {
 	Highlight   string
 	FgHighlight string
 
-	Actor   string
-	FgActor string
+	Member   string
+	FgMember string
 
 	LipglossPalette struct {
 		Night     lipgloss.Style
@@ -74,7 +74,7 @@ type Palette struct {
 		Evening   lipgloss.Style
 		Highlight lipgloss.Style
 
-		Actor lipgloss.Style
+		Member lipgloss.Style
 	}
 }
 
@@ -89,7 +89,7 @@ func NewPalette(theme string) *Palette {
 	p.LipglossPalette.Dusk = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgDusk)).Background(lipgloss.Color(p.Dusk))
 	p.LipglossPalette.Evening = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgEvening)).Background(lipgloss.Color(p.Evening))
 	p.LipglossPalette.Highlight = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgHighlight)).Background(lipgloss.Color(p.Highlight))
-	p.LipglossPalette.Actor = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgActor)).Background(lipgloss.Color(p.Actor))
+	p.LipglossPalette.Member = lipgloss.NewStyle().Foreground(lipgloss.Color(p.FgMember)).Background(lipgloss.Color(p.Member))
 
 	return p
 }
@@ -135,8 +135,8 @@ var BlueYellow = Palette{
 	Highlight:   "#fafa00",
 	FgHighlight: "#000000",
 
-	Actor:   "#fbabb2",
-	FgActor: "#000000",
+	Member:   "#fbabb2",
+	FgMember: "#000000",
 }
 
 var PurpleYellow = Palette{

@@ -92,28 +92,28 @@ func Run(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		group = c.DefaultGroup
 	}
 
-	am, err := ConfigToActorMap(c, group)
+	am, err := ConfigToMemberMap(c, group)
 	if err != nil {
 		return fmt.Errorf("failed to parse config: %w", err)
 	}
 	Logger.Printf("%+v\n", am)
 
 	p := NewPalette("BlueYellow")
-	PrintActors(am, short, p)
+	PrintMembers(am, short, p)
 
 	return nil
 }
 
-func ConfigToActorMap(c *Config, group string) (ActorMap, error) {
+func ConfigToMemberMap(c *Config, group string) (MemberMap, error) {
 	cc := NewCities()
-	am := make(ActorMap)
-	for _, actor := range c.Group[group].Actor {
-		at := ActorTime{
-			Actor:   actor.Name,
-			Display: fmt.Sprintf("@%s", actor.Name),
+	am := make(MemberMap)
+	for _, member := range c.Group[group].Member {
+		at := MemberTime{
+			Member:  member.Name,
+			Display: fmt.Sprintf("@%s", member.Name),
 		}
-		if actor.TimeZone != "" {
-			location := actor.TimeZone
+		if member.TimeZone != "" {
+			location := member.TimeZone
 			loc, err := time.LoadLocation(location)
 			if err != nil {
 				return am, fmt.Errorf("failed to load '%s': %w", location, err)
@@ -126,9 +126,9 @@ func ConfigToActorMap(c *Config, group string) (ActorMap, error) {
 			at.Abbreviation = now.Format("MST")
 			am[offset] = append(am[offset], at)
 		}
-		if actor.City != "" {
-			Logger.Printf("Searching for city: %s - %s\n", actor.City, actor.CountryCode)
-			cities, err := cc.Get(actor.City, actor.CountryCode)
+		if member.City != "" {
+			Logger.Printf("Searching for city: %s - %s\n", member.City, member.CountryCode)
+			cities, err := cc.Get(member.City, member.CountryCode)
 			if err != nil {
 				return am, fmt.Errorf("failed search: %w", err)
 			}
@@ -181,7 +181,7 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		"America/Los_Angeles",
 	}
 
-	am := make(ActorMap)
+	am := make(MemberMap)
 	count := 0
 	for _, location := range locations {
 		loc, err := time.LoadLocation(location)
@@ -190,16 +190,16 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		}
 		now := time.Now().In(loc)
 		_, offset := now.Zone()
-		at := ActorTime{
-			Actor:    location,
+		at := MemberTime{
+			Member:   location,
 			Location: location,
 			Time:     now,
 			Offset:   offset,
 			Display:  fmt.Sprintf("@%s (%s)", location, now.Format("MST")),
 		}
-		Logger.Printf("@%s: %s %d", at.Actor, at.Time.Format("01/02 15:04 MST"), offset/3600)
+		Logger.Printf("@%s: %s %d", at.Member, at.Time.Format("01/02 15:04 MST"), offset/3600)
 		if _, ok := am[offset]; !ok {
-			am[offset] = []ActorTime{at}
+			am[offset] = []MemberTime{at}
 		} else {
 			am[offset] = append(am[offset], at)
 		}
@@ -208,7 +208,7 @@ func ListRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	Logger.Printf("Total: %d\n", count)
 
 	p := NewPalette("BlueYellow")
-	PrintActors(am, short, p)
+	PrintMembers(am, short, p)
 	return nil
 }
 
