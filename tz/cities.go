@@ -6,9 +6,12 @@ import (
 	"fmt"
 	"io"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/charmbracelet/lipgloss"
+	"golang.org/x/text/language"
+	"golang.org/x/text/message"
 )
 
 //go:embed cities-tz.tsv
@@ -19,6 +22,7 @@ type City struct {
 	Admin1Name  string // Admin division 1
 	CountryCode string
 	TimeZone    string
+	Population  string
 }
 
 // CityMap is a map of city names to City.
@@ -110,15 +114,23 @@ func (c *CityMap) load() error {
 
 		// Column widths are known:
 		// select max(length(asciiname)) from admin1;
-		// 37, 40, 2, 30
+		// 37, 40, 2, 30, 8
 		// name, admin1Name, countryCode, timeZone
 		// Logger.Printf("%#v\n", record)
+		p := message.NewPrinter(language.English)
+
+		pop, err := strconv.Atoi(record[4])
+		if err != nil {
+			return fmt.Errorf("failed to parse population: %w", err)
+		}
+		population := p.Sprintf("%d\n", pop)
 		if c.m[record[0]] == nil {
 			c.m[record[0]] = []*City{{
 				Name:        record[0],
 				Admin1Name:  record[1],
 				CountryCode: record[2],
 				TimeZone:    record[3],
+				Population:  population,
 			}}
 		} else {
 			c.m[record[0]] = append(c.m[record[0]], &City{
@@ -126,6 +138,7 @@ func (c *CityMap) load() error {
 				Admin1Name:  record[1],
 				CountryCode: record[2],
 				TimeZone:    record[3],
+				Population:  population,
 			})
 		}
 	}
@@ -139,7 +152,7 @@ func PrintCities(cities []*City) {
 	dark := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#dce3e6"))
 	for i, city := range cities {
 		if i%2 == 0 {
-			fmt.Printf("%s%s%s%s\n",
+			fmt.Printf("%s%s%s%s%s\n",
 				light.
 					Width(41).
 					PaddingLeft(1).
@@ -160,9 +173,14 @@ func PrintCities(cities []*City) {
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.TimeZone),
+				light.
+					Width(12).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.Population),
 			)
 		} else {
-			fmt.Printf("%s%s%s%s\n",
+			fmt.Printf("%s%s%s%s%s\n",
 				dark.
 					Width(41).
 					PaddingLeft(1).
@@ -183,6 +201,11 @@ func PrintCities(cities []*City) {
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.TimeZone),
+				dark.
+					Width(12).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.Population),
 			)
 		}
 	}

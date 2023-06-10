@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS "cities" (
 	"admin2code" TEXT,
 	"admin3code" TEXT,
 	"admin4code" TEXT,
-	"population" TEXT,
+	"population" INTEGER,
 	"elevation" TEXT,
 	"dem" TEXT,
 	"timezone" TEXT,
