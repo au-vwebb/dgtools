@@ -21,6 +21,7 @@ type Config struct {
 			City        string
 			CountryCode string `json:"country_code"`
 			TimeZone    string `json:"time_zone"`
+			Type        string // person, city, country
 		}
 	}
 }

@@ -8,5 +8,6 @@ group: [string]: {
 		city?:         string
 		country_code?: string
 		time_zone?:    string
+		type:          "country" | "city" | *"person"
 	}
 }

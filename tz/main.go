@@ -117,6 +117,7 @@ func ConfigToMemberMap(c *Config, group string) (MemberMap, error) {
 		at := MemberTime{
 			Member:  member.Name,
 			Display: member.Name,
+			Type:    member.Type,
 		}
 		if member.TimeZone != "" {
 			location := member.TimeZone

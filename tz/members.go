@@ -16,6 +16,7 @@ type MemberTime struct {
 	Offset       int // in seconds
 	Display      string
 	Abbreviation string
+	Type         string // person, city, country
 }
 
 type MemberMap map[int][]MemberTime
@@ -38,14 +39,35 @@ func PrintMembers(am MemberMap, short bool, p *Palette) {
 
 func PrintMembersLine(p *Palette, att []MemberTime) {
 	// map[abbreviation] = display
-	displayLine := map[string][]string{}
+	displayLineCountries := map[string][]string{}
+	displayLineCities := map[string][]string{}
+	displayLinePeople := map[string][]string{}
 	for _, at := range att {
-		if _, ok := displayLine[at.Abbreviation]; !ok {
-			displayLine[at.Abbreviation] = []string{at.Display}
-		} else {
-			displayLine[at.Abbreviation] = append(displayLine[at.Abbreviation], at.Display)
-			// TODO: who cares about the repeated sorting right?
-			sort.Strings(displayLine[at.Abbreviation])
+		switch at.Type {
+		case "country":
+			if _, ok := displayLineCountries[at.Abbreviation]; !ok {
+				displayLineCountries[at.Abbreviation] = []string{at.Display}
+			} else {
+				displayLineCountries[at.Abbreviation] = append(displayLineCountries[at.Abbreviation], at.Display)
+				// TODO: who cares about the repeated sorting right?
+				sort.Strings(displayLineCountries[at.Abbreviation])
+			}
+		case "city":
+			if _, ok := displayLineCities[at.Abbreviation]; !ok {
+				displayLineCities[at.Abbreviation] = []string{at.Display}
+			} else {
+				displayLineCities[at.Abbreviation] = append(displayLineCities[at.Abbreviation], at.Display)
+				// TODO: who cares about the repeated sorting right?
+				sort.Strings(displayLineCities[at.Abbreviation])
+			}
+		case "person":
+			if _, ok := displayLinePeople[at.Abbreviation]; !ok {
+				displayLinePeople[at.Abbreviation] = []string{at.Display}
+			} else {
+				displayLinePeople[at.Abbreviation] = append(displayLinePeople[at.Abbreviation], at.Display)
+				// TODO: who cares about the repeated sorting right?
+				sort.Strings(displayLinePeople[at.Abbreviation])
+			}
 		}
 	}
 
@@ -59,12 +81,20 @@ func PrintMembersLine(p *Palette, att []MemberTime) {
 		p.Style(t.Hour()).Render("   "),
 	)
 	str := ""
-	for abb, list := range displayLine {
+	for abb, list := range displayLineCountries {
 		str += p.Style(t.Hour()).Render(fmt.Sprintf(" %s ", abb))
 		// for _, d := range list {
 		// 	str += fmt.Sprint(p.LipglossPalette.Member.Render(fmt.Sprintf("%s", d)))
 		// 	str += p.Style(t.Hour()).Render(" ")
 		// }
+		str += p.LipglossPalette.Member.Render(fmt.Sprintf(" %s ", strings.Join(list, " ")))
+	}
+	for abb, list := range displayLineCities {
+		str += p.Style(t.Hour()).Render(fmt.Sprintf(" %s ", abb))
+		str += p.LipglossPalette.Member.Render(fmt.Sprintf(" %s ", strings.Join(list, " ")))
+	}
+	for abb, list := range displayLinePeople {
+		str += p.Style(t.Hour()).Render(fmt.Sprintf(" %s ", abb))
 		str += p.LipglossPalette.Member.Render(fmt.Sprintf(" %s ", strings.Join(list, " ")))
 	}
 	// fmt.Println(lipgloss.PlaceHorizontal(132, lipgloss.Left, str, lipgloss.WithWhitespaceBackground(p.LipglossPalette.Noon.GetBackground())))
