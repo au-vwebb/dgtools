@@ -77,7 +77,7 @@ func PrintMembersLine(p *Palette, att []MemberTime) {
 
 	fmt.Print(
 		p.Style(t.Hour()).Render(ClockEmoji[t.Hour()]+" "),
-		p.Style(t.Hour()).Render(t.Format(HourMinuteFormat)),
+		p.Style(t.Hour()).Render(t.Format("02 "+HourMinuteFormat)),
 		p.Style(t.Hour()).Render("   "),
 	)
 	str := ""

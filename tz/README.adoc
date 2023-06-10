@@ -67,9 +67,13 @@ $ tz cities rochester -cc gb
 
 * Show the time zone of your team members.
 
-* Use a config file to configure your time zones.
+* Show countries and cities in the same view as people but show them first for a faster lookup.
 
-* List all time zones so you can easily edit your config file.
+* Use a config file to configure your time zone groups.
+
+* List all time zones by city so you can easily edit your config file.
+
+* Show the day next to the time to see -1/+1 days.
 
 == Motivation
 
