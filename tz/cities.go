@@ -8,6 +8,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/charmbracelet/lipgloss"
 	"golang.org/x/text/language"
@@ -113,9 +114,17 @@ func (c *CityMap) load() error {
 		}
 
 		// Column widths are known:
+		// select max(length(asciiname)) from cities;
+		// 49
 		// select max(length(asciiname)) from admin1;
-		// 37, 40, 2, 30, 8
-		// name, admin1Name, countryCode, timeZone
+		// 40
+		// select max(length(countrycode)) from cities;
+		// 2
+		// select max(length(timezone)) from cities;
+		// 30
+		// select max(length(population)) from cities;
+		// 8 + 2 commas
+		// name, admin1Name, countryCode, timeZone, population
 		// Logger.Printf("%#v\n", record)
 		p := message.NewPrinter(language.English)
 
@@ -123,7 +132,7 @@ func (c *CityMap) load() error {
 		if err != nil {
 			return fmt.Errorf("failed to parse population: %w", err)
 		}
-		population := p.Sprintf("%d\n", pop)
+		population := p.Sprintf("%d", pop)
 		if c.m[record[0]] == nil {
 			c.m[record[0]] = []*City{{
 				Name:        record[0],
@@ -151,10 +160,17 @@ func PrintCities(cities []*City) {
 	light := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#eef2f3"))
 	dark := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#dce3e6"))
 	for i, city := range cities {
+		loc, _ := time.LoadLocation(city.TimeZone)
+		now := time.Now().In(loc)
 		if i%2 == 0 {
-			fmt.Printf("%s%s%s%s%s\n",
+			fmt.Printf("%s%s%s%s%s%s\n",
 				light.
-					Width(41).
+					Width(19).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(now.Format("01/02 15:04 MST")),
+				light.
+					Width(49).
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.Name),
@@ -164,7 +180,7 @@ func PrintCities(cities []*City) {
 					PaddingRight(1).
 					Render(city.Admin1Name),
 				light.
-					Width(2).
+					Width(4).
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.CountryCode),
@@ -180,9 +196,14 @@ func PrintCities(cities []*City) {
 					Render(city.Population),
 			)
 		} else {
-			fmt.Printf("%s%s%s%s%s\n",
+			fmt.Printf("%s%s%s%s%s%s\n",
 				dark.
-					Width(41).
+					Width(19).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(now.Format("01/02 15:04 MST")),
+				dark.
+					Width(49).
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.Name),
@@ -192,7 +213,7 @@ func PrintCities(cities []*City) {
 					PaddingRight(1).
 					Render(city.Admin1Name),
 				dark.
-					Width(2).
+					Width(4).
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.CountryCode),
