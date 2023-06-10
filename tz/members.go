@@ -98,7 +98,7 @@ func PrintMembersLine(p *Palette, att []MemberTime) {
 		str += p.LipglossPalette.Member.Render(fmt.Sprintf(" %s ", strings.Join(list, " ")))
 	}
 	// fmt.Println(lipgloss.PlaceHorizontal(132, lipgloss.Left, str, lipgloss.WithWhitespaceBackground(p.LipglossPalette.Noon.GetBackground())))
-	fmt.Println(lipgloss.PlaceHorizontal(132, lipgloss.Left, str, lipgloss.WithWhitespaceBackground(p.Style(t.Hour()).GetBackground())))
+	fmt.Println(lipgloss.PlaceHorizontal(129, lipgloss.Left, str, lipgloss.WithWhitespaceBackground(p.Style(t.Hour()).GetBackground())))
 	// 🕕 06:56   .
 	// fmt.Println(str)
 }
