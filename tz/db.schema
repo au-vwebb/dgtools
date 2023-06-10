@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS "cities15000" (
+CREATE TABLE IF NOT EXISTS "cities" (
 	"geonameid" INTEGER,
 	"name" TEXT,
 	"asciiname" TEXT,
@@ -20,5 +20,13 @@ CREATE TABLE IF NOT EXISTS "cities15000" (
 	"modificationdate" TEXT
 );
 
+CREATE TABLE IF NOT EXISTS "admin1" (
+	"code" TEXT,
+	"name" TEXT,
+	"asciiname" TEXT,
+	"geonameid" TEXT
+);
+
 .mode tabs
-.import cities15000.txt cities15000
+.import cities5000.txt cities
+.import admin1CodesASCII.txt admin1

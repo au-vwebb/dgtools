@@ -11,11 +11,12 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-//go:embed cities15000-tz.tsv
+//go:embed cities-tz.tsv
 var f embed.FS
 
 type City struct {
 	Name        string
+	Admin1Name  string // Admin division 1
 	CountryCode string
 	TimeZone    string
 }
@@ -88,7 +89,7 @@ func (c *CityMap) load() error {
 		return nil
 	}
 
-	tableFilename := "cities15000-tz.tsv"
+	tableFilename := "cities-tz.tsv"
 	tableFH, err := f.Open(tableFilename)
 	if err != nil {
 		return fmt.Errorf("failed to open '%s': %w", tableFilename, err)
@@ -107,20 +108,24 @@ func (c *CityMap) load() error {
 			return fmt.Errorf("failed to read table: %w", err)
 		}
 
-		// 37, 2, 30
-		// name, countryCode, timeZone
+		// Column widths are known:
+		// select max(length(asciiname)) from admin1;
+		// 37, 40, 2, 30
+		// name, admin1Name, countryCode, timeZone
 		// Logger.Printf("%#v\n", record)
 		if c.m[record[0]] == nil {
 			c.m[record[0]] = []*City{{
 				Name:        record[0],
-				CountryCode: record[1],
-				TimeZone:    record[2],
+				Admin1Name:  record[1],
+				CountryCode: record[2],
+				TimeZone:    record[3],
 			}}
 		} else {
 			c.m[record[0]] = append(c.m[record[0]], &City{
 				Name:        record[0],
-				CountryCode: record[1],
-				TimeZone:    record[2],
+				Admin1Name:  record[1],
+				CountryCode: record[2],
+				TimeZone:    record[3],
 			})
 		}
 	}
@@ -134,12 +139,17 @@ func PrintCities(cities []*City) {
 	dark := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#dce3e6"))
 	for i, city := range cities {
 		if i%2 == 0 {
-			fmt.Printf("%s%s%s\n",
+			fmt.Printf("%s%s%s%s\n",
 				light.
 					Width(41).
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.Name),
+				light.
+					Width(42).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.Admin1Name),
 				light.
 					Width(2).
 					PaddingLeft(1).
@@ -152,12 +162,17 @@ func PrintCities(cities []*City) {
 					Render(city.TimeZone),
 			)
 		} else {
-			fmt.Printf("%s%s%s\n",
+			fmt.Printf("%s%s%s%s\n",
 				dark.
 					Width(41).
 					PaddingLeft(1).
 					PaddingRight(1).
 					Render(city.Name),
+				dark.
+					Width(42).
+					PaddingLeft(1).
+					PaddingRight(1).
+					Render(city.Admin1Name),
 				dark.
 					Width(2).
 					PaddingLeft(1).

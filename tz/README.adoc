@@ -92,7 +92,7 @@ sqlite3 cities.db < db.schema
 Finally, the following query is used to generate an export:
 
 ----
-sqlite3 cities.db ".headers off" ".mode tabs" "select distinct asciiname,countrycode,timezone from cities15000;"  > cities15000-tz.tsv
+sqlite3 cities.db ".headers off" ".mode tabs" "select distinct c.asciiname,a.asciiname,c.countrycode,c.timezone from cities as c left join admin1 as a on c.countrycode || '.' || c.admin1code = a.code;"  > cities-tz.tsv
 ----
 
 The TSV is bundled in the binary (The resulting TSV is smaller than its CSV and JSON counterparts).
