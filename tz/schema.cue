@@ -9,5 +9,6 @@ group: [string]: {
 		country_code?: string
 		time_zone?:    string
 		type:          "country" | "city" | *"person"
+		admin1?:       string
 	}
 }

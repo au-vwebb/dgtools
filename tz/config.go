@@ -21,6 +21,7 @@ type Config struct {
 			City        string
 			CountryCode string `json:"country_code"`
 			TimeZone    string `json:"time_zone"`
+			Admin1      string // Admin division 1 name (state, province, etc.)
 			Type        string // person, city, country
 		}
 	}

@@ -40,7 +40,7 @@ func NewCities() *CityMap {
 }
 
 // Returns a list of cities with the given name and optionally a country code.
-func (c *CityMap) Get(name, countryCode string) ([]*City, error) {
+func (c *CityMap) Get(name, admin1Name, countryCode string) ([]*City, error) {
 	if !c.loaded {
 		err := c.load()
 		if err != nil {
@@ -51,16 +51,30 @@ func (c *CityMap) Get(name, countryCode string) ([]*City, error) {
 	if !ok {
 		return []*City{}, fmt.Errorf("no cities found for '%s'", name)
 	}
-	if len(cities) <= 1 || countryCode == "" {
+	if len(cities) <= 1 || (admin1Name == "" && countryCode == "") {
 		return cities, nil
 	}
 	cc := []*City{}
-	for _, city := range cities {
-		if strings.EqualFold(countryCode, city.CountryCode) {
-			cc = append(cc, city)
+	ccAdmin1 := []*City{}
+	if countryCode != "" {
+		for _, city := range cities {
+			if strings.EqualFold(countryCode, city.CountryCode) {
+				cc = append(cc, city)
+			}
 		}
+	} else {
+		cc = cities
 	}
-	return cc, nil
+	if admin1Name != "" {
+		for _, city := range cc {
+			if strings.EqualFold(admin1Name, city.Admin1Name) {
+				ccAdmin1 = append(ccAdmin1, city)
+			}
+		}
+	} else {
+		ccAdmin1 = cc
+	}
+	return ccAdmin1, nil
 }
 
 func (c *CityMap) Search(name, countryCode string) ([]City, error) {
@@ -159,6 +173,40 @@ func (c *CityMap) load() error {
 func PrintCities(cities []*City) {
 	light := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#eef2f3"))
 	dark := lipgloss.NewStyle().Foreground(lipgloss.Color("#000000")).Background(lipgloss.Color("#dce3e6"))
+
+	fmt.Printf("%s%s%s%s%s%s\n",
+		dark.
+			Width(19).
+			PaddingLeft(1).
+			PaddingRight(1).
+			Render("Time"),
+		dark.
+			Width(49).
+			PaddingLeft(1).
+			PaddingRight(1).
+			Render("Name"),
+		dark.
+			Width(42).
+			PaddingLeft(1).
+			PaddingRight(1).
+			Render("Admin1"),
+		dark.
+			Width(4).
+			PaddingLeft(1).
+			PaddingRight(1).
+			Render("CC"),
+		dark.
+			Width(32).
+			PaddingLeft(1).
+			PaddingRight(1).
+			Render("TimeZone"),
+		dark.
+			Width(12).
+			PaddingLeft(1).
+			PaddingRight(1).
+			Render("Population"),
+	)
+
 	for i, city := range cities {
 		loc, _ := time.LoadLocation(city.TimeZone)
 		now := time.Now().In(loc)

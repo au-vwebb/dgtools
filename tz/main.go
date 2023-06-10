@@ -134,7 +134,7 @@ func ConfigToMemberMap(c *Config, group string) (MemberMap, error) {
 			am[offset] = append(am[offset], at)
 		} else if member.City != "" {
 			Logger.Printf("Searching for city: %s - %s\n", member.City, member.CountryCode)
-			cities, err := cc.Get(member.City, member.CountryCode)
+			cities, err := cc.Get(member.City, member.Admin1, member.CountryCode)
 			if err != nil {
 				return am, fmt.Errorf("failed search: %w", err)
 			}
