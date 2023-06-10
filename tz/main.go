@@ -116,7 +116,7 @@ func ConfigToMemberMap(c *Config, group string) (MemberMap, error) {
 	for _, member := range c.Group[group].Member {
 		at := MemberTime{
 			Member:  member.Name,
-			Display: fmt.Sprintf("%s", member.Name),
+			Display: member.Name,
 		}
 		if member.TimeZone != "" {
 			location := member.TimeZone
@@ -131,8 +131,7 @@ func ConfigToMemberMap(c *Config, group string) (MemberMap, error) {
 			at.Offset = offset
 			at.Abbreviation = now.Format("MST")
 			am[offset] = append(am[offset], at)
-		}
-		if member.City != "" {
+		} else if member.City != "" {
 			Logger.Printf("Searching for city: %s - %s\n", member.City, member.CountryCode)
 			cities, err := cc.Get(member.City, member.CountryCode)
 			if err != nil {
