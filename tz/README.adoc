@@ -35,7 +35,7 @@ group: "family": {
 
 Run `tz` to see the time zones of your team members.
 
-image::./tz_sample.png[]
+image::https://github.com/DavidGamba/screenshots/blob/master/dgtools/tz/tz-default.png[]
 
 Use `tz -s` to see a short version.
 
@@ -84,6 +84,14 @@ group: "family": {
 ----
 
 Not all fields are required, as long as the provided fields uniquely identify a city or a time zone.
+
+Additionally, members can be labeled as cities so they show up before other members.
+
+[source, cue]
+----
+	member: "Palo_Alto": _palo_alto
+	member: "Palo_Alto": {type: "city"}
+----
 
 == Features
 
