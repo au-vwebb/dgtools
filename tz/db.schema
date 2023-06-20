@@ -28,5 +28,5 @@ CREATE TABLE IF NOT EXISTS "admin1" (
 );
 
 .mode tabs
-.import cities5000.txt cities
+.import cities15000.txt cities
 .import admin1CodesASCII.txt admin1
