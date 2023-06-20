@@ -8,44 +8,36 @@ Place your config file in `~/.config/tz/config.cue`, `~/.tz.cue` or pass it as a
 .config file
 [source, cue]
 ----
+package tz
+
 default_group: "work"
 
+_miami: {city: "Miami", admin1: "Florida", country_code: "US"}
+_calgary: {city: "Calgary", country_code: "CA"}
+_san_jose: {city: "San Jose", admin1: "San Jose", country_code: "CR"}
+_palo_alto: {city: "Palo Alto", country_code: "US"}
+
 group: "work": {
-	member: "John": {city: "Palo Alto"}
-	member: "Alan": {city: "Toronto"}
+	member: "John": _palo_alto
+	member: "Alan": _palo_alto
 	member: "Mike": {city: "Rochester", country_code: "gb"}
 	member: "Steve": {time_zone: "Europe/London"}
+	member: "Patrick": {city: "Flint", time_zone: "America/Detroit"}
 }
 
 group: "family": {
-	member: "Melqui": {city: "Miami"}
-	member: "David": {city: "Calgary"}
-	member: "Todos": {city: "San Jose", country_code: "CR"}
-	member: "Colombia": {city: "Bogota"}
+	member: "Brother": _miami
+	member: "David": _calgary
+	member: "Parents": _san_jose
+	member: "Bogota": {city: "Bogota", country_code: "CO", type: "city"}
 }
 ----
 
 Run `tz` to see the time zones of your team members.
 
-----
-$ tz
-🕙 22:55   @John (PDT)
-  18    19    20    21  22  23    00    01    02    03    04    05    06    07    08    09    10    11    12    13    14    15    16    17
+image::./tz_sample.png[]
 
-🕐 01:55   @Alan (EDT)
-  21    22    23    00  01  02    03    04    05    06    07    08    09    10    11    12    13    14    15    16    17    18    19    20
-
-🕕 06:55   @Mike (BST)  @Steve (BST)
-  02    03    04    05  06  07    08    09    10    11    12    13    14    15    16    17    18    19    20    21    22    23    00    01
-----
-
-Use `tz -s` to see a short version:
-
-----
-🕙 22:56   @John (PDT)
-🕐 01:56   @Alan (EDT)
-🕕 06:56   @Mike (BST)  @Steve (BST)
-----
+Use `tz -s` to see a short version.
 
 == Finding the time zone for a city
 
@@ -62,6 +54,36 @@ $ tz cities rochester
 $ tz cities rochester -cc gb
  Rochester                                GB  Europe/London
 ----
+
+== Config file syntax
+
+The config file is a CUE file with the following syntax:
+
+[source, cue]
+----
+package tz
+
+default_group: "name"
+
+group: "name": {
+	member: "name": {city: "city", admin1: "admin1", country_code: "country_code", time_zone: "time_zone"}
+}
+----
+
+The admin1 field is the Admin division 1 name as defined in the geonames database: state, province, etc.
+
+You can create reusable cities, for example:
+
+[source, cue]
+----
+_miami: {city: "Miami", admin1: "Florida", country_code: "US"}
+
+group: "family": {
+	member: "Brother": _miami
+}
+----
+
+Not all fields are required, as long as the provided fields uniquely identify a city or a time zone.
 
 == Features
 
@@ -96,6 +118,12 @@ sqlite3 cities.db ".headers off" ".mode tabs" "select distinct c.asciiname,a.asc
 ----
 
 The TSV is bundled in the binary (The resulting TSV is smaller than its CSV and JSON counterparts).
+
+== ROADMAP
+
+* Show google maps link to city
+
+* tz list shows a list of all timezone abbreviations
 
 == LICENSE
 
