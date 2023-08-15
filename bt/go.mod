@@ -1,6 +1,6 @@
 module github.com/DavidGamba/dgtools/bt
 
-go 1.20
+go 1.21
 
 require (
 	cuelang.org/go v0.6.0 // indirect

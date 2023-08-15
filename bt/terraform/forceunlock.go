@@ -9,11 +9,13 @@ import (
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"slices"
 )
 
-func applyCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
-	opt := parent.NewCommand("apply", "Wrapper around terraform apply")
-	opt.SetCommandFn(applyRun)
+func forceUnlockCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
+	opt := parent.NewCommand("force-unlock", "")
+	opt.SetCommandFn(forceUnlockRun)
+	opt.HelpSynopsisArg("lock-id", "Lock ID")
 
 	wss := []string{}
 	if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
@@ -37,7 +39,7 @@ func applyCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
 	return opt
 }
 
-func applyRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+func forceUnlockRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	cfg, f, err := config.Get(ctx, ".bt.cue")
 	if err != nil {
 		return fmt.Errorf("failed to find config file: %w", err)
@@ -45,7 +47,15 @@ func applyRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error 
 	Logger.Printf("Using config file: %s\n", f)
 	Logger.Printf("cfg: %#v\n", cfg)
 
-	cmd := []string{"terraform", "apply", "-input", "tf.plan"}
+	if len(args) < 1 {
+		fmt.Fprintf(os.Stderr, "ERROR: missing <lock-id>\n")
+		fmt.Fprintf(os.Stderr, "%s", opt.Help(getoptions.HelpSynopsis))
+		return getoptions.ErrorHelpCalled
+	}
+	lockID := args[0]
+	args = slices.Delete(args, 0, 1)
+
+	cmd := []string{"terraform", "force-unlock", "-force", lockID}
 
 	cmd = append(cmd, args...)
 	ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()

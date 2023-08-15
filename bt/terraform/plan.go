@@ -12,6 +12,7 @@ import (
 	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"slices"
 )
 
 func planCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
@@ -72,7 +73,9 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 			}
 			for _, f := range ff {
 				Logger.Printf("file: %s\n", f)
-				cmd = append(cmd, "-var-file", f)
+				if !slices.Contains(cmd, f) {
+					cmd = append(cmd, "-var-file", f)
+				}
 			}
 		}
 	}
