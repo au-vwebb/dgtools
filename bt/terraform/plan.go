@@ -24,15 +24,11 @@ func planCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
 func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	varFiles := opt.Value("var-file").([]string)
 
-	f, err := config.FindFileUpwards(ctx, ".bt.cue")
+	cfg, f, err := config.Get(ctx, ".bt.cue")
 	if err != nil {
 		return fmt.Errorf("failed to find config file: %w", err)
 	}
 	Logger.Printf("Using config file: %s\n", f)
-	cfg, err := config.Read(ctx, f)
-	if err != nil {
-		return fmt.Errorf("failed to read config: %w", err)
-	}
 	Logger.Printf("cfg: %#v\n", cfg)
 
 	cmd := []string{"terraform", "plan", "-out", "tf.plan"}
@@ -51,7 +47,7 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		cmd = append(cmd, "-var-file", v)
 	}
 	cmd = append(cmd, args...)
-	ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
+	var wsEnv string
 	if cfg.Terraform.Workspaces.Enabled {
 		if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
 			if len(varFiles) < 1 {
@@ -60,10 +56,29 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 			wsFilename := filepath.Base(varFiles[0])
 			r := regexp.MustCompile(`\..*$`)
 			wsName := r.ReplaceAllString(wsFilename, "")
-			wsEnv := fmt.Sprintf("TF_WORKSPACE=%s", wsName)
-			ri.Env(wsEnv)
+			wsEnv = fmt.Sprintf("TF_WORKSPACE=%s", wsName)
 			Logger.Printf("export %s\n", wsEnv)
+		} else {
+			e, err := os.ReadFile(".terraform/environment")
+			if err != nil {
+				return fmt.Errorf("failed to read current workspace: %w", err)
+			}
+			ws := strings.TrimSpace(string(e))
+			glob := fmt.Sprintf("%s/%s.tfvars*", cfg.Terraform.Workspaces.Dir, ws)
+			Logger.Printf("ws: %s, glob: %s\n", ws, glob)
+			ff, _, err := fsmodtime.Glob(os.DirFS("."), true, []string{glob})
+			if err != nil {
+				return fmt.Errorf("failed to glob ws files: %w", err)
+			}
+			for _, f := range ff {
+				Logger.Printf("file: %s\n", f)
+				cmd = append(cmd, "-var-file", f)
+			}
 		}
+	}
+	ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
+	if wsEnv != "" {
+		ri.Env(wsEnv)
 	}
 	err = ri.Run()
 	if err != nil {

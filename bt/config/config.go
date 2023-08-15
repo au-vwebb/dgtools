@@ -31,6 +31,18 @@ type Config struct {
 	}
 }
 
+func Get(ctx context.Context, filename string) (*Config, string, error) {
+	f, err := FindFileUpwards(ctx, filename)
+	if err != nil {
+		return nil, f, fmt.Errorf("failed to find config file: %w", err)
+	}
+	cfg, err := Read(ctx, f)
+	if err != nil {
+		return cfg, f, fmt.Errorf("failed to read config: %w", err)
+	}
+	return cfg, f, nil
+}
+
 func Read(ctx context.Context, filename string) (*Config, error) {
 	configs := []cueutils.CueConfigFile{}
 

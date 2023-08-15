@@ -19,15 +19,11 @@ func initCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
 }
 
 func initRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
-	f, err := config.FindFileUpwards(ctx, ".bt.cue")
+	cfg, f, err := config.Get(ctx, ".bt.cue")
 	if err != nil {
 		return fmt.Errorf("failed to find config file: %w", err)
 	}
 	Logger.Printf("Using config file: %s\n", f)
-	cfg, err := config.Read(ctx, f)
-	if err != nil {
-		return fmt.Errorf("failed to read config: %w", err)
-	}
 	Logger.Printf("cfg: %#v\n", cfg)
 
 	cmd := []string{"terraform", "init"}
