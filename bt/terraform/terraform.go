@@ -114,3 +114,18 @@ func VarFileIfWorkspaceSelected(cfg *config.Config, varFiles []string) ([]string
 	}
 	return varFiles, nil
 }
+
+func getDefaultVarFiles(cfg *config.Config) ([]string, error) {
+	varFiles := []string{}
+	for _, vars := range cfg.Terraform.Plan.VarFile {
+		v := strings.ReplaceAll(vars, "~", "$HOME")
+		vv, err := fsmodtime.ExpandEnv([]string{v})
+		if err != nil {
+			return varFiles, fmt.Errorf("failed to expand: %w", err)
+		}
+		if _, err := os.Stat(vv[0]); err == nil {
+			varFiles = append(varFiles, vv[0])
+		}
+	}
+	return varFiles, nil
+}

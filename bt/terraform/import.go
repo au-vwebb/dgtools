@@ -3,16 +3,10 @@ package terraform
 import (
 	"context"
 	"fmt"
-	"os"
-	"path/filepath"
-	"regexp"
-	"strings"
 
 	"github.com/DavidGamba/dgtools/bt/config"
-	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
-	"slices"
 )
 
 func importCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
@@ -30,18 +24,15 @@ func importRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error
 
 	cmd := []string{"terraform", "import"}
 
-	for _, vars := range cfg.Terraform.Plan.VarFile {
-		v := strings.ReplaceAll(vars, "~", "$HOME")
-		vv, err := fsmodtime.ExpandEnv([]string{v})
-		if err != nil {
-			return fmt.Errorf("failed to expand: %w", err)
-		}
-		if _, err := os.Stat(vv[0]); err == nil {
-			cmd = append(cmd, "-var-file", vv[0])
-		}
+	defaultVarFiles, err := getDefaultVarFiles(cfg)
+	if err != nil {
+		return err
+	}
+	for _, v := range defaultVarFiles {
+		cmd = append(cmd, "-var-file", v)
 	}
 
-	varFiles, err := VarFileIfWorkspaceSelected(cfg, varFiles)
+	varFiles, err = VarFileIfWorkspaceSelected(cfg, varFiles)
 	if err != nil {
 		return err
 	}
