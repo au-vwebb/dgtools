@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
@@ -17,21 +16,9 @@ func applyCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt
 	opt := parent.NewCommand("apply", "Wrapper around terraform apply")
 	opt.SetCommandFn(applyRun)
 
-	wss := []string{}
-	if cfg.Terraform.Workspaces.Enabled {
-		if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
-			wss, err = getWorkspaces(ctx, cfg)
-			if err != nil {
-				Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
-			}
-		} else {
-			e, err := os.ReadFile(".terraform/environment")
-			if err != nil {
-				Logger.Printf("WARNING: failed to retrieve workspace: %s\n", err)
-			} else {
-				wss = append(wss, strings.TrimSpace(string(e)))
-			}
-		}
+	wss, err := validWorkspaces(ctx, cfg)
+	if err != nil {
+		Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
 	}
 	opt.String("ws", "", opt.ValidValues(wss...), opt.Description("Workspace to use"))
 

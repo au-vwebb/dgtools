@@ -4,12 +4,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"strings"
+	"slices"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
-	"slices"
 )
 
 func forceUnlockCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
@@ -19,26 +18,11 @@ func forceUnlockCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.
 	opt.SetCommandFn(forceUnlockRun)
 	opt.HelpSynopsisArg("lock-id", "Lock ID")
 
-	wss := []string{}
-	if cfg.Terraform.Workspaces.Enabled {
-		if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
-			wss, err = getWorkspaces(ctx, cfg)
-			if err != nil {
-				Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
-				opt.String("ws", "", opt.ValidValues(wss...))
-				return opt
-			}
-		} else {
-			e, err := os.ReadFile(".terraform/environment")
-			if err != nil {
-				Logger.Printf("WARNING: failed to retrieve workspace: %s\n", err)
-				opt.String("ws", "", opt.ValidValues(wss...))
-				return opt
-			}
-			wss = append(wss, strings.TrimSpace(string(e)))
-		}
+	wss, err := validWorkspaces(ctx, cfg)
+	if err != nil {
+		Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
 	}
-	opt.String("ws", "", opt.ValidValues(wss...))
+	opt.String("ws", "", opt.ValidValues(wss...), opt.Description("Workspace to use"))
 
 	return opt
 }

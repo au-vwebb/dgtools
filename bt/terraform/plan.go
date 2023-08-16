@@ -28,6 +28,8 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	cfg := config.ConfigFromContext(ctx)
 	Logger.Printf("cfg: %v\n", cfg)
 
+	Logger.Printf("ctx: %#v\n", ctx)
+
 	cmd := []string{"terraform", "plan", "-out", "tf.plan"}
 
 	for _, vars := range cfg.Terraform.Plan.VarFile {
