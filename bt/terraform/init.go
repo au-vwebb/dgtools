@@ -12,18 +12,14 @@ import (
 	"github.com/DavidGamba/go-getoptions"
 )
 
-func initCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
+func initCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
 	opt := parent.NewCommand("init", "Wrapper around terraform init")
 	opt.SetCommandFn(initRun)
 	return opt
 }
 
 func initRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
-	cfg, f, err := config.Get(ctx, ".bt.cue")
-	if err != nil {
-		return fmt.Errorf("failed to find config file: %w", err)
-	}
-	Logger.Printf("Using config file: %s\n", f)
+	cfg := config.ConfigFromContext(ctx)
 	Logger.Printf("cfg: %#v\n", cfg)
 
 	cmd := []string{"terraform", "init"}
@@ -39,7 +35,7 @@ func initRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		}
 	}
 	cmd = append(cmd, args...)
-	err = run.CMD(cmd...).Ctx(ctx).Stdin().Log().Run()
+	err := run.CMD(cmd...).Ctx(ctx).Stdin().Log().Run()
 	if err != nil {
 		return fmt.Errorf("failed to run: %w", err)
 	}

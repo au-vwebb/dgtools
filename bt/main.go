@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/bt/terraform"
 	"github.com/DavidGamba/go-getoptions"
 )
@@ -18,12 +19,25 @@ func main() {
 }
 
 func program(args []string) int {
+	ctx, cancel, done := getoptions.InterruptContext()
+	defer func() { cancel(); <-done }()
+
+	// Read config and store it in context
+	cfg, f, err := config.Get(ctx, ".bt.cue")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "INFO: config file not found\n")
+	}
+	if f != "" {
+		Logger.Printf("Using config file: %s\n", f)
+	}
+	ctx = config.NewConfigContext(ctx, cfg)
+
 	opt := getoptions.New()
 	opt.Self("", "Terraform build system built as a no lock-in wrapper")
 	opt.Bool("quiet", false, opt.GetEnv("QUIET"))
 	opt.SetUnknownMode(getoptions.Pass)
 
-	terraform.NewCommand(opt)
+	terraform.NewCommand(ctx, opt)
 
 	opt.HelpCommand("help", opt.Alias("?"))
 	remaining, err := opt.Parse(args[1:])
@@ -34,10 +48,6 @@ func program(args []string) int {
 	if opt.Called("quiet") {
 		Logger.SetOutput(io.Discard)
 	}
-	Logger.Println(remaining)
-
-	ctx, cancel, done := getoptions.InterruptContext()
-	defer func() { cancel(); <-done }()
 
 	err = opt.Dispatch(ctx, remaining)
 	if err != nil {

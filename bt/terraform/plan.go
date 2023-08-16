@@ -15,7 +15,7 @@ import (
 	"slices"
 )
 
-func planCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
+func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
 	opt := parent.NewCommand("plan", "Wrapper around terraform plan")
 	opt.StringSlice("var-file", 1, 1)
 	opt.SetCommandFn(planRun)
@@ -25,12 +25,8 @@ func planCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
 func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	varFiles := opt.Value("var-file").([]string)
 
-	cfg, f, err := config.Get(ctx, ".bt.cue")
-	if err != nil {
-		return fmt.Errorf("failed to find config file: %w", err)
-	}
-	Logger.Printf("Using config file: %s\n", f)
-	Logger.Printf("cfg: %#v\n", cfg)
+	cfg := config.ConfigFromContext(ctx)
+	Logger.Printf("cfg: %v\n", cfg)
 
 	cmd := []string{"terraform", "plan", "-out", "tf.plan"}
 
@@ -83,7 +79,7 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	if wsEnv != "" {
 		ri.Env(wsEnv)
 	}
-	err = ri.Run()
+	err := ri.Run()
 	if err != nil {
 		return fmt.Errorf("failed to run: %w", err)
 	}

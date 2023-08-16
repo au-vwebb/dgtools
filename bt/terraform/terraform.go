@@ -15,24 +15,21 @@ import (
 
 var Logger = log.New(os.Stderr, "", log.LstdFlags)
 
-func NewCommand(parent *getoptions.GetOpt) *getoptions.GetOpt {
+func NewCommand(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
 	opt := parent.NewCommand("terraform", "terraform related tasks")
 
-	initCMD(opt)
-	planCMD(opt)
-	applyCMD(opt)
+	initCMD(ctx, opt)
+	planCMD(ctx, opt)
+	applyCMD(ctx, opt)
 
-	forceUnlockCMD(opt)
+	importCMD(ctx, opt)
+	forceUnlockCMD(ctx, opt)
 
 	return opt
 }
 
-func getWorkspaces() ([]string, error) {
+func getWorkspaces(ctx context.Context, cfg *config.Config) ([]string, error) {
 	wss := []string{}
-	cfg, _, err := config.Get(context.Background(), ".bt.cue")
-	if err != nil {
-		return wss, fmt.Errorf("failed to find config file: %w", err)
-	}
 	glob := fmt.Sprintf("%s/*.tfvars*", cfg.Terraform.Workspaces.Dir)
 	ff, _, err := fsmodtime.Glob(os.DirFS("."), true, []string{glob})
 	if err != nil {

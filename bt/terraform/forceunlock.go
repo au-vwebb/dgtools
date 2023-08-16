@@ -12,27 +12,31 @@ import (
 	"slices"
 )
 
-func forceUnlockCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
+func forceUnlockCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
+	cfg := config.ConfigFromContext(ctx)
+
 	opt := parent.NewCommand("force-unlock", "")
 	opt.SetCommandFn(forceUnlockRun)
 	opt.HelpSynopsisArg("lock-id", "Lock ID")
 
 	wss := []string{}
-	if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
-		wss, err = getWorkspaces()
-		if err != nil {
-			Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
-			opt.String("ws", "", opt.ValidValues(wss...))
-			return opt
+	if cfg.Terraform.Workspaces.Enabled {
+		if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
+			wss, err = getWorkspaces(ctx, cfg)
+			if err != nil {
+				Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
+				opt.String("ws", "", opt.ValidValues(wss...))
+				return opt
+			}
+		} else {
+			e, err := os.ReadFile(".terraform/environment")
+			if err != nil {
+				Logger.Printf("WARNING: failed to retrieve workspace: %s\n", err)
+				opt.String("ws", "", opt.ValidValues(wss...))
+				return opt
+			}
+			wss = append(wss, strings.TrimSpace(string(e)))
 		}
-	} else {
-		e, err := os.ReadFile(".terraform/environment")
-		if err != nil {
-			Logger.Printf("WARNING: failed to retrieve workspace: %s\n", err)
-			opt.String("ws", "", opt.ValidValues(wss...))
-			return opt
-		}
-		wss = append(wss, strings.TrimSpace(string(e)))
 	}
 	opt.String("ws", "", opt.ValidValues(wss...))
 
@@ -40,11 +44,7 @@ func forceUnlockCMD(parent *getoptions.GetOpt) *getoptions.GetOpt {
 }
 
 func forceUnlockRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
-	cfg, f, err := config.Get(ctx, ".bt.cue")
-	if err != nil {
-		return fmt.Errorf("failed to find config file: %w", err)
-	}
-	Logger.Printf("Using config file: %s\n", f)
+	cfg := config.ConfigFromContext(ctx)
 	Logger.Printf("cfg: %#v\n", cfg)
 
 	if len(args) < 1 {
@@ -70,7 +70,7 @@ func forceUnlockRun(ctx context.Context, opt *getoptions.GetOpt, args []string) 
 			Logger.Printf("export %s\n", wsEnv)
 		}
 	}
-	err = ri.Run()
+	err := ri.Run()
 	if err != nil {
 		return fmt.Errorf("failed to run: %w", err)
 	}

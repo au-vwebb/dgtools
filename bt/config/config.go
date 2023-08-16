@@ -31,14 +31,30 @@ type Config struct {
 	}
 }
 
+type contextKey string
+
+const configKey contextKey = "config"
+
+func NewConfigContext(ctx context.Context, value *Config) context.Context {
+	return context.WithValue(ctx, configKey, value)
+}
+
+func ConfigFromContext(ctx context.Context) *Config {
+	v, ok := ctx.Value(configKey).(*Config)
+	if ok {
+		return v
+	}
+	return &Config{}
+}
+
 func Get(ctx context.Context, filename string) (*Config, string, error) {
 	f, err := FindFileUpwards(ctx, filename)
 	if err != nil {
-		return nil, f, fmt.Errorf("failed to find config file: %w", err)
+		return &Config{}, f, fmt.Errorf("failed to find config file: %w", err)
 	}
 	cfg, err := Read(ctx, f)
 	if err != nil {
-		return cfg, f, fmt.Errorf("failed to read config: %w", err)
+		return &Config{}, f, fmt.Errorf("failed to read config: %w", err)
 	}
 	return cfg, f, nil
 }
