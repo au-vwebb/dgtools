@@ -6,7 +6,6 @@ import (
 	"io"
 	"log"
 	"os"
-	"path/filepath"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/bt/terraform"
@@ -24,18 +23,7 @@ func program(args []string) int {
 	defer func() { cancel(); <-done }()
 
 	// Read config and store it in context
-	cfg, f, err := config.Get(ctx, ".bt.cue")
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "INFO: config file not found\n")
-	}
-	if f != "" {
-		home, _ := os.UserHomeDir()
-		fr, err := filepath.Rel(home, f)
-		if err != nil {
-			Logger.Printf("Using config file: %s\n", f)
-		}
-		Logger.Printf("Using config file: ~/%s\n", fr)
-	}
+	cfg, _, _ := config.Get(ctx, ".bt.cue")
 	ctx = config.NewConfigContext(ctx, cfg)
 
 	opt := getoptions.New()

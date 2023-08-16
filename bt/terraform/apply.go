@@ -23,20 +23,17 @@ func applyCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt
 			wss, err = getWorkspaces(ctx, cfg)
 			if err != nil {
 				Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
-				opt.String("ws", "", opt.ValidValues(wss...))
-				return opt
 			}
 		} else {
 			e, err := os.ReadFile(".terraform/environment")
 			if err != nil {
 				Logger.Printf("WARNING: failed to retrieve workspace: %s\n", err)
-				opt.String("ws", "", opt.ValidValues(wss...))
-				return opt
+			} else {
+				wss = append(wss, strings.TrimSpace(string(e)))
 			}
-			wss = append(wss, strings.TrimSpace(string(e)))
 		}
 	}
-	opt.String("ws", "", opt.ValidValues(wss...))
+	opt.String("ws", "", opt.ValidValues(wss...), opt.Description("Workspace to use"))
 
 	return opt
 }

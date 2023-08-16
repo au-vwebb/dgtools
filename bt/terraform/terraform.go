@@ -28,6 +28,8 @@ func NewCommand(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetO
 	return opt
 }
 
+// Retrieves workspaces assuming a convention where the .tfvars[.json] file matches the name of the workspace
+// It only lists files, it doesn't query Terraform for a 'proper' list of workspaces.
 func getWorkspaces(ctx context.Context, cfg *config.Config) ([]string, error) {
 	wss := []string{}
 	glob := fmt.Sprintf("%s/*.tfvars*", cfg.Terraform.Workspaces.Dir)
