@@ -31,6 +31,15 @@ type Config struct {
 	}
 }
 
+func (c *Config) String() string {
+	return fmt.Sprintf("backend_config files: %v, var files: %v, workspaces enabled: %t, ws dir: '%s'",
+		c.Terraform.Init.BackendConfig,
+		c.Terraform.Plan.VarFile,
+		c.Terraform.Workspaces.Enabled,
+		c.Terraform.Workspaces.Dir,
+	)
+}
+
 type contextKey string
 
 const configKey contextKey = "config"

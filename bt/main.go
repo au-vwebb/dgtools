@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/bt/terraform"
@@ -28,7 +29,12 @@ func program(args []string) int {
 		fmt.Fprintf(os.Stderr, "INFO: config file not found\n")
 	}
 	if f != "" {
-		Logger.Printf("Using config file: %s\n", f)
+		home, _ := os.UserHomeDir()
+		fr, err := filepath.Rel(home, f)
+		if err != nil {
+			Logger.Printf("Using config file: %s\n", f)
+		}
+		Logger.Printf("Using config file: ~/%s\n", fr)
 	}
 	ctx = config.NewConfigContext(ctx, cfg)
 
