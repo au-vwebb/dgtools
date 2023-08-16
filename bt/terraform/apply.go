@@ -16,7 +16,7 @@ func applyCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt
 	opt := parent.NewCommand("apply", "Wrapper around terraform apply")
 	opt.SetCommandFn(applyRun)
 
-	wss, err := validWorkspaces(ctx, cfg)
+	wss, err := validWorkspaces(cfg)
 	if err != nil {
 		Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
 	}

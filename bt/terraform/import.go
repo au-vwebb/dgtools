@@ -4,28 +4,31 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"path/filepath"
+	"regexp"
 	"strings"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"slices"
 )
 
-func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
-	opt := parent.NewCommand("plan", "Wrapper around terraform plan")
+func importCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
+	opt := parent.NewCommand("import", "Wrapper around terraform import")
 	opt.StringSlice("var-file", 1, 1)
-	opt.SetCommandFn(planRun)
+	opt.SetCommandFn(importRun)
 	return opt
 }
 
-func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+func importRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	varFiles := opt.Value("var-file").([]string)
 
 	cfg := config.ConfigFromContext(ctx)
-	Logger.Printf("cfg: %v\n", cfg)
+	Logger.Printf("cfg: %#v\n", cfg)
 
-	cmd := []string{"terraform", "plan", "-out", "tf.plan"}
+	cmd := []string{"terraform", "import"}
 
 	for _, vars := range cfg.Terraform.Plan.VarFile {
 		v := strings.ReplaceAll(vars, "~", "$HOME")

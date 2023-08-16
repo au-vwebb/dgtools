@@ -18,7 +18,7 @@ func forceUnlockCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.
 	opt.SetCommandFn(forceUnlockRun)
 	opt.HelpSynopsisArg("lock-id", "Lock ID")
 
-	wss, err := validWorkspaces(ctx, cfg)
+	wss, err := validWorkspaces(cfg)
 	if err != nil {
 		Logger.Printf("WARNING: failed to list workspaces: %s\n", err)
 	}
