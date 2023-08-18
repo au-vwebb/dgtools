@@ -73,65 +73,60 @@ func validWorkspaces(cfg *config.Config) ([]string, error) {
 	return wss, nil
 }
 
+func workspaceSelected() bool {
+	if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
+		return false
+	}
+	return true
+}
+
+func updateWSIfSelected(ws string) (string, error) {
+	if workspaceSelected() {
+		e, err := os.ReadFile(".terraform/environment")
+		if err != nil {
+			return ws, fmt.Errorf("failed to read current workspace: %w", err)
+		}
+		wse := strings.TrimSpace(string(e))
+		if ws != "" && wse != ws {
+			return wse, fmt.Errorf("given workspace doesn't match selected workspace: %s", wse)
+		}
+		ws = wse
+	}
+	return ws, nil
+}
+
 // If there is no workspace selected, check the given var files and use the first one as the workspace then return the ws env var
-func getWorkspaceEnvVar(cfg *config.Config, ws string, varFiles []string) (string, error) {
-	var wsEnv string
+func getWorkspace(cfg *config.Config, ws string, varFiles []string) (string, error) {
 	if cfg.Terraform.Workspaces.Enabled {
-		if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
+		if !workspaceSelected() {
 			if ws != "" {
-				wsEnv = fmt.Sprintf("TF_WORKSPACE=%s", ws)
-				return wsEnv, nil
+				return ws, nil
 			}
 			if len(varFiles) < 1 {
 				return "", fmt.Errorf("running in workspace mode but no workspace selected or -var-file given")
 			}
 			wsFilename := filepath.Base(varFiles[0])
 			r := regexp.MustCompile(`\..*$`)
-			wsName := r.ReplaceAllString(wsFilename, "")
-			wsEnv = fmt.Sprintf("TF_WORKSPACE=%s", wsName)
+			ws = r.ReplaceAllString(wsFilename, "")
 		}
 	}
-	return wsEnv, nil
+	return ws, nil
 }
 
 // If a workspace is selected automatically insert a var file matching the workspace.
 // If the var file is already present then don't add it again.
-func VarFileIfWorkspaceSelected(cfg *config.Config, ws string, varFiles []string) ([]string, error) {
-	if cfg.Terraform.Workspaces.Enabled {
-		if _, err := os.Stat(".terraform/environment"); os.IsNotExist(err) {
-			Logger.Printf("ws: %s\n", ws)
-			if ws == "" {
-				return varFiles, nil
-			}
-			glob := fmt.Sprintf("%s/%s.tfvars*", cfg.Terraform.Workspaces.Dir, ws)
-			Logger.Printf("ws: %s, glob: %s\n", ws, glob)
-			ff, _, err := fsmodtime.Glob(os.DirFS("."), true, []string{glob})
-			if err != nil {
-				return varFiles, fmt.Errorf("failed to glob ws files: %w", err)
-			}
-			for _, f := range ff {
-				Logger.Printf("file: %s\n", f)
-				if !slices.Contains(varFiles, f) {
-					varFiles = append(varFiles, f)
-				}
-			}
-		} else {
-			e, err := os.ReadFile(".terraform/environment")
-			if err != nil {
-				return varFiles, fmt.Errorf("failed to read current workspace: %w", err)
-			}
-			ws := strings.TrimSpace(string(e))
-			glob := fmt.Sprintf("%s/%s.tfvars*", cfg.Terraform.Workspaces.Dir, ws)
-			Logger.Printf("ws: %s, glob: %s\n", ws, glob)
-			ff, _, err := fsmodtime.Glob(os.DirFS("."), true, []string{glob})
-			if err != nil {
-				return varFiles, fmt.Errorf("failed to glob ws files: %w", err)
-			}
-			for _, f := range ff {
-				Logger.Printf("file: %s\n", f)
-				if !slices.Contains(varFiles, f) {
-					varFiles = append(varFiles, f)
-				}
+func AddVarFileIfWorkspaceSelected(cfg *config.Config, ws string, varFiles []string) ([]string, error) {
+	if ws != "" {
+		glob := fmt.Sprintf("%s/%s.tfvars*", cfg.Terraform.Workspaces.Dir, ws)
+		Logger.Printf("ws: %s, glob: %s\n", ws, glob)
+		ff, _, err := fsmodtime.Glob(os.DirFS("."), true, []string{glob})
+		if err != nil {
+			return varFiles, fmt.Errorf("failed to glob ws files: %w", err)
+		}
+		for _, f := range ff {
+			Logger.Printf("file: %s\n", f)
+			if !slices.Contains(varFiles, f) {
+				varFiles = append(varFiles, f)
 			}
 		}
 	}

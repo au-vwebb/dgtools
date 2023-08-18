@@ -13,21 +13,31 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		varFiles := opt.Value("var-file").([]string)
 		ws := opt.Value("ws").(string)
+		ws, err := updateWSIfSelected(ws)
+		if err != nil {
+			return err
+		}
 
 		cfg := config.ConfigFromContext(ctx)
 		Logger.Printf("cfg: %s\n", cfg)
+
+		ws, err = getWorkspace(cfg, ws, varFiles)
+		if err != nil {
+			return err
+		}
 
 		defaultVarFiles, err := getDefaultVarFiles(cfg)
 		if err != nil {
 			return err
 		}
-		for _, v := range defaultVarFiles {
-			cmd = append(cmd, "-var-file", v)
-		}
 
-		varFiles, err = VarFileIfWorkspaceSelected(cfg, ws, varFiles)
+		varFiles, err = AddVarFileIfWorkspaceSelected(cfg, ws, varFiles)
 		if err != nil {
 			return err
+		}
+
+		for _, v := range defaultVarFiles {
+			cmd = append(cmd, "-var-file", v)
 		}
 		for _, v := range varFiles {
 			cmd = append(cmd, "-var-file", v)
@@ -35,11 +45,8 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 		cmd = append(cmd, args...)
 
 		ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
-		wsEnv, err := getWorkspaceEnvVar(cfg, ws, varFiles)
-		if err != nil {
-			return err
-		}
-		if wsEnv != "" {
+		if ws != "" {
+			wsEnv := fmt.Sprintf("TF_WORKSPACE=%s", ws)
 			Logger.Printf("export %s\n", wsEnv)
 			ri.Env(wsEnv)
 		}
