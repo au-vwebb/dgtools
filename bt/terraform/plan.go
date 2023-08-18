@@ -2,7 +2,9 @@ package terraform
 
 import (
 	"context"
+	"errors"
 	"fmt"
+	"os/exec"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
@@ -14,6 +16,9 @@ func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt 
 
 	opt := parent.NewCommand("plan", "")
 	opt.StringSlice("var-file", 1, 1)
+	opt.Bool("destroy", false)
+	opt.Bool("detailed-exitcode", false)
+	opt.StringSlice("target", 1, 99)
 	opt.SetCommandFn(planRun)
 
 	wss, err := validWorkspaces(cfg)
@@ -26,7 +31,10 @@ func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt 
 }
 
 func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+	destroy := opt.Value("destroy").(bool)
+	detailedExitcode := opt.Value("detailed-exitcode").(bool)
 	varFiles := opt.Value("var-file").([]string)
+	targets := opt.Value("target").([]string)
 	ws := opt.Value("ws").(string)
 	ws, err := updateWSIfSelected(ws)
 	if err != nil {
@@ -58,6 +66,15 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	for _, v := range varFiles {
 		cmd = append(cmd, "-var-file", v)
 	}
+	if destroy {
+		cmd = append(cmd, "-destroy")
+	}
+	if detailedExitcode {
+		cmd = append(cmd, "-detailed-exitcode")
+	}
+	for _, t := range targets {
+		cmd = append(cmd, "-target", t)
+	}
 	cmd = append(cmd, args...)
 
 	if ws == "" {
@@ -74,6 +91,12 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	}
 	err = ri.Run()
 	if err != nil {
+		// exit code 2 with detailed-exitcode means changes found
+		var eerr *exec.ExitError
+		if detailedExitcode && errors.As(err, &eerr) && eerr.ExitCode() == 2 {
+			Logger.Printf("plan has changes\n")
+			return eerr
+		}
 		return fmt.Errorf("failed to run: %w", err)
 	}
 	return nil
