@@ -3,10 +3,12 @@ package terraform
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"github.com/mattn/go-isatty"
 )
 
 func applyCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
@@ -47,6 +49,9 @@ func applyRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error 
 		cmd = append(cmd, "-input", ".tf.plan")
 	} else {
 		cmd = append(cmd, "-input", fmt.Sprintf(".tf.plan-%s", ws))
+	}
+	if !isatty.IsTerminal(os.Stdout.Fd()) {
+		cmd = append(cmd, "-no-color")
 	}
 	cmd = append(cmd, args...)
 	ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()

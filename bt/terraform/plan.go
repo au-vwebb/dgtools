@@ -4,11 +4,13 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"os"
 	"os/exec"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"github.com/mattn/go-isatty"
 )
 
 func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
@@ -74,6 +76,9 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	}
 	for _, t := range targets {
 		cmd = append(cmd, "-target", t)
+	}
+	if !isatty.IsTerminal(os.Stdout.Fd()) {
+		cmd = append(cmd, "-no-color")
 	}
 	cmd = append(cmd, args...)
 

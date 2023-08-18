@@ -10,6 +10,7 @@ import (
 	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"github.com/mattn/go-isatty"
 )
 
 func initCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
@@ -33,6 +34,9 @@ func initRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		if _, err := os.Stat(bb[0]); err == nil {
 			cmd = append(cmd, "-backend-config", bb[0])
 		}
+	}
+	if !isatty.IsTerminal(os.Stdout.Fd()) {
+		cmd = append(cmd, "-no-color")
 	}
 	cmd = append(cmd, args...)
 	err := run.CMD(cmd...).Ctx(ctx).Stdin().Log().Run()

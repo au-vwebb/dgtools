@@ -3,10 +3,12 @@ package terraform
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"github.com/mattn/go-isatty"
 )
 
 func varFileCMDRun(cmd ...string) getoptions.CommandFn {
@@ -41,6 +43,9 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 		}
 		for _, v := range varFiles {
 			cmd = append(cmd, "-var-file", v)
+		}
+		if !isatty.IsTerminal(os.Stdout.Fd()) {
+			cmd = append(cmd, "-no-color")
 		}
 		cmd = append(cmd, args...)
 

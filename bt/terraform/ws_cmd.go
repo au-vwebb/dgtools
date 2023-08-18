@@ -3,10 +3,12 @@ package terraform
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"github.com/DavidGamba/dgtools/bt/config"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
+	"github.com/mattn/go-isatty"
 )
 
 func wsCMDRun(cmd ...string) getoptions.CommandFn {
@@ -28,6 +30,9 @@ func wsCMDRun(cmd ...string) getoptions.CommandFn {
 			}
 		}
 
+		if !isatty.IsTerminal(os.Stdout.Fd()) {
+			cmd = append(cmd, "-no-color")
+		}
 		cmd = append(cmd, args...)
 		ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
 		if ws != "" {
