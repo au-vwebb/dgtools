@@ -13,7 +13,7 @@ import (
 )
 
 func initCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
-	opt := parent.NewCommand("init", "Wrapper around terraform init")
+	opt := parent.NewCommand("init", "")
 	opt.SetCommandFn(initRun)
 	return opt
 }

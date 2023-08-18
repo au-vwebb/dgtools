@@ -12,9 +12,10 @@ import (
 func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		varFiles := opt.Value("var-file").([]string)
+		ws := opt.Value("ws").(string)
 
 		cfg := config.ConfigFromContext(ctx)
-		Logger.Printf("cfg: %#v\n", cfg)
+		Logger.Printf("cfg: %s\n", cfg)
 
 		defaultVarFiles, err := getDefaultVarFiles(cfg)
 		if err != nil {
@@ -24,7 +25,7 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 			cmd = append(cmd, "-var-file", v)
 		}
 
-		varFiles, err = VarFileIfWorkspaceSelected(cfg, varFiles)
+		varFiles, err = VarFileIfWorkspaceSelected(cfg, ws, varFiles)
 		if err != nil {
 			return err
 		}
@@ -34,7 +35,7 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 		cmd = append(cmd, args...)
 
 		ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
-		wsEnv, err := getWorkspaceEnvVar(cfg, varFiles)
+		wsEnv, err := getWorkspaceEnvVar(cfg, ws, varFiles)
 		if err != nil {
 			return err
 		}
