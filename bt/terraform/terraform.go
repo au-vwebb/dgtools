@@ -32,6 +32,9 @@ func NewCommand(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetO
 	forceUnlockCMD(ctx, opt)
 	statePushCMD(ctx, opt)
 	statePullCMD(ctx, opt)
+	showPlanCMD(ctx, opt)
+
+	buildCMD(ctx, opt)
 
 	return opt
 }

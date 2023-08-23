@@ -8,6 +8,7 @@ import (
 	"os/exec"
 
 	"github.com/DavidGamba/dgtools/bt/config"
+	"github.com/DavidGamba/dgtools/fsmodtime"
 	"github.com/DavidGamba/dgtools/run"
 	"github.com/DavidGamba/go-getoptions"
 	"github.com/mattn/go-isatty"
@@ -61,7 +62,26 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		return err
 	}
 
-	cmd := []string{"terraform", "plan"}
+	planFile := ""
+	if ws == "" {
+		planFile = ".tf.plan"
+	} else {
+		planFile = fmt.Sprintf(".tf.plan-%s", ws)
+	}
+
+	files, modified, err := fsmodtime.Target(os.DirFS("."),
+		[]string{planFile},
+		append(append([]string{".tf.init"}, defaultVarFiles...), varFiles...))
+	if err != nil {
+		Logger.Printf("failed to check changes for: '%s'\n", ".tf.init")
+	}
+	if !modified {
+		Logger.Printf("no changes: skipping plan\n")
+		return nil
+	}
+	Logger.Printf("modified: %v\n", files)
+
+	cmd := []string{"terraform", "plan", "-out", planFile}
 	for _, v := range defaultVarFiles {
 		cmd = append(cmd, "-var-file", v)
 	}
@@ -82,12 +102,6 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	}
 	cmd = append(cmd, args...)
 
-	if ws == "" {
-		cmd = append(cmd, "-out", ".tf.plan")
-	} else {
-		cmd = append(cmd, "-out", fmt.Sprintf(".tf.plan-%s", ws))
-	}
-
 	ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
 	if ws != "" {
 		wsEnv := fmt.Sprintf("TF_WORKSPACE=%s", ws)
@@ -102,6 +116,7 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 			Logger.Printf("plan has changes\n")
 			return eerr
 		}
+		os.Remove(planFile)
 		return fmt.Errorf("failed to run: %w", err)
 	}
 	return nil

@@ -21,7 +21,7 @@ func initCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt 
 
 func initRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	cfg := config.ConfigFromContext(ctx)
-	Logger.Printf("cfg: %#v\n", cfg)
+	Logger.Printf("cfg: %s\n", cfg)
 
 	cmd := []string{"terraform", "init"}
 
@@ -43,5 +43,11 @@ func initRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	if err != nil {
 		return fmt.Errorf("failed to run: %w", err)
 	}
+	fh, err := os.Create(".tf.init")
+	if err != nil {
+		return fmt.Errorf("failed to create file: %w", err)
+	}
+	fh.Close()
+
 	return nil
 }
