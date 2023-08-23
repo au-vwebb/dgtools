@@ -21,6 +21,7 @@ func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt 
 	opt.StringSlice("var-file", 1, 1)
 	opt.Bool("destroy", false)
 	opt.Bool("detailed-exitcode", false)
+	opt.Bool("ignore-cache", false, opt.Description("ignore the cache and re-run the plan"), opt.Alias("ic"))
 	opt.StringSlice("target", 1, 99)
 	opt.SetCommandFn(planRun)
 
@@ -36,6 +37,7 @@ func planCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt 
 func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	destroy := opt.Value("destroy").(bool)
 	detailedExitcode := opt.Value("detailed-exitcode").(bool)
+	ignoreCache := opt.Value("ignore-cache").(bool)
 	varFiles := opt.Value("var-file").([]string)
 	targets := opt.Value("target").([]string)
 	ws := opt.Value("ws").(string)
@@ -75,7 +77,7 @@ func planRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	if err != nil {
 		Logger.Printf("failed to check changes for: '%s'\n", ".tf.init")
 	}
-	if !modified {
+	if !ignoreCache && !modified {
 		Logger.Printf("no changes: skipping plan\n")
 		return nil
 	}

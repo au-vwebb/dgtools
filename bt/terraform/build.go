@@ -20,6 +20,7 @@ func buildCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt
 	opt.StringSlice("var-file", 1, 1)
 	opt.Bool("destroy", false)
 	opt.Bool("detailed-exitcode", false)
+	opt.Bool("ignore-cache", false, opt.Description("ignore the cache and re-run the plan"), opt.Alias("ic"))
 	opt.StringSlice("target", 1, 99)
 	opt.Bool("apply", false, opt.Description("apply Terraform plan"))
 
