@@ -26,7 +26,7 @@ func NewCommand(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetO
 	// var-file
 	planCMD(ctx, opt)
 	importCMD(ctx, opt)
-	// refreshCMD(ctx, opt)
+	refreshCMD(ctx, opt)
 
 	// workspace selection
 	applyCMD(ctx, opt)

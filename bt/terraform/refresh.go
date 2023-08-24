@@ -7,12 +7,12 @@ import (
 	"github.com/DavidGamba/go-getoptions"
 )
 
-func importCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
+func refreshCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
 	cfg := config.ConfigFromContext(ctx)
 
-	opt := parent.NewCommand("import", "")
+	opt := parent.NewCommand("refresh", "")
 	opt.StringSlice("var-file", 1, 1)
-	opt.SetCommandFn(importRun)
+	opt.SetCommandFn(refreshRun)
 
 	wss, err := validWorkspaces(cfg)
 	if err != nil {
@@ -23,7 +23,7 @@ func importCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOp
 	return opt
 }
 
-func importRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
+func refreshRun(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 	i := invalidatePlan{}
-	return varFileCMDRun(i, "terraform", "import")(ctx, opt, args)
+	return varFileCMDRun(i, "terraform", "refresh")(ctx, opt, args)
 }

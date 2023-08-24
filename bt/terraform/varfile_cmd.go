@@ -12,7 +12,6 @@ import (
 )
 
 type VarFileCMDer interface {
-
 	// Function that adds elements to the command based on the workspace
 	cmdFunction(ws string) []string
 
@@ -21,6 +20,32 @@ type VarFileCMDer interface {
 
 	// Function that runs if the command succeeded
 	successFunction(ws string)
+}
+
+type invalidatePlan struct{}
+
+func (fn invalidatePlan) cmdFunction(ws string) []string {
+	return []string{}
+}
+
+func (fn invalidatePlan) errorFunction(ws string) {
+	planFile := ""
+	if ws == "" {
+		planFile = ".tf.plan"
+	} else {
+		planFile = fmt.Sprintf(".tf.plan-%s", ws)
+	}
+	os.Remove(planFile)
+}
+
+func (fn invalidatePlan) successFunction(ws string) {
+	planFile := ""
+	if ws == "" {
+		planFile = ".tf.plan"
+	} else {
+		planFile = fmt.Sprintf(".tf.plan-%s", ws)
+	}
+	os.Remove(planFile)
 }
 
 func varFileCMDRun(fn VarFileCMDer, cmd ...string) getoptions.CommandFn {
