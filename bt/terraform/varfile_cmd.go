@@ -11,7 +11,19 @@ import (
 	"github.com/mattn/go-isatty"
 )
 
-func varFileCMDRun(cmd ...string) getoptions.CommandFn {
+type VarFileCMDer interface {
+
+	// Function that adds elements to the command based on the workspace
+	cmdFunction(ws string) []string
+
+	// Function that runs if the command errored
+	errorFunction(ws string)
+
+	// Function that runs if the command succeeded
+	successFunction(ws string)
+}
+
+func varFileCMDRun(fn VarFileCMDer, cmd ...string) getoptions.CommandFn {
 	return func(ctx context.Context, opt *getoptions.GetOpt, args []string) error {
 		varFiles := opt.Value("var-file").([]string)
 		ws := opt.Value("ws").(string)
@@ -47,6 +59,7 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 		if !isatty.IsTerminal(os.Stdout.Fd()) {
 			cmd = append(cmd, "-no-color")
 		}
+		cmd = append(cmd, fn.cmdFunction(ws)...)
 		cmd = append(cmd, args...)
 
 		ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
@@ -57,8 +70,10 @@ func varFileCMDRun(cmd ...string) getoptions.CommandFn {
 		}
 		err = ri.Run()
 		if err != nil {
+			fn.errorFunction(ws)
 			return fmt.Errorf("failed to run: %w", err)
 		}
+		fn.successFunction(ws)
 		return nil
 	}
 }

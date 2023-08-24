@@ -26,6 +26,7 @@ func NewCommand(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetO
 	// var-file
 	planCMD(ctx, opt)
 	importCMD(ctx, opt)
+	// refreshCMD(ctx, opt)
 
 	// workspace selection
 	applyCMD(ctx, opt)
@@ -33,6 +34,12 @@ func NewCommand(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetO
 	statePushCMD(ctx, opt)
 	statePullCMD(ctx, opt)
 	showPlanCMD(ctx, opt)
+	// outputCMD(ctx, opt)
+	// showCMD(ctx, opt)
+	// taintCMD(ctx, opt)
+	// untaintCMD(ctx, opt)
+
+	// workspaceList(ctx, opt)
 
 	buildCMD(ctx, opt)
 

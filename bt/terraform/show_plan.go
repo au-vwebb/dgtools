@@ -45,6 +45,8 @@ func showPlanRun(ctx context.Context, opt *getoptions.GetOpt, args []string) err
 	}
 
 	cmd := []string{"terraform", "show"}
+	cmd = append(cmd, args...)
+	// possitional arg goes at the end
 	if ws == "" {
 		cmd = append(cmd, ".tf.plan")
 	} else {
@@ -53,7 +55,6 @@ func showPlanRun(ctx context.Context, opt *getoptions.GetOpt, args []string) err
 	if !isatty.IsTerminal(os.Stdout.Fd()) {
 		cmd = append(cmd, "-no-color")
 	}
-	cmd = append(cmd, args...)
 	ri := run.CMD(cmd...).Ctx(ctx).Stdin().Log()
 	if ws != "" {
 		wsEnv := fmt.Sprintf("TF_WORKSPACE=%s", ws)
