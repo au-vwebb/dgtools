@@ -15,7 +15,7 @@ import (
 func buildCMD(ctx context.Context, parent *getoptions.GetOpt) *getoptions.GetOpt {
 	cfg := config.ConfigFromContext(ctx)
 
-	opt := parent.NewCommand("build", "")
+	opt := parent.NewCommand("build", "Wraps init, plan and apply into a single operation with a cache")
 	opt.SetCommandFn(buildRun)
 	opt.StringSlice("var-file", 1, 1)
 	opt.Bool("destroy", false)
