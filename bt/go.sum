@@ -8,6 +8,8 @@ github.com/DavidGamba/dgtools/run v0.7.0 h1:ENTskNQvBM1/n/b42PxqJktU9EzQVqPZRGUB
 github.com/DavidGamba/dgtools/run v0.7.0/go.mod h1:3P1fMJupTWqsiE8IXsXrk2HtgkZBTCFRLbaTjRlmDe0=
 github.com/DavidGamba/go-getoptions v0.27.0 h1:hldKJSwO9SwvR+z9pe6ojhEcYECrRiO/bar9B7MnBKA=
 github.com/DavidGamba/go-getoptions v0.27.0/go.mod h1:qLaLSYeQ8sUVOfKuu5JT5qKKS3OCwyhkYSJnoG+ggmo=
+github.com/DavidGamba/go-getoptions v0.27.1-0.20230929064643-24025a361d38 h1:Z1nyhyORbsIBgQ8RyY78DdKm5/5a2q+Ejd+70V7YgCE=
+github.com/DavidGamba/go-getoptions v0.27.1-0.20230929064643-24025a361d38/go.mod h1:qLaLSYeQ8sUVOfKuu5JT5qKKS3OCwyhkYSJnoG+ggmo=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
 github.com/agext/levenshtein v1.2.2 h1:0S/Yg6LYmFJ5stwQeRp6EeOcCbj7xiqQSdNelsXvaqE=
 github.com/agext/levenshtein v1.2.2/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
